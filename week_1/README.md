@@ -146,7 +146,8 @@ GNU 프로젝트를 통해 리눅스가 완성되었으므로 엄밀히 따지�
 
 ![image](https://user-images.githubusercontent.com/43658658/139009807-da7aa502-1e56-4f00-a617-9b3a4a14110f.png)
 
-로그인을 할 때 ID는 root, 비밀번호는 설정한 비밀번호로 접속합니다.
+로그인을 할 때 ID는 root, 비밀번호는 설정한 비밀번호로 접속합니다.   
+바로 관리자 계정으로 접속되는 것을 확인할 수 있습니다.
 
 ---
 [우분투 커서, 지우기 관련 단축키](http://egloos.zum.com/ranivris/v/4304292)   
