@@ -76,6 +76,7 @@ ESXi 물리 서버의 디스크 스토리지를 나타냅니다.
 * SATA   
 ![image](https://user-images.githubusercontent.com/43658658/139047629-130261dd-c248-4ae9-8b6b-94388561a44f.png)   
   - 최근에 나온 인터페이스(연결 규격)으로 하드디스크 드라이브의 속도와 연결 방식 등을 개선하기 위해 개발되었습니다.   
+
 [SCSI, SATA 외 인터페이스 설명](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skyluvtoya&logNo=100120822628)
 * 네트워크 어뎁터
   - `VM Network`라는 이름의 가상의 LAN 카드
