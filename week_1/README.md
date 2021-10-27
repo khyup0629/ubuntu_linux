@@ -6,7 +6,7 @@
 
 > <h3>가상머신(virtual machine, VM)</h3>
 
-![image](https://user-images.githubusercontent.com/43658658/138982671-d930e19c-204c-43d8-a2a4-ad7fab5b7dd8.png)
+![image](https://user-images.githubusercontent.com/43658658/138982754-520506a8-7840-4b50-b5eb-91cb53bc60fb.png)
 
 하나의 PC에서 여러 개의 운영체제(OS)를 사용할 수 있도록 하는 소프트웨어.   
 컴퓨터에 설치된 운영체제(호스트 OS)에 가상의 컴퓨터를 만들고,   
