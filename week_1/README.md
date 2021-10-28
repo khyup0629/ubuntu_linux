@@ -136,6 +136,54 @@ GNU 프로젝트를 통해 리눅스가 완성되었으므로 엄밀히 따지�
 
 # Ch 3. 우분투 리눅스 설치
 
+> <h3>우분투 데스크탑 설치</h3>
+
+먼저 우분투 데스크탑을 VM에 설치해보겠습니다.   
+앞서 VM 생성 당시 CD/DVD 드라이브에 우분투 데스크탑 iso 파일을 선택했었습니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/139168789-96497f81-7c28-49cc-b67c-17ac3e19b577.png)   
+생성한 VM을 클릭하고 [편집] > [CD/DVD 드라이브] > 연결에 체크하고 저장합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139168903-774551be-10db-4bd7-863a-e56904b13686.png)   
+상단에 [전원 켜기] 버튼을 클릭하고, 아래의 화면을 클릭하면 우분투 데스크탑 설치가 시작되는 것을 볼 수 있습니다.
+
+[한국어] > [Ubuntu 체험하기]를 눌러줍니다.
+* 바로 [Ubuntu 설치]를 클릭하면 화면의 해상도가 낮게 설정되어 설치 진행 버튼들이 화면 밖으로 나가 보이지 않으므로 진행하기 어려워집니다.   
+그래서 우선 [Ubuntu 체험하기]를 클릭해서 메모리상에 부팅을 먼저 시킵니다.
+
+잠시 기다리면 우분투가 다시 부팅됩니다.
+
+해상도를 바꾸기 위해 [Settings]를 클릭합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139170923-573c7cdb-d6b8-4f2d-9e85-44fec759a271.png)
+
+[Display] > [Resolution]의 해상도를 `1024 x 768`로 맞춰줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139171449-0878bff1-b995-48ec-ad95-fe720ed943c6.png)
+
+바탕화면에서 `Ubuntu 20.04 LTS 설치` 아이콘을 클릭해 설치를 진행합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139171733-2695d14a-5f25-47b8-a945-ebb4be20a34a.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/139175410-e5483795-6161-4114-99c4-6a1f92c7c4b7.png)   
+* Korean-Korean(101/104 key compatible) : 한영키를 사용해 한글을 쓸 수 있게 하는 키보드 레이아웃
+
+![image](https://user-images.githubusercontent.com/43658658/139175786-8426ccd1-46c7-4bb6-af2a-fb36d71d369f.png)   
+![image](https://user-images.githubusercontent.com/43658658/139176219-4a6a6744-bef0-45d6-815b-4f098032c91d.png)   
+* `디스크를 지우고 Ubuntu 설치`는 전체 디스크를 하나의 파티션으로 설정해서 진행
+* `기타`는 디스크를 여러 개의 파티션으로 나누는 진행
+
+![image](https://user-images.githubusercontent.com/43658658/139176986-3337800b-c438-4f3f-b9f2-81dd31fb9349.png)   
+알림창이 뜨면 [계속하기] 버튼을 누릅니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139178321-79ac5b1e-953b-4dd7-89db-ad6de9144bd7.png)   
+스왑 파티션을 나눕니다.   
+
+* 스왑 파티션이란?   
+하드 디스크에서 메모리의 역할을 할 일정 용량을 할당하는 것입니다. 그래서 메모리가 가득 찼을 때 스왑 파티션이 초과되는 메모리의 역할을 담당합니다.   
+하지만, 하드 디스크의 용량을 차지하고 있고, 하드 디스크는 계속해서 쓰이게 되므로 성능이 떨어집니다.   
+  * 설치된 메모리가 4GB 이하일 때는 스왑 파티션이 사실상 별로 필요하지 않고, 
+  * 최소 7200rpm의 하드디스크가 장착되었을 때 메모리 성능을 좀 더 올리고 싶다면 스왑 파티션을 고려해 볼 수 있습니다.
+  * 스왑 파티션은 최소, 메모리의 용량에 10~25%의 여유 공간을 더 가지는 용량을, 교재에서는 메모리의 2배의 용량을 권장하고 있습니다.
+
 # Ch 4. 서버 구축시 알아야 할 필수 개념과 명령어
 
 * 터미널 실행 단축키 :  `[Ctrl] + [Alt] + [T]`
