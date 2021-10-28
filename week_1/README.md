@@ -91,6 +91,26 @@ ESXi 물리 서버의 디스크 스토리지를 나타냅니다.
 
 선택한 항목들로 VM이 생성됩니다.
 
+> <h3>VMware 설치</h3>
+
+비록, 가상화 테스트에서는 불가능하다고 나왔지만 VMware 설치를 시도해보았습니다.   
+
+VMware Workstation Player 설치 파일을 실행했을 때 아래와 같은 메시지가 출력되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139246018-6aa6f643-69fa-4a4d-89b0-6acab6069b8b.png)
+
+기술 자료 문서를 클릭해보니 아래와 같았습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139246030-9ee678a3-20a8-4c39-96d9-6ea4c12b0fe4.png)
+
+Microsoft VC 재배포 가능 패키지는 Microsoft Visual C++ 2017 Redistributable를 의미했고, 요약하면 Microsoft Visual C++ 2017 Redistributable가 사전에 설치되어 있어야 한다는 것을 의미했습니다.
+
+Microsoft Visual C++ 2017 Redistributable를 구글링 해서 설치했습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139246044-9ac67719-9010-444c-bd68-50e35b81297a.png)
+
+재부팅 결과 정상적으로 설치가 가능 해졌습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139246069-f3fa229f-014f-4c81-85d8-9b20f497828d.png)   
+Server라는 이름의 VM을 오른쪽과 같은 환경으로 만들었습니다.
+
 # Ch 2. 우분투 리눅스 소개
 
 > <h3>리눅스의 탄생</h3>
