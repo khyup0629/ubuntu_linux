@@ -301,6 +301,21 @@ IP 주소가 자동으로 할당되어 있는 것을 볼 수 있습니다.
 ![image](https://user-images.githubusercontent.com/43658658/139410250-48d8056c-f312-4c6a-85cf-92eb3126c95c.png)   
 추가할 프로그램은 없으므로 그냥 넘어갑니다.   
 
+> <h3>쿠분투 데스크탑 설치</h3>
+
+Client의 역할을 하는 쿠분투 데스크탑을 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139432961-995918bd-7f80-449e-b635-5e083c3cbd7b.png)   
+kubuntu-20.04-desktop-amd64.iso를 이미지 파일로 넣고 가상머신을 실행합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139432991-1053b664-060b-40eb-9ba5-9269f36254be.png)   
+![image](https://user-images.githubusercontent.com/43658658/139433025-05468f6f-1b9c-4713-a4a7-dd1de51c3cfa.png)   
+![image](https://user-images.githubusercontent.com/43658658/139433033-0d896adb-abb8-4f4f-962c-55bb06a37248.png)   
+![image](https://user-images.githubusercontent.com/43658658/139433049-ff3ad0a0-37fd-4f36-b361-8e3fc470afda.png)
+![image](https://user-images.githubusercontent.com/43658658/139433062-d4ea8384-9d57-42d9-91c0-ee05f247835c.png)   
+![image](https://user-images.githubusercontent.com/43658658/139433072-cf0d3407-588d-40d5-aed9-90f3782ae50b.png)   
+이제 설치를 진행합니다. 모든 설치가 진행된 후 재부팅합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139433090-93e4574d-9dd2-4b6a-a92e-cb1af2c2ce8a.png)   
+패키지를 설치할 때 20.04 LTS가 출시될 때의 패키지만 설치되도록 우분투 서버와 똑같이 설정합니다.
+
 # Ch 4. 서버 구축시 알아야 할 필수 개념과 명령어
 
 * 터미널 실행 단축키 :  `[Ctrl] + [Alt] + [T]`
