@@ -316,6 +316,8 @@ kubuntu-20.04-desktop-amd64.iso를 이미지 파일로 넣고 가상머신을 �
 ![image](https://user-images.githubusercontent.com/43658658/139433090-93e4574d-9dd2-4b6a-a92e-cb1af2c2ce8a.png)   
 패키지를 설치할 때 20.04 LTS가 출시될 때의 패키지만 설치되도록 우분투 서버와 똑같이 설정합니다.
 
+우분투 데스크탑은 GNOME이라는 GUI 환경을 이용하고, 쿠분투 데스크탑은 KDE라는 GUI 환경을 제공합니다.
+
 # Ch 4. 서버 구축시 알아야 할 필수 개념과 명령어
 
 * 터미널 실행 단축키 :  `[Ctrl] + [Alt] + [T]`
