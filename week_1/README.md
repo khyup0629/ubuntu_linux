@@ -514,6 +514,7 @@ vi 편집기와 같아서 `/단어`를 이용해 단어를 찾을 수 있고, �
 ![image](https://user-images.githubusercontent.com/43658658/139528083-3645c4e3-7336-412b-b7c2-78d1e1998e8f.png)   
 `umount` 명령어로 마운트를 해제합니다(기존에 CD/DVD가 마운트되어 있을 수 있으므로)   
 * /dev/sr0와 /dev/cdrom은 같은 것을 의미합니다. `ls -l /dev/cdrom`을 통해 살펴보면 /dev/cdrom이 /dev/sr0에 링크되어 있는 것을 확인할 수 있습니다.   
+
 ![image](https://user-images.githubusercontent.com/43658658/139528652-0e5165cd-4e95-4790-ba79-b5ea593f86d1.png)   
 우측 상단의 CD 모양을 우클릭해서 [settings]에 들어갑니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139528452-8f7c7e9a-5741-4690-86b3-08d01e8e18dc.png)   
