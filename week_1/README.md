@@ -547,6 +547,50 @@ Client용 가상머신(Kubuntu)를 실행합니다.
 ![image](https://user-images.githubusercontent.com/43658658/139530100-a29b763e-825f-4f45-9a85-dcb3e6f6ba4b.png)   
 `umount /dev/sdb1`를 통해 마운트를 해제하고, 우측 상단의 USB 아이콘에서 [Disconnected]를 클릭합니다.   
 
+> <h3>CD/DVD, USB 우분투 서버에 마운트</h3>
+
+앞서 진행한 CD/DVD, USB 마운트를 똑같이 진행합니다.   
+하지만 mount를 입력해보면 여전히 마운트되지 않은 것을 확인할 수 있습니다.   
+우분투 서버에서는 `/media` 하위에 적절한 디렉토리를 만들어주고 수동으로 마운트를 진행해야 합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139531085-4824f4bb-f43b-4a92-95cb-f398fb402bf2.png)   
+* mkdir로 /media의 하위 디렉토리인 /cdrom과 /usb를 만들어줍니다.
+* /dev/cdrom(CD/DVD 장치)를 /media/cdrom에, /dev/sdb1(USB 장치)fmf /media/usb에 각각 마운트합니다.
+* /dev/sda : 우분투를 처음 설치할 때의 최초 하드디스크
+* /dev/sdb : USB 메모리
+
+`mount`를 실행해보면 아래와 같이 CD/DVD와 USB가 마운트되었음을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139531173-c8933de5-ab82-4fcd-b430-5c3ea065aa56.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/139531567-287ad1da-8574-46c0-a774-867c9572a4be.png)   
+/media/usb의 파일 리스트를 확인해보면 USB에 들어있는 파일과 같다는 것을 확인할 수 있습니다.   
+마찬가지로 `cp` 명령어를 통해 우분투 서버 내의 파일을 USB에 복사해서 넣을 수도 그 반대로 할 수도 있습니다.
+
+`umount /dev/cdrom`, `umount /dev/sdb1`으로 언마운트 시킵니다.   
+앞서 진행한 바와 같이 settings와 disconnected로 확실하게 언마운트 시킵니다.
+
+> <h3>ISO 파일 만들기</h3>
+
+ISO 파일을 생성하는 명령어는 `genisoimage`입니다.   
+해당 프로그램이 포함된 패키지가 설치되었는지 확인하기 위해 `dpkg --get-selections genisoimage` 명령을 입력합니다.   
+패키지가 설치되어 있다면 `install`이 표시됩니다.
+* dpkg : 패키지(프로그램) 설치 명령어
+
+![image](https://user-images.githubusercontent.com/43658658/139532397-81a43785-dd67-4f6d-9f44-f00f0b5e266a.png)
+
+간단히 /boot 디렉토리의 파일들을 boot.iso 파일로 생성해보겠습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139532576-88972921-735e-406d-95c7-8fd39c914734.png)   
+* -r, -J : 8글자 이상의 긴 파일 이름을 허용, 대소문자를 구분해서 인식하도록 하는 옵션입니다.
+* -o : 출력 파일 이름을 지정하는 옵션입니다.
+
+/media 하위 디렉토리로 /iso를 만들고 boot.iso 파일을 마운트합니다.   
+/boot와 /media/iso의 파일 리스트가 동일함을 알 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139533102-e53bead8-53ff-4391-bc4f-7c3adcb56322.png)   
+마지막으로 `umount /media/iso`로 언마운트 시킵니다.
+
+
+
+
+
 ---
 [우분투 커서, 지우기 관련 단축키](http://egloos.zum.com/ranivris/v/4304292)   
 
