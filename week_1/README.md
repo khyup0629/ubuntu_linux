@@ -416,7 +416,136 @@ CLI 환경의 경우 `exit` 또는 `logout`을 입력해서 로그아웃 할 수
 다른 콘솔에서 5분 후에 시스템 종료가 `취소`되었다는 메세지가 나타납니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139013857-a2077c80-5d83-403f-94a3-3cd197438842.png)
 
+> <h3>런레벨</h3>
 
+리눅스는 시스템이 가동되는 방법을 7가지 런레벨로 나눌 수 있습니다.    
+런레벨 모드를 확인하려면 `/lib/systemd/system` 디렉토리 내의 `runlevel?.target` 파일을 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524283-d8fc4324-e91b-4c00-8b35-20ced0d3394e.png)   
+* ls 명령어 : 파일 리스트, -l 옵션 : 자세한 내용(퍼미션(권한), 포함된 파일수, 소유자, 그룹, 파일크기, 수정일자, 파일이름)
+* poweroff : 종료 모드
+* rescue : 시스템 복구 모드
+* multi-user : CLI 모드
+* graphical : GUI 모드
+* reboot : 재부팅 모드
+
+`우분투 데스크탑`의 경우 런레벨 `5`로 지정되고, `우분투 서버`의 경우 런레벨 `3`으로 지정됩니다.   
+init 0, 1, 2, 3, 4, 5, 6 명령으로 런레벨 모드를 변경할 수 있습니다.   
+예를 들어, 우분투 데스크탑을 열면 런레벨 5번으로 지정되고, `init 0`을 명령할 경우 `종료 모드`가 되어 시스템이 종료 됩니다.
+
+> <h3>시스템에 설정된 초기 런레벨을 변경하기</h3>
+
+시스템에 설정된 초기 런레벨은 `/lib/systemd/system/default.target`에 연결된 링크를 통해 알 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524528-a6950a27-baf3-4d90-a4f4-8e16ab62747f.png)   
+graphical.target(런레벨 5)에 연결된 것을 확인할 수 있습니다.   
+CLI 모드로 부팅되도록 하기 위해 연결 링크를 multi-user.target(런레벨 3)으로 변경합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524565-2c085dde-d0f6-46a9-9d36-72cf898a0720.png)   
+`reboot`로 재부팅을 하게 되면 아래와 같이 CLI 환경으로 부팅됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524711-a0d901e9-805e-4746-a576-ae350c74152b.png)   
+`startx` 명령어를 통해 GUI 환경으로 바꿀 수 있습니다.
+터미널을 열고 다시 default.target에 연결된 링크를 graphical.target으로 바꿔줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524760-e2b0d3b5-99a6-49a6-918b-39655252583d.png)   
+
+> <h3>자동 완성 기능과 도스 키</h3>
+
+자동 완성 : 명령을 입력할 때 모두 입력하지 않고 `[Tab]`키를 눌러 자동 완성 시켜주는 기능을 말합니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/139524976-44baef0b-7f4d-43d1-887c-825c3ae7863f.png)   
+자동 완성 기능은 가능한 경우가 1가지 일 때만 완성이 됩니다. 두 가지 이상일 때는 완성되지 않고 [Tab]키를 한 번 더 누르게 되면 관련된 리스트가 나타납니다.
+
+도스 키 : 이전에 했던 명령을 화살표 위/아래를 눌러 다시 나타나게 하는 것을 말합니다.   
+
+`history` 명령어는 지금까지 썼던 명령어를 모두 보여줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524893-0c7731af-e4f6-4ffe-9930-975fdc443979.png)   
+`history -c`는 명령어 히스토리를 모두 삭제합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139524927-d6c3d401-b944-48be-ad89-fe3ad634e317.png)   
+
+> <h3>vi 에디터 사용</h3>
+
+`vi new.txt`를 입력합니다. vi 에디터는 해당 파일이 있을 경우 수정, 없을 경우 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139525272-4a74fcb0-f0c3-4001-9b2d-f4e43d7328fc.png)   
+`i` 키를 누르고 `입력 모드`로 전환해 적절히 수정해 줄 수 있고,   
+`[esc]` > `:`키를 눌러 `라인 명령 모드`로 진입할 수 있습니다. 라인 명령 모드에서는 저장(w), 종료(q), 취소(i) 등을 수행할 수 있습니다.   
+`:wq!`는 저장하고 종료하라는 의미입니다.   
+`:q!`는 수정된 요소를 무시하고 종료하라는 의미입니다.
+
+처음에 `vi`로 생성하고 `:` 라인 명령 모드로 진입해서 `:w test.txt`와 같이 파일 이름을 저장하는 방법도 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139525388-133080de-d92e-426f-9113-af417cdee64b.png)
+
+vi 편집 도중 저장하지 않고 비정상적으로 종료된 경우 아래와 같은 창이 나옵니다.   
+![image](https://user-images.githubusercontent.com/43658658/139525513-69f79d5b-6cbc-4884-9495-24b5c1bfcaac.png)   
+vi 편집기를 작동시키면 해당 파일에 대한 swap 파일이 생성되고 정상적으로 종료되면 swap 파일이 삭제되는 형식입니다.   
+비정상적으로 종료된 파일은 `.파일이름.swp`이 그대로 남아있기 때문에 이때는 swap 파일을 지워주면 해결됩니다.   
+vi 편집기를 종료하고, swap 파일을 삭제합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139525596-7e70f675-47b7-4f9b-8ca4-017c6b4c4626.png)   
+* swap 파일은 숨김 파일이기 때문에 ls 명령어의 `-a`를 사용해서 숨김 파일을 보여줄 수 있도록 합니다.
+* rm 명령어의 `-f` 옵션은 강제로 삭제하는 옵션입니다.
+
+편집 모드로 들어가는 방법   
+* i : 현재 커서의 위치부터 입력
+* a : 현재 커서의 위치 다음 칸부터 입력
+* o : 현재 커서의 다음 줄에 입력
+* s : 현재 커서의 한 글자를 지우고 입력
+
+명령 모드에서 유용한 키 모음   
+![image](https://user-images.githubusercontent.com/43658658/139525828-c4858488-57f0-404e-839e-da331e8c71d9.png)   
+![image](https://user-images.githubusercontent.com/43658658/139525839-10f0cbf7-f943-4630-a053-5690ec0792d9.png)   
+![image](https://user-images.githubusercontent.com/43658658/139525848-b95e6e40-4a4b-42bc-984c-114c786fe448.png)   
+
+라인 명령 모드에서 유용한 키 모음   
+* `:set number` : 행마다 번호가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/139527302-2a97e305-ffb5-4728-b3be-18de824f9df2.png)   
+* `:%s/기존 문자열/새문자열` : 파일 내용 중 '기존 문자열'을 '새문자열'로 변환합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139527329-c33792e7-8bb0-467c-b859-f0c6ead57efe.png)
+
+> <h3>명령어 도움말</h3>
+
+명령어에 대한 옵션 등의 메뉴얼을 보기 위한 명령어는 `man 명령어`입니다(Manual)   
+예를 들어, `man ls` 명령어를 입력하면 `ls`에 대한 사용법을 보여줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139527372-fb2464ac-0d50-4a5f-b02a-da2644191f15.png)   
+vi 편집기와 같아서 `/단어`를 이용해 단어를 찾을 수 있고, 종료는 `q`입니다. 
+
+> <h3>CD/DVD 마운트</h3>
+
+리눅스에서는 하드디스크의 파티션, CD/DVD, USB 등을 사용하려면 지정한 위치(대게는 폴더)에 연결시키는데, 이 과정을 `마운트`라고 합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139527994-554250b3-93b8-4cd2-94d3-c78d83e18ca8.png)   
+`mount` 명령어로 현재 마운트 정보를 확인할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139528083-3645c4e3-7336-412b-b7c2-78d1e1998e8f.png)
+`umount` 명령어로 마운트를 해제합니다(기존에 CD/DVD가 마운트되어 있을 수 있으므로)
+* /dev/sr0와 /dev/cdrom은 같은 것을 의미합니다. `ls -l /dev/cdrom`을 통해 살펴보면 /dev/cdrom이 /dev/sr0에 링크되어 있는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139528652-0e5165cd-4e95-4790-ba79-b5ea593f86d1.png)
+우측 상단의 CD 모양을 우클릭해서 [settings]에 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/139528452-8f7c7e9a-5741-4690-86b3-08d01e8e18dc.png)   
+잠시 후에 잠깐 화면 상단에 20.04 LTS가 연결되었다는 메세지가 나옵니다.   
+![image](https://user-images.githubusercontent.com/43658658/139528479-ea7fbcbc-664f-4b66-9393-08e97d99383e.png)   
+다시 마운트 명령을 입력하면 위와 같이 CD/DVD 장치인 `/dev/sr0`이 `/media/bllu/Ubuntu 20.04.3 LTS amd64` 디렉토리에 마운트되어 있는 것을 확인할 수 있습니다.
+![image](https://user-images.githubusercontent.com/43658658/139528534-e45936b4-1098-45d3-a57e-3795eb576cd9.png)   
+DVD 패키지가 들어있는 디렉토리로 이동해봅시다.   
+![image](https://user-images.githubusercontent.com/43658658/139528829-164cb5a8-8d10-4395-b17c-7f25b9a5a094.png)   
+casper > filesystem.squashfs 파일이 우분투 전체가 들어있는 파일입니다. 우분투를 설치하면 이 파일의 압축이 풀리면서 전체 시스템이 구성됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/139528873-19170ed1-d121-4805-8a01-c21db4af10c2.png)   
+DVD를 사용하지 않는다면 마운트를 해제합니다.   
+이때, 현재 마운트된 디렉토리에서 명령을 실행하면 아래와 같이 `target is busy`라는 오류 메세지가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/139528930-d645081f-d759-466f-a9ed-4fb650eb21c7.png)
+마운트를 완전히 해제하기 위해 [settings]에서 체크를 해제합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139529099-9dbfbfaf-c55f-4c93-978c-0e3c340436db.png)   
+
+> <h3>USB 마운트</h3>
+
+Client용 가상머신(Kubuntu)를 실행합니다.   
+가상머신 실행 전, Edit에서 USB 호환성을 3.1로 변경합니다(연결할 USB 표준을 확인합니다).   
+![image](https://user-images.githubusercontent.com/43658658/139530397-df64e608-7f47-4a23-a1b8-49ae8de694ec.png)   
+호스트 컴퓨터(Windows)에 USB를 꽂게 되면 가상 머신 창의 우측 상단에 USB 표시가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/139529336-99c1a9cf-cb4a-4a54-ad0a-4fc4176a1533.png)    
+[우클릭] > [Connect (Disconnect from host)]를 선택합니다.   
+호스트에서 USB 연결이 해제되고, 가상머신 안에 USB를 마운트합니다.   
+장치 알리미에서 해당 USB에 대한 연결을 허용해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139530049-7cb571bf-a488-4dcb-a91d-61dbb8e477c3.png)   
+`mount`를 통해 확인해보면 USB 장치인 `/dev/sdb1`가 `/media/bllu/USB이름`에 마운트되어 있는 것을 볼 수 있습니다.   
+이제 `/media/bllu/DE92-94AE`에 가상머신에 있는 파일을 복사해서 USB에 파일을 넣을 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139530100-a29b763e-825f-4f45-9a85-dcb3e6f6ba4b.png)   
+`umount /dev/sdb1`를 통해 마운트를 해제하고, 우측 상단의 USB 아이콘에서 [Disconnected]를 클릭합니다.   
 
 ---
 [우분투 커서, 지우기 관련 단축키](http://egloos.zum.com/ranivris/v/4304292)   
