@@ -511,15 +511,15 @@ vi 편집기와 같아서 `/단어`를 이용해 단어를 찾을 수 있고, �
 ![image](https://user-images.githubusercontent.com/43658658/139527994-554250b3-93b8-4cd2-94d3-c78d83e18ca8.png)   
 `mount` 명령어로 현재 마운트 정보를 확인할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/43658658/139528083-3645c4e3-7336-412b-b7c2-78d1e1998e8f.png)
-`umount` 명령어로 마운트를 해제합니다(기존에 CD/DVD가 마운트되어 있을 수 있으므로)
+![image](https://user-images.githubusercontent.com/43658658/139528083-3645c4e3-7336-412b-b7c2-78d1e1998e8f.png)   
+`umount` 명령어로 마운트를 해제합니다(기존에 CD/DVD가 마운트되어 있을 수 있으므로)   
 * /dev/sr0와 /dev/cdrom은 같은 것을 의미합니다. `ls -l /dev/cdrom`을 통해 살펴보면 /dev/cdrom이 /dev/sr0에 링크되어 있는 것을 확인할 수 있습니다.   
-![image](https://user-images.githubusercontent.com/43658658/139528652-0e5165cd-4e95-4790-ba79-b5ea593f86d1.png)
+![image](https://user-images.githubusercontent.com/43658658/139528652-0e5165cd-4e95-4790-ba79-b5ea593f86d1.png)   
 우측 상단의 CD 모양을 우클릭해서 [settings]에 들어갑니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139528452-8f7c7e9a-5741-4690-86b3-08d01e8e18dc.png)   
 잠시 후에 잠깐 화면 상단에 20.04 LTS가 연결되었다는 메세지가 나옵니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139528479-ea7fbcbc-664f-4b66-9393-08e97d99383e.png)   
-다시 마운트 명령을 입력하면 위와 같이 CD/DVD 장치인 `/dev/sr0`이 `/media/bllu/Ubuntu 20.04.3 LTS amd64` 디렉토리에 마운트되어 있는 것을 확인할 수 있습니다.
+다시 마운트 명령을 입력하면 위와 같이 CD/DVD 장치인 `/dev/sr0`이 `/media/bllu/Ubuntu 20.04.3 LTS amd64` 디렉토리에 마운트되어 있는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139528534-e45936b4-1098-45d3-a57e-3795eb576cd9.png)   
 DVD 패키지가 들어있는 디렉토리로 이동해봅시다.   
 ![image](https://user-images.githubusercontent.com/43658658/139528829-164cb5a8-8d10-4395-b17c-7f25b9a5a094.png)   
@@ -527,7 +527,7 @@ casper > filesystem.squashfs 파일이 우분투 전체가 들어있는 파일�
 ![image](https://user-images.githubusercontent.com/43658658/139528873-19170ed1-d121-4805-8a01-c21db4af10c2.png)   
 DVD를 사용하지 않는다면 마운트를 해제합니다.   
 이때, 현재 마운트된 디렉토리에서 명령을 실행하면 아래와 같이 `target is busy`라는 오류 메세지가 나타납니다.   
-![image](https://user-images.githubusercontent.com/43658658/139528930-d645081f-d759-466f-a9ed-4fb650eb21c7.png)
+![image](https://user-images.githubusercontent.com/43658658/139528930-d645081f-d759-466f-a9ed-4fb650eb21c7.png)   
 마운트를 완전히 해제하기 위해 [settings]에서 체크를 해제합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139529099-9dbfbfaf-c55f-4c93-978c-0e3c340436db.png)   
 
