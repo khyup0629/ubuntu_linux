@@ -588,6 +588,31 @@ ISO 파일을 생성하는 명령어는 `genisoimage`입니다.
 ![image](https://user-images.githubusercontent.com/43658658/139533102-e53bead8-53ff-4391-bc4f-7c3adcb56322.png)   
 마지막으로 `umount /media/iso`로 언마운트 시킵니다.
 
+> <h3>사용자와 그룹</h3>
+
+리눅스는 다중 사용자 시스템입니다. 1대의 리눅스에 여러 명의 사용자가 동시에 접속할 수 있습니다.   
+vi 에디터로 /etc/passwd 파일을 열어봅시다.   
+![image](https://user-images.githubusercontent.com/43658658/139561291-4b267417-589c-4b28-9f07-94c1f2a61682.png)   
+`사용자 이름:암호:사용자 ID:사용자가 소속된 그룹 ID:추가 정보:홈 디렉토리:기본 셸`   
+* 암호는 `/etc/shadow` 파일에 저장되어 있습니다.
+* 추가 정보는 '전체 이름, 사무실 호수, 직장 전화번호, 집 전화번호, 기타'로 나타내는데 생략해도 무방합니다.
+* 홈 디렉토리는 사용자의 홈 디렉토리를 나타냅니다.
+* 기본 셸은 로그인 시 제공되는 셸을 의미합니다.
+
+모든 사용자는 하나 이상의 그룹에 속해 있습니다.   
+/etc/group 파일을 살펴봅시다.   
+![image](https://user-images.githubusercontent.com/43658658/139561346-a1b6eee4-141f-46f1-8a19-27b6ef43cf10.png)   
+`그룹 이름:암호:그룹 ID:그룹에 속한 다른 사용자 이름`
+* 그룹에 속한 다른 사용자 이름 : 그룹에 속해 있는 자신을 제외한 다른 사용자 이름이 표시됩니다. 아무것도 표시되지 않을 수도 있습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139561404-b21eea0d-ba11-4a7c-9822-7af12bac9c29.png)   
+![image](https://user-images.githubusercontent.com/43658658/139561408-e586f0cb-c1c9-4fb5-a51e-e2859d004fd1.png)   
+![image](https://user-images.githubusercontent.com/43658658/139561413-9c004378-cfb0-4e7c-9b4a-69d0c284edc0.png)
+
+> <h3>사용자, 그룹 관리 연습</h3>
+
+
+
 
 
 
