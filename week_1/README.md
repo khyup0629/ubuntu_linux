@@ -602,14 +602,96 @@ vi 에디터로 /etc/passwd 파일을 열어봅시다.
 모든 사용자는 하나 이상의 그룹에 속해 있습니다.   
 /etc/group 파일을 살펴봅시다.   
 ![image](https://user-images.githubusercontent.com/43658658/139561346-a1b6eee4-141f-46f1-8a19-27b6ef43cf10.png)   
-`그룹 이름:암호:그룹 ID:그룹에 속한 다른 사용자 이름`
-* 그룹에 속한 다른 사용자 이름 : 그룹에 속해 있는 자신을 제외한 다른 사용자 이름이 표시됩니다. 아무것도 표시되지 않을 수도 있습니다.
+`그룹 이름:암호:그룹 ID:그룹에 속한 사용자 이름`
+* 그룹에 속한 다른 사용자 이름 : 아무것도 표시되지 않을 수도 있습니다. 그렇다고 소속된 사용자가 없다는 의미가 아닙니다.
 
 ![image](https://user-images.githubusercontent.com/43658658/139561404-b21eea0d-ba11-4a7c-9822-7af12bac9c29.png)   
 ![image](https://user-images.githubusercontent.com/43658658/139561408-e586f0cb-c1c9-4fb5-a51e-e2859d004fd1.png)   
 ![image](https://user-images.githubusercontent.com/43658658/139561413-9c004378-cfb0-4e7c-9b4a-69d0c284edc0.png)
 
 > <h3>사용자, 그룹 관리 연습</h3>
+
+사용자 이름 : user1 / 비밀번호 : 1 추가   
+![image](https://user-images.githubusercontent.com/43658658/139562451-4e68b6da-6048-4c33-ad80-2698b6304c36.png)   
+![image](https://user-images.githubusercontent.com/43658658/139562568-a20f4355-cff2-4794-8f5b-c60d3568a41f.png)   
+* tail : 마지막 10행을 보여주는 명령어, `tail -5` 형식으로 옵션을 주면 마지막 5행을 보여줍니다.
+
+그룹을 살펴보면 사용자 이름과 동일한 그룹 이름으로 그룹이 생성되어 있음을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139562584-913ad5dd-d7e0-4253-bfa4-c515ffc40c16.png)   
+
+하지만 사용자가 많아질 수록 사용자 이름과 그룹 이름이 같으면 관리하기가 힘들어집니다.   
+`userdel user1`을 통해 user1을 지웁니다(그룹도 같이 지워집니다).   
+
+`groupadd ubuntuGroup` 명령어로 그룹을 먼저 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139562685-7320b8d1-e0cb-47fb-a094-62d2ad58f2f4.png)   
+`adduser --gid 그룹ID 사용자이름`의 형식으로 명령어를 입력하면 그룹ID에 사용자이름이 소속됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/139562755-aa027ef7-bcbf-42bd-ab3d-61b7d3137cf9.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/139562894-3518f7ea-3384-4b2f-b529-a107f1062d17.png)   
+새로운 사용자를 생성하면 기본적으로 `/home/사용자이름`으로 디렉토리가 생성되고, `/etc/skel`의 모든 내용을 복사합니다.   
+사용자를 생성할 때 특정 파일을 배포하고 싶다면 `/etc/skel`에 해당 파일을 넣어두면 됩니다.
+
+사용자를 변경하려면 `su - 사용자이름`을 입력해서 변경해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139567188-0f5e3391-4aeb-4083-a9cc-7e44f18b1315.png)
+
+> <h3>파일, 디렉터리 소유권과 허가권</h3>
+
+리눅스는 각각의 파일과 디렉토리마다 소유권과 허가권이라는 속성이 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139563034-3232af1c-4169-414e-ad65-3efbe9803106.png)   
+* touch : 크기가 0인 새 파일을 생성합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/139563078-f5a9f5fa-00b2-42da-a33f-fb3ae7513649.png)
+
+파일 유형   
+* - : 일반 파일
+* d : 디렉토리
+* b : 블록 디바이스(하드디스크, CD/DVD)
+* c : 문자 디바이스(마우스, 키보드, 프린터)
+* l : 링크 파일. 실제 파일을 다른 곳에 있다.
+
+파일 허가권   
+* 3개씩 끊어서 인식합니다(소유자(User) / 그룹(Group) / 그 외 사용자(Other)).   
+![image](https://user-images.githubusercontent.com/43658658/139563199-ae7ddcf4-52bf-4398-9a2c-59854f6403f3.png)   
+* 3개의 자리는 rwx로 고정되어 있습니다.
+* `r` : read(읽기), `w` : write(쓰기), `x` : execute(실행)
+* `rw-` : 읽거나 쓸 수 있지만 실행은 불가. `rwx` : 읽고 쓰고 실행 모두 가능
+* `2진수`로 나타낼 수 있습니다(`-` : 0, `r/w/x` : 1).   
+* `rwx` : 4 + 2 + 1 = 7, `r--` : 4 + 0 + 0 = 4, `rw-` : 4 + 2 + 0 = 6
+* 디렉토리(d)는 해당 디렉토리로 이동하려면 반드시 실행 권한(x)이 있어야 합니다.
+* 허가권은 `chmod 2진수 파일이름`으로 변경 가능합니다.
+
+`test.txt` 파일을 하나 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139566670-5a141860-ec29-41aa-a92e-6a80dda0a7aa.png)   
+`test.txt` 파일과 관련된 허가권, 소유권은 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139566689-5450db66-2058-4182-bd79-a02da7c5878c.png)   
+`./test`를 통해 test.txt 파일을 실행하면 `허가 거부`가 나옵니다. 이는 허가권이 `rw-`이기 때문입니다. 
+![image](https://user-images.githubusercontent.com/43658658/139566699-fb36d721-4263-4a96-8999-4f7b57817540.png)   
+실행할 수 있도록 rwxr-xr-x(755)로 파일 허가를 바꿔줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/139566792-e5c2d5cf-caf6-4254-aa5b-0934ba7b000e.png)   
+`ls -l test.txt` 파일을 살펴보면 아래와 같이 `rwxr-xr-x`로 변경된 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139566826-52cb8aed-c6ac-4242-bc5b-b49e08ed6bca.png)   
+다시 `./test`로 파일을 실행해보면 정상적으로 실행이 됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/139566850-65a5b148-f81f-4db2-adc6-67afb0737c34.png)   
+* 명령어가 없으면 오류가 발생하고, 명령어가 있으면 해당 명령어를 실행합니다.
+
+파일 소유권   
+* 파일을 소유한 사용자와 그룹을 의미합니다.
+* `chown 새로운사용자이름(.새로운그룹이름)`, `chgrp 새로운그룹이름`의 형식 파일의 소유권자를 변경할 수 있습니다.
+* `chown user1 sample.txt` : 파일의 소유자를 user1으로 바꿉니다.   
+![image](https://user-images.githubusercontent.com/43658658/139563499-a6c38605-9b60-40af-95e5-fc101808c84c.png)   
+* `chown user1.ubuntuGroup sample.txt` : 파일의 소유자를 user1, 그룹 ubuntuGroup으로 변경합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139563534-5e5b1909-90c9-4fe7-a93f-9b7d53d61406.png)   
+* `chgrp ubuntuGroup sample.txt` : 그룹만 ubuntuGroup으로 바꿉니다.
+![image](https://user-images.githubusercontent.com/43658658/139563561-839aa8de-a3e5-45e8-b5fd-7cc3c1cfe602.png)   
+
+
+
+
+
+
+
+
+
 
 
 
