@@ -471,12 +471,12 @@ galculator 패키지가 설치되어 있는지 먼저 확인합니다.
 ![image](https://user-images.githubusercontent.com/43658658/139622907-b11f503d-9136-42c7-9bd4-a5049ed34d18.png)   
 * `find /home -user ubuntu` : /home 디렉토리 하위에서 소유자가 ubuntu인 파일 검색   
 ![image](https://user-images.githubusercontent.com/43658658/139622977-d1694b96-15c3-4119-b9d5-a53ec146c8ea.png)   
-* `find ~ -perm 644` : 현재 사용자의 홈 디렉토리 하위에서 허가권이 644인 파일 검색
+* `find ~ -perm 644` : 현재 사용자의 홈 디렉토리 하위에서 허가권이 644인 파일 검색   
 ![image](https://user-images.githubusercontent.com/43658658/139623025-23c06b8e-3cfe-4325-ba44-f247d665144b.png)   
-* `find /usr/bin -size +10k -size -100k` : /usr/bin 디렉토리 하위에서 파일 크기가 10KB~100KB인 파일 검색
+* `find /usr/bin -size +10k -size -100k` : /usr/bin 디렉토리 하위에서 파일 크기가 10KB~100KB인 파일 검색   
 ![image](https://user-images.githubusercontent.com/43658658/139623119-7e4b9302-3f53-4652-b27a-11bc045db399.png)   
 * `find ~ -size 0k -exec ls -l {} \;` : 홈 디렉토리 하위에서 파일 크기가 0인 파일 목록들을 상세히 출력    
-![image](https://user-images.githubusercontent.com/43658658/139623248-c0313539-719b-4d8f-82bc-f2b963687380.png)
+![image](https://user-images.githubusercontent.com/43658658/139623248-c0313539-719b-4d8f-82bc-f2b963687380.png)   
 * `find /home -name *.swp -exec rm {} \;` : 홈 디렉토리 하위에서 확장자가 .swp인 파일들을 모두 제거
 * `-exec` : 외부 명령 제거
 
@@ -499,7 +499,7 @@ cron과 관련 서비스인 cron 프로그램이 동작하고 있는지 확인�
 ![image](https://user-images.githubusercontent.com/43658658/139625294-5d7df0a5-b884-4986-a577-3c9ac6d8c51c.png)   
 * `분  시 일 월 요일  사용자 실행명령` : `*`는 주기적을 의미
 
-`myBackup.sh` 파일에 명령을 입력합니다.
+`myBackup.sh` 파일에 명령을 입력합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139625502-44e22996-4d9b-47f8-82ce-c9dfce495327.png)   
 * 현재 날짜를 추출해서 /backup 디렉토리에 "backup-현재날짜.tar.xz" 파일이름으로 전체 백업 파일을 생성하라는 의미.
 
