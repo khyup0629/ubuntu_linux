@@ -630,7 +630,7 @@ DNS 주소
 * `systemctl status 서비스이름` : 서비스 상태 확인
 * `systemctl enable/disable 서비스이름` : 서비스 사용/사용 안 함 설정
 
-소켓 : 필요할 때만 작동하는 서버 프로세스.
+소켓 : 필요할 때만 작동하는 서버 프로세스.   
 소켓 스크립트 파일 장소 : `/lib/systemd/system/소켓이름.socket`   
 ![image](https://user-images.githubusercontent.com/43658658/139666036-83941afc-21dd-4c01-92d4-590c3b7c4821.png)
 
@@ -647,7 +647,7 @@ DNS 주소
 재부팅하면 초기에 GRUB 화면이 20초 동안 대기한다.   
 ![image](https://user-images.githubusercontent.com/43658658/139667194-611b4a1e-86d3-4d9d-a823-8eb7c04e0116.png)
 
-> <h3>GRUB에 비밀번호를 설정</h3>
+> <h3>(실습)GRUB에 비밀번호를 설정</h3>
   
 ![image](https://user-images.githubusercontent.com/43658658/139668088-734b9207-2419-4f76-aae1-e3d1d9db4749.png)   
 * set superusers="grubuser" : 새로운 GRUB 사용자 이름은 grubuser
