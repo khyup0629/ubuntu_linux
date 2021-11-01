@@ -631,7 +631,56 @@ DNS 주소
 * `systemctl enable/disable 서비스이름` : 서비스 사용/사용 안 함 설정
 
 소켓 : 필요할 때만 작동하는 서버 프로세스.
-소켓 스크립트 파일 장소 : `/lib/systemd/system/소켓이름.socket`
+소켓 스크립트 파일 장소 : `/lib/systemd/system/소켓이름.socket`   
+![image](https://user-images.githubusercontent.com/43658658/139666036-83941afc-21dd-4c01-92d4-590c3b7c4821.png)
+
+> <h3>(실습)GRUB 부트로더 변경</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/139667056-f360cb86-1be3-4018-a2aa-6c03c38fc490.png)   
+* #GRUB_TIMEOUT_STYLE=hidden : 주석처리(#) : GRUB 화면을 보여준다.
+* GRUB_TIMEOUT=20 : 20초 동안 부팅 메뉴가 나옴.
+* GRUB_DISTRIBUTOR='THIS IS LINUX' : "THIS IS LINUX"가 메뉴에 나타남.
+
+변경한 내용 적용   
+![image](https://user-images.githubusercontent.com/43658658/139666997-c8208105-b44b-4e41-97df-1149cbee15df.png)
+
+재부팅하면 초기에 GRUB 화면이 20초 동안 대기한다.   
+![image](https://user-images.githubusercontent.com/43658658/139667194-611b4a1e-86d3-4d9d-a823-8eb7c04e0116.png)
+
+> <h3>GRUB에 비밀번호를 설정</h3>
+  
+![image](https://user-images.githubusercontent.com/43658658/139668088-734b9207-2419-4f76-aae1-e3d1d9db4749.png)   
+* set superusers="grubuser" : 새로운 GRUB 사용자 이름은 grubuser
+* password grubuser 1234 : 비밀번호는 1234
+
+![image](https://user-images.githubusercontent.com/43658658/139668334-948dec8b-938d-4945-b96f-d132cf7d395f.png)
+편집을 위해 `[E]`를 누르면 사용자와 비밀번호를 입력하는 창이 나옵니다.
+![image](https://user-images.githubusercontent.com/43658658/139668520-c1b8a2f1-8ad1-45f8-900e-f3eae62b43c2.png)   
+`[Ctrl] + [X]`를 눌러 부팅합니다.
+
+> <h3>모듈</h3>
+
+모듈 : 별도로 보관했다가 필요할 때마다 호출하여 사용되는 코드
+
+> <h3>(실습)우분투 20.04 LTS의 커널을 최신 커널로 업그레이드하기</h3>
+
+커널 컴파일 원활히 하기 위해 메모리 늘리기   
+![image](https://user-images.githubusercontent.com/43658658/139669365-0e7caba9-46dc-41b2-81c2-8fdddeb6ff47.png)   
+
+현 커널 버전 확인   
+![image](https://user-images.githubusercontent.com/43658658/139669673-af9a2fe4-cd43-4a44-96ce-e82fb8addf16.png)
+
+커널의 최신 버전 확인   
+![image](https://user-images.githubusercontent.com/43658658/139669922-8230a2a5-6741-49bd-a341-674da5892438.png)   
+
+커널 소스 다운로드   
+![image](https://user-images.githubusercontent.com/43658658/139670057-a90c4838-2b17-42e1-a6be-99d419774e48.png)
+
+`/bllu/다운로드`에서 `/usr/src` 디렉토리로 옮긴 후 압축 풀기   
+ sudo mv linux-5.15 /usr/src/
+ cd /usr/src
+![image](https://user-images.githubusercontent.com/43658658/139670999-394f370f-f457-401b-b284-121ccab5d257.png)
+
 
 
 
