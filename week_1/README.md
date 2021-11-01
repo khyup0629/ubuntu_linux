@@ -769,6 +769,204 @@ galculator 패키지가 설치되어 있는지 먼저 확인합니다.
 ![image](https://user-images.githubusercontent.com/43658658/139612979-9aff65f9-59c8-40e3-af9d-a9a11e9554db.png)   
 ![image](https://user-images.githubusercontent.com/43658658/139613056-870f6007-c0d5-4a5a-b5dc-30e5e913fb90.png)
 
+패키지를 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139620507-43f9654c-65cd-416b-97cc-8d453781026e.png)   
+
+> apt install 작동 원리
+
+![image](https://user-images.githubusercontent.com/43658658/139620662-af35a48a-70a4-4c27-a38a-9b6e1aed9d8a.png)   
+1. `apt install 패키지이름` 입력
+2. `/etc/apt/sources.list` 파일에서 우분투 저장소 URL 주소를 확인합니다.
+3. 설치에 필요한 패키지 파일을 저장소에 요청
+4. 패키지 파일 다운로드
+5. 의존성 패키지가 있는 경우 `y/n`를 묻습니다.
+6. `y`를 눌러 의존성 패키지 파일을 저장소에 요청
+7. 의존성 패키지 파일 다운로드
+
+* 우분투 저장소 미러 사이트 : 우분투 저장소는 한 곳만 있는 것이 아니라 동일한 저장소로 대학, 연구소, 기업체 등에서 자발적으로 참여해 구축하고 있다.
+
+> <h3>파일 압축과 묶기</h3>
+
+파일을 압축할 때 사용하는 명령어는 `tar xvfJ 파일이름.tar.xz` 또는 `tar xvfj 파일이름.tar.bz2`
+
+`xz`, `bz2` : 압축 파일 확장자명
+`tar` : 파일을 묶어주는 명령어
+`xvfj` : 묶인 파일을 풀어주고(x), 푸는 과정을 보여주며(v), 묶음 파일 이름 지정(f-필수), xz 압축 파일 해제(J), bz2 압축 파일 해제(j)
+
+> <h3>파일 위치 검색</h3>
+
+`find`는 파일의 위치를 검색할 때 이용합니다.
+
+* `find /etc -name *.conf` : /etc 디렉토리 하위에서 확장명이 `*.conf`인 파일 검색   
+![image](https://user-images.githubusercontent.com/43658658/139622907-b11f503d-9136-42c7-9bd4-a5049ed34d18.png)   
+* `find /home -user ubuntu` : /home 디렉토리 하위에서 소유자가 ubuntu인 파일 검색   
+![image](https://user-images.githubusercontent.com/43658658/139622977-d1694b96-15c3-4119-b9d5-a53ec146c8ea.png)   
+* `find ~ -perm 644` : 현재 사용자의 홈 디렉토리 하위에서 허가권이 644인 파일 검색
+![image](https://user-images.githubusercontent.com/43658658/139623025-23c06b8e-3cfe-4325-ba44-f247d665144b.png)   
+* `find /usr/bin -size +10k -size -100k` : /usr/bin 디렉토리 하위에서 파일 크기가 10KB~100KB인 파일 검색
+![image](https://user-images.githubusercontent.com/43658658/139623119-7e4b9302-3f53-4652-b27a-11bc045db399.png)   
+* `find ~ -size 0k -exec ls -l {} \;` : 홈 디렉토리 하위에서 파일 크기가 0인 파일 목록들을 상세히 출력    
+![image](https://user-images.githubusercontent.com/43658658/139623248-c0313539-719b-4d8f-82bc-f2b963687380.png)
+* `find /home -name *.swp -exec rm {} \;` : 홈 디렉토리 하위에서 확장자가 .swp인 파일들을 모두 제거
+* `-exec` : 외부 명령 제거
+
+![image](https://user-images.githubusercontent.com/43658658/139623830-3ad8d4b9-8842-4a91-9ae1-d9ce919501f8.png)   
+* `which 실행파일이름` : 디렉토리만 검색
+* `whereis 실행파일이름` : 실행파일, 소스, man 파일까지 검색
+* `locate 파일이름` : locate 명령어를 실행하려면, `mlocate` 패키지 설치가 선행되어야 합니다. 모든 파일이름을 찾아줍니다.
+
+> <h3>cron과 at</h3>
+
+`cron` : 주기적으로 반복되는 일을 자동으로 실행할 수 있도록 시스템 작업을 예약해놓는 것
+`/etc/crontab` 파일에 스크립트로 작성합니다.
+
+cron과 관련 서비스인 cron 프로그램이 동작하고 있는지 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139624579-6875a723-7e27-4752-a7c1-bec6d2895c26.png)   
+* systemctl : 서비스의 시작, 중지, 상태 확인 등을 하는 명령어.
+
+`sudo vi /etc/crontab`으로 들어가 아래와 같이 수정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139625157-2f994b1d-bdd4-4d6c-9e2d-efc67e95bc09.png)   
+![image](https://user-images.githubusercontent.com/43658658/139625294-5d7df0a5-b884-4986-a577-3c9ac6d8c51c.png)   
+* `분  시 일 월 요일  사용자 실행명령` : `*`는 주기적을 의미
+
+`myBackup.sh` 파일에 명령을 입력합니다.
+![image](https://user-images.githubusercontent.com/43658658/139625502-44e22996-4d9b-47f8-82ce-c9dfce495327.png)   
+* 현재 날짜를 추출해서 /backup 디렉토리에 "backup-현재날짜.tar.xz" 파일이름으로 전체 백업 파일을 생성하라는 의미.
+
+백업용 디렉토리를 생성하고 `cron`을 재시작합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139625726-6d474b71-f66c-4fa4-a81c-60cd0a5371fc.png)
+
+`at` : 일회성 예약, `apt -y install rdate at`으로 관련 패키지를 설치합니다.
+
+내일 새벽 4시에 시스템을 최신 패키지로 업데이트하고 완료되면 재부팅되도록 설정해봅시다.   
+![image](https://user-images.githubusercontent.com/43658658/139626878-31f07a57-e625-447a-9e3b-1d113634499b.png)   
+* `[ctrl] + [d]`를 통해 at을 빠져 나올 수 있습니다.
+* `at -l`을 통해 리스트를 확인할 수 있습니다. 리스트의 맨 앞 번호가 at의 작업번호입니다.
+* `atrm 작업번호`를 통해 at 리스트의 작업을 지울 수 있습니다.
+
+> <h3>네트워크 관련 명령어</h3>
+
+* nm-connection-editor : 네트워크 설정과 관련해서 GUI 형식으로 제공
+* nmtui : 네트워크 설정과 관련해 TUI 형식으로 제공
+  - 자동 IP 주소, 고정 IP 주소 사용 결정
+  - IP 주소, 서브넷 마스크, 게이트웨이 정보 입력
+  - DNS 정보 입력
+  - 네트워크 카드 드라이버 설정
+  - 네트워크 장치(ens32 or ens33) 설정
+
+* systemctl start/stop/restart/status networking : 네트워크 설정 변경 후 변경된 내용을 적용시키는 명령어. status 옵션은 현재 작동 or 정지 상태 표시.
+* ifconfig 장치이름 : 해당 장치의 IP 주소와 관련 정보를 출력
+* nslookup : DNS 서버의 작동을 테스트하는 명령어
+* ping IP주소 or ping URL : 컴퓨터가 네트워크 상에서 응답하는지 테스트하는 명령어.
+
+`nm-connections-editor`를 열면 아래와 같이 나타난다.   
+![image](https://user-images.githubusercontent.com/43658658/139629477-9b4d2eed-52f1-4ebc-ac9b-1dd3c05e94d6.png)   
+`cat /etc/NetworkManager/system-connections/유선[Tab]` 명령으로 설정 파일의 [ipv4]를 확인합니다. 이곳에서 파일을 편집하고 재부팅해도 네트워크가 적용됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/139630811-e5a2395a-465a-43b6-b829-c0db4dc1dfa6.png)   
+IP 주소, 넷마스크, 게이트웨이   
+DNS 주소   
+수동 : 수동으로 설정했다는 의미
+
+* 공인된 DNS 서버 : 통신사에서 제공하는 DNS 서버
+  - 구글 : 8.8.8.8, 8.8.4.4
+  - KT : 168.126.63.1, 168.126.63.2
+  - SKT : 219.250.36.130, 210.220.163.82
+  - LG U+ : 164.126.101.2, 203.248.252.2
+
+> (실습)DNS 서버에 문제가 생겼을 경우 해결해보자.
+
+임의로 DNS 서버를 바꿔보겠습니다. `/etc/resolv.conf` 파일을 엽니다.   
+![image](https://user-images.githubusercontent.com/43658658/139632291-bc3f98fe-287a-4436-a057-8a2da0b0c7b3.png)
+* `127.0.0.xx` : `/etc/NetworkManager/system-connections/유선[Tab]` 또는 `/etc/netplan/*.yaml` 파일에 설정된 DNS 서버를 사용한다는 의미
+* 이것을 바꾸면 `www.naver.com`를 검색했을 때 정상적으로 접속이 되지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139632715-e09242e2-0251-43b0-a87b-bc32ae777a7e.png)
+
+`nslookup`을 통해 DNS의 문제인지 확인해보겠습니다.   
+![image](https://user-images.githubusercontent.com/43658658/139632845-d2274b98-f3d8-4303-9da3-f292983b2f2e.png)
+* `server` : 현재 DNS 서버 IP 주소를 나타냅니다.
+* 도메인 주소를 입력해보면 접속이 되지 않는 것을 확인할 수 있습니다.
+
+`server 새로운DNS서버IP주소`로 DNS 주소를 바꿔보겠습니다.   
+공인 DNS 주소로 바꿔서 도메인 주소로 테스트 해보겠습니다.
+![image](https://user-images.githubusercontent.com/43658658/139633056-6fae1fbf-9f9b-44b6-9d92-ab071a6857c9.png)
+
+접속이 되는 것을 확인할 수 있습니다.   
+
+이와 같이 `nslookup` 명령어로 DNS 서버 주소를 변경해 네트워크가 제대로 응답한다면, `/etc/resolv.conf` 파일에 설정된 DNS 서버에 문제가 있는 것입니다.   
+`exit`으로 nslookup 명령을 종료합니다.
+
+> (실습)CLI 환경에서 네트워크 환경 살펴보기
+ 
+`cat /etc/netplan/00-installer-config.yaml`로 접속해서 우분투 서버의 네트워크 환경을 확인해보자.   
+![image](https://user-images.githubusercontent.com/43658658/139634747-88db5c3c-392d-4a23-905c-b126783baf60.png)   
+* ens33 : 네트워크 장치 이름
+  * dhcp4 : 자동 IP 사용 여부 지정.
+  * addresses [IP 주소 / 넷마스크] : 고정 IP 주소, 넷마스크(24 = 255.255.255.0)
+  * gateway4 : IP 주소 : 게이트웨이 장치의 주소를 지정
+  * nameservers : DNS 서버의 주소를 지정.
+    - addresses: [IP 주소] : DNS 서버의 IP 주소를 지정.
+
+`sudo vi /etc/netplan/00-installer-config.yaml`로 파일을 편집해보자.   
+![image](https://user-images.githubusercontent.com/43658658/139635177-2cdfc7d9-2f9a-4d15-9671-dcb1cfff02d5.png)   
+재부팅한 후 로그인해서 `ifconfig ens33`과 `cat /etc/resolv.conf` 명령으로 변경된 내용을 확인해보자.   
+![image](https://user-images.githubusercontent.com/43658658/139635459-53f28a9d-dca9-4793-ae4b-750558e22371.png)   
+`/etc/resolv.conf` 파일은 여전히 `127.0.0.xx`입니다. `/etc/netplan/*.yaml`에 적용된 DNS 서버를 사용한다는 의미입니다.   
+실제로 작동하는 현재 DNS 서버는 `/run/systemd/resolve/resolv.conf`파일로 확인 가능합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139635798-3f1b04e9-db6b-4a01-8186-33659e111c1c.png)
+
+> <h3>프로세스</h3>
+
+프로세스 : '하드디스크에 저장된 실행 코드(프로그램)가 메모리에 로딩되어 활성화된 것`   
+* 포그라운드 프로세스 : 프로그램을 실행 했을 때, 화면에 나타나 사용자와 상호 작용하는 프로세스
+* 백그라운드 프로세스 : 화면에 보이지 않고 뒤에서 실행되는 프로세스
+* 프로세스 번호 : 메모리에 활성화된 프로세스를 구분하는 고유 번호
+* 작업 번호 : 백그라운드 프로세스의 순차 번호
+* 부모 프로세스와 자식 프로세스 : 모든 프로세스는 혼자서 독립적으로 실행되는 것이 아니라 부모 프로세스의 하위에 종속되어 실행.
+  * 예를 들어, Firefox는 X 윈도 프로세스가 구동된 상태에서 실행되어야 하므로 X 윈도는 Firefox의 부모 프로세스, Firefox는 X 윈도의 자식 프로세스.
+  * 부모 프로세스를 종료하면 자식 프로세스도 종료.
+
+`yes > /dev/null`을 이용해 y글자를 화면에 무한 출력하는 무한 루프 프로세스를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139640118-ccdce9b0-1821-4e02-a011-98cec0909597.png)
+
+바탕화면에서 새로운 터미널을 열고, `ps -ef | grep 프로세스이름`를 통해 yes 프로세스를 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/139640309-d56a1e34-3e09-431d-977c-a316509d76d7.png)   
+* bllu : 소유주 / 8072 : 프로세스 번호 / 2121 : 부모 프로세스 번호
+
+`kill -9 프로세스번호`로 프로세스를 종료시킵니다.   
+![image](https://user-images.githubusercontent.com/43658658/139640904-a17bb91e-0ed3-4d22-9b57-ea4d10934abd.png)   
+![image](https://user-images.githubusercontent.com/43658658/139640872-9d2fc715-4736-4036-bec6-c720b5614257.png)   
+* `[Ctrl]+[C]` : 현재 작동중인 포그라운드 프로세스를 종료
+
+![image](https://user-images.githubusercontent.com/43658658/139641291-5666599c-57a2-40b7-a2b1-2013032c13e5.png)   
+* `[Ctrl] + [Z]` : yes > /dev/null
+* `bg` : 현재 동작하는 프로세스를 백그라운드 프로세스로 만듭니다.
+* `jobs` : 현재 동작하는 백그라운드 프로세스를 보여줍니다.
+* `fg` : 프로세스를 포그라운드 프로세스로 만듭니다.
+
+처음부터 백그라운드 프로세스로 만드는 방법   
+![image](https://user-images.githubusercontent.com/43658658/139643918-3402838a-aa78-48f5-8900-834fe4d57972.png)   
+`fg 1`으로 포그라운드로 당겨오면 vi 편집기가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/139644070-e6700680-01c4-4d29-b747-a4935ab8c254.png)
+
+> <h3>데몬, 서비스, 소켓</h3>
+
+서비스(=데몬(daemon)) : 서버 프로세스. 백그라운드 프로세스의 일종. 웹 서버 데몬, 네임 서버 데몬, DB 서버 데몬 등의 프로세스 지칭. 평상 시에 늘 작동
+서비스 실행 스크립트 파일 장소 : `/lib/systemd/system/서비스이름.service`
+
+`systemd`라는 서비스 매니저 프로그램으로 작동시키거나 관리한다.
+
+`systemctl` 명령어로 시스템을 구동합니다(ex, `systemctl restart httpd`).   
+* `systemctl start/stop/restart 서비스이름` : 서비스 시작/중지/재시작
+* `systemctl status 서비스이름` : 서비스 상태 확인
+* `systemctl enable/disable 서비스이름` : 서비스 사용/사용 안 함 설정
+
+소켓 : 필요할 때만 작동하는 서버 프로세스.
+소켓 스크립트 파일 장소 : `/lib/systemd/system/소켓이름.socket`
+
+
+
+
+
 
 
 
