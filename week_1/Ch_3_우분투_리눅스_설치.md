@@ -176,7 +176,7 @@ Windows 10 설치가 완료된 모습입니다.
 > <h3>스냅숏</h3>
 
 ![image](https://user-images.githubusercontent.com/43658658/139653665-0bdb85dd-cf14-49db-af8a-7a28554a3f1c.png)   
-![image](https://user-images.githubusercontent.com/43658658/139653862-bca37882-5d90-4815-adfe-b1318ab9af9e.png)   
+![image](https://user-images.githubusercontent.com/43658658/139654671-6f612d72-481c-428f-b9aa-312ffd627cd4.png)   
 스냅숏을 불러오고 싶을 때는 아래와 같이 한다.   
 ![image](https://user-images.githubusercontent.com/43658658/139654259-17d040bf-e93d-4813-a7f0-8424f973311a.png)   
 ![image](https://user-images.githubusercontent.com/43658658/139654157-65d7ceba-e1a7-4823-9875-f93897954691.png)   
