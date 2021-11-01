@@ -662,39 +662,6 @@ DNS 주소
 
 모듈 : 별도로 보관했다가 필요할 때마다 호출하여 사용되는 코드
 
-> <h3>(실습)우분투 20.04 LTS의 커널을 최신 커널로 업그레이드하기</h3>
-
-커널 컴파일 원활히 하기 위해 메모리 늘리기   
-![image](https://user-images.githubusercontent.com/43658658/139669365-0e7caba9-46dc-41b2-81c2-8fdddeb6ff47.png)   
-
-현 커널 버전 확인   
-![image](https://user-images.githubusercontent.com/43658658/139669673-af9a2fe4-cd43-4a44-96ce-e82fb8addf16.png)
-
-커널의 최신 버전 확인   
-![image](https://user-images.githubusercontent.com/43658658/139669922-8230a2a5-6741-49bd-a341-674da5892438.png)   
-
-커널 소스 다운로드   
-![image](https://user-images.githubusercontent.com/43658658/139670057-a90c4838-2b17-42e1-a6be-99d419774e48.png)
-
-`/bllu/다운로드`에서 `/usr/src` 디렉토리로 옮긴 후 압축 풀기   
-```
-sudo mv linux-5.15 /usr/src/
-cd /usr/src
-```
-![image](https://user-images.githubusercontent.com/43658658/139670999-394f370f-f457-401b-b284-121ccab5d257.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 [우분투 커서, 지우기 관련 단축키](http://egloos.zum.com/ranivris/v/4304292)   
 
