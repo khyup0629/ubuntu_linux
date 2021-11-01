@@ -117,3 +117,11 @@ Microsoft Visual C++ 2017 Redistributable를 구글링 해서 설치했습니다
 
 ![image](https://user-images.githubusercontent.com/43658658/139246069-f3fa229f-014f-4c81-85d8-9b20f497828d.png)   
 Server라는 이름의 VM을 오른쪽과 같은 환경으로 만들었습니다.
+
+> <h3>VMnet8의 IP 주소 설정</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/139648734-7e530a2e-47d6-49c4-b0c4-b43d885e41ee.png)   
+![image](https://user-images.githubusercontent.com/43658658/139648811-6ede9921-b9a1-4a6d-988a-879c2b1ec9f4.png)   
+![image](https://user-images.githubusercontent.com/43658658/139648916-bbfb6416-4a4e-41e0-acf6-438ee31e0a56.png)   
+![image](https://user-images.githubusercontent.com/43658658/139649042-aab721f7-220d-4896-9e53-828bfb4eab54.png)   
+
