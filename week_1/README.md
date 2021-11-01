@@ -677,8 +677,10 @@ DNS 주소
 ![image](https://user-images.githubusercontent.com/43658658/139670057-a90c4838-2b17-42e1-a6be-99d419774e48.png)
 
 `/bllu/다운로드`에서 `/usr/src` 디렉토리로 옮긴 후 압축 풀기   
- sudo mv linux-5.15 /usr/src/
- cd /usr/src
+```
+sudo mv linux-5.15 /usr/src/
+cd /usr/src
+```
 ![image](https://user-images.githubusercontent.com/43658658/139670999-394f370f-f457-401b-b284-121ccab5d257.png)
 
 
