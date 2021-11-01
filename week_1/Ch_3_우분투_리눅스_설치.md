@@ -172,3 +172,13 @@ Windows 10 설치가 완료된 모습입니다.
 이제 `VMware Tools`를 설치합니다. VMware Tools는 가상머신에 여러 드라이버 파일을 설치해서 부드럽게 사용할 수 있도록 도와줍니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139447205-fc7cd158-e134-4ce5-a4b7-c3f5845daa43.png)   
 가상머신을 다시 시작합니다.
+
+> <h3>스냅숏</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/139653665-0bdb85dd-cf14-49db-af8a-7a28554a3f1c.png)   
+![image](https://user-images.githubusercontent.com/43658658/139653862-bca37882-5d90-4815-adfe-b1318ab9af9e.png)   
+스냅숏을 불러오고 싶을 때는 아래와 같이 한다.   
+![image](https://user-images.githubusercontent.com/43658658/139654259-17d040bf-e93d-4813-a7f0-8424f973311a.png)   
+![image](https://user-images.githubusercontent.com/43658658/139654157-65d7ceba-e1a7-4823-9875-f93897954691.png)   
+
+
