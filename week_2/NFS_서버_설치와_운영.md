@@ -60,6 +60,6 @@ NFS 클라이언트가 부팅될 때마다 NFS 서버의 공유 디렉토리에 
 [Windows 기능] > [Windows 기능 켜기/끄기]   
 ![image](https://user-images.githubusercontent.com/43658658/140266610-c031ce45-6f86-4c31-ba43-0671a2ebac27.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140266758-4b917f4c-4ad2-4b52-ac8b-b3c6d57c6e0e.png)   
-`mount NFS서버IP주소:공유디렉토리 * `로 NFS 서버의 공유 디렉토리에 마운트합니다.   
+cmd를 열고, `mount NFS서버IP주소:공유디렉토리 * `로 NFS 서버의 공유 디렉토리에 마운트합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/140266907-c8577b21-7bad-415f-9330-00e73d936a30.png)   
 파일 탐색기를 열어보면 Z 드라이브가 생성된 것을 볼 수 있습니다. NFS 서버의 공유 디렉토리와 같은 파일이 있음을 볼 수 있습니다.
