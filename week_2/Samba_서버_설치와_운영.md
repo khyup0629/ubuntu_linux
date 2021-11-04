@@ -61,7 +61,8 @@ Samba 클라이언트 : 윈도우
 ![image](https://user-images.githubusercontent.com/43658658/140287057-c34261a8-153e-4fc9-84f3-2719dcf98e11.png)   
 `sambaGroup`을 생성하고, `/share` 그룹을 `sambaGroup`으로 바꿔줍니다. 허가는 소유권자와 그룹 사용자 외 다른 사람들은 접근하지 못하게 합니다(770).   
 ![image](https://user-images.githubusercontent.com/43658658/140287096-c3ed8782-9375-43eb-a2a9-fe9a08524773.png)   
-* `usermod -G 그룹 사용자` : 사용자를 다른 그룹에 추가적으로 속하게 하고 싶을 때   
+bllu 계정의 두 번째 그룹을 sambaGroup으로 설정합니다.   
+* `usermod -G 그룹 사용자` : 사용자 계정의 두 번째 그룹을 추가적으로 설정 하고 싶을 때   
 
 ![image](https://user-images.githubusercontent.com/43658658/140287177-e0a2efe6-e088-4198-8c27-3050dc5a617e.png)   
 패스워드 지정
