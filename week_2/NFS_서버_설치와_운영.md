@@ -52,7 +52,7 @@ NFS 클라이언트가 부팅될 때마다 NFS 서버의 공유 디렉토리에 
 
 ![image](https://user-images.githubusercontent.com/43658658/140264892-24e3b127-cbe0-4fc1-a1b1-05b527f41ca0.png)   
 `/etc/fstab` 파일의 맨 아래에 내용을 추가합니다.   
-![image](https://user-images.githubusercontent.com/43658658/140266243-a9c89be6-35bc-4ac3-b279-09a6d18e62ac.png)
+![image](https://user-images.githubusercontent.com/43658658/140266243-a9c89be6-35bc-4ac3-b279-09a6d18e62ac.png)   
 이제 클라이언트가 부팅될 때마다 공유 디렉토리에 자동으로 마운트 됩니다.
 
 > <h3>윈도우 마운트 설정</h3>
