@@ -55,7 +55,7 @@ NFS 클라이언트가 부팅될 때마다 NFS 서버의 공유 디렉토리에 
 ![image](https://user-images.githubusercontent.com/43658658/140266243-a9c89be6-35bc-4ac3-b279-09a6d18e62ac.png)   
 이제 클라이언트가 부팅될 때마다 공유 디렉토리에 자동으로 마운트 됩니다.
 
-> <h3>윈도우 마운트 설정</h3>
+> <h3>윈도우를 NFS 클라이언트로 설정 후 마운트 설정</h3>
 
 [Windows 기능] > [Windows 기능 켜기/끄기]   
 ![image](https://user-images.githubusercontent.com/43658658/140266610-c031ce45-6f86-4c31-ba43-0671a2ebac27.png)   
