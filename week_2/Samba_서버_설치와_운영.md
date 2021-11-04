@@ -95,6 +95,8 @@ bllu 계정의 두 번째 그룹을 sambaGroup으로 설정합니다.
 윈도우 10에서는 보안상 Samba 연결을 막아놓았기 때문에 이를 허용으로 변경해야 합니다.
 
 윈도우 검색에서 `mmc`를 실행 후, [파일] > [스냅인 추가/제거]로 들어갑니다.   
+* MMC(Microsoft Management Console) : 윈도우 시스템 관리자, 고급 사용자에게 윈도우를 관리하는데 편리한 인터페이스를 제공하는 콘솔.
+
 ![image](https://user-images.githubusercontent.com/43658658/140292373-d8cdd9a1-9080-43fb-a46a-e1b14ae05e1a.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140292719-8d1544ac-48de-4c86-963e-47ad103addf1.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140292969-5a1d8d95-bc3d-4735-ac07-25fffe1112cb.png)   
