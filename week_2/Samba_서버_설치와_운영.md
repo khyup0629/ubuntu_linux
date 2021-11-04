@@ -23,7 +23,7 @@ Samba 클라이언트 : 리눅스
 ![image](https://user-images.githubusercontent.com/43658658/140269693-bfee245d-16d7-473a-a958-23097c99ce4c.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140269797-d765f7c8-58e3-4351-a3f0-33cd79c5d9ea.png)   
 `smbShare` 폴더를 공유합니다.   
-![image](https://user-images.githubusercontent.com/43658658/140269888-d2e493fe-4bef-430e-9c23-985130695bf5.png)
+![image](https://user-images.githubusercontent.com/43658658/140269888-d2e493fe-4bef-430e-9c23-985130695bf5.png)   
 폴더 내에 적당한 파일을 만듭니다.
 
 > <h3>윈도우에 리눅스 사용자 추가</h3>
