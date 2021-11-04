@@ -61,7 +61,7 @@ Samba 클라이언트 : 윈도우
 ![image](https://user-images.githubusercontent.com/43658658/140287057-c34261a8-153e-4fc9-84f3-2719dcf98e11.png)   
 `sambaGroup`을 생성하고, `/share` 그룹을 `sambaGroup`으로 바꿔줍니다. 허가는 소유권자와 그룹 사용자 외 다른 사람들은 접근하지 못하게 합니다(770).   
 ![image](https://user-images.githubusercontent.com/43658658/140287096-c3ed8782-9375-43eb-a2a9-fe9a08524773.png)   
-* `usermod -G 그룹 사용자` : 사용자를 다른 그룹에 추가적으로 속하게 하고 싶을 때
+* `usermod -G 그룹 사용자` : 사용자를 다른 그룹에 추가적으로 속하게 하고 싶을 때   
 ![image](https://user-images.githubusercontent.com/43658658/140287177-e0a2efe6-e088-4198-8c27-3050dc5a617e.png)   
 패스워드 지정
 
@@ -102,7 +102,7 @@ Samba 클라이언트 : 윈도우
 ![image](https://user-images.githubusercontent.com/43658658/140293482-deed1a8a-5693-465d-abb6-f2492db09c55.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140294436-0fbe3c51-e1ee-4fac-b90c-95175b8881fa.png)   
 적당한 드라이브 선택 후 `리눅스IP주소\공유디렉토리`를 입력합니다.   
-![image](https://user-images.githubusercontent.com/43658658/140297257-c89dfe77-f24f-4f86-afe2-1a96383cd2cc.png)
+![image](https://user-images.githubusercontent.com/43658658/140297257-c89dfe77-f24f-4f86-afe2-1a96383cd2cc.png)   
 오류 발생!   
 [제어판] > [사용자 계정] > [Windows 자격증명 관리]   
 ![image](https://user-images.githubusercontent.com/43658658/140297432-4420f054-259b-431b-9785-b87b6aab71db.png)   
