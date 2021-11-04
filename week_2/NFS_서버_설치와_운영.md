@@ -1,6 +1,6 @@
 # NFS 서버 설치와 운영
 
-NFS(Network File System) : 서로 다른 OS 끼리 저장 공간을 공유하는 시스템
+NFS(Network File System) : 리눅스 끼리 저장 공간을 공유하는 시스템
 
 ![image](https://user-images.githubusercontent.com/43658658/140259959-178b4d46-f7d9-44f0-8d15-5583ff2419a0.png)   
 
