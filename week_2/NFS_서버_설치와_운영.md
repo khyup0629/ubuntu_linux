@@ -57,7 +57,7 @@ NFS 클라이언트가 부팅될 때마다 NFS 서버의 공유 디렉토리에 
 
 > <h3>윈도우 마운트 설정</h3>
 
-[Windows 기능] > [Windows 기능 켜기/끄기]
+[Windows 기능] > [Windows 기능 켜기/끄기]   
 ![image](https://user-images.githubusercontent.com/43658658/140266610-c031ce45-6f86-4c31-ba43-0671a2ebac27.png)   
 ![image](https://user-images.githubusercontent.com/43658658/140266758-4b917f4c-4ad2-4b52-ac8b-b3c6d57c6e0e.png)   
 `mount NFS서버IP주소:공유디렉토리 * `로 NFS 서버의 공유 디렉토리에 마운트합니다.   
