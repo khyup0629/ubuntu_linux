@@ -135,4 +135,21 @@ Normal Mode에서 `5ishell`을 입력하고 `esc`를 누르면 `shell` 단어가
 ![image](https://user-images.githubusercontent.com/43658658/140491659-c2520e05-671e-4e35-b749-8d4d75353d0c.png)   
 `:%s/Shell/aaaaa/gc` : 매칭되는 문자열을 하나씩 탐색하며 치환할 것인지 물어봅니다(`a`를 누를 경우 전체 문자열을 치환, `y`는 해당 문자열 치환, `n`는 치환하지 않음)
 
+## 여러 개의 편집창 사용하기
 
+`:vs [파일명]` : 현재의 편집창을 세로로 분리   
+![image](https://user-images.githubusercontent.com/43658658/140492244-00a66a16-bc0f-4eba-b3f3-15fba9424226.png)   
+
+`:sp [파일명]` : 현재의 편집창을 가로로 분리   
+![image](https://user-images.githubusercontent.com/43658658/140492321-9b2e04c1-b461-43ef-9e57-eabe18de4f7d.png)
+
+창 분리는 여러 번 할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/140492829-646d84e1-d2a1-4bd2-bf4d-bc9352f4c3d6.png)
+
+`[Ctrl+w]`를 2회 입력해서 창을 이동할 수 있습니다.
+
+각 창에서 종료(`:q`)를 하면 해당 창이 사라집니다.   
+![image](https://user-images.githubusercontent.com/43658658/140492545-a00fe784-ee51-4b6e-b4f7-c82352b75636.png)   
+현재 창에서 빨간 박스 창을 지웁니다.   
+![image](https://user-images.githubusercontent.com/43658658/140492647-b67fdd54-c4ea-4550-8e94-eb1f6d915afd.png)
+![image](https://user-images.githubusercontent.com/43658658/140492689-485d257b-f9e6-4676-85dd-bdbddc376e36.png)   
