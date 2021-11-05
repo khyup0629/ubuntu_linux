@@ -2,7 +2,7 @@
 
 ---
 
-# 셸 스크립트 프로그래밍
+# 쉘 스크립트 프로그래밍
 
 ## 환경 변수
 
@@ -23,7 +23,7 @@ printenv
 
 ![image](https://user-images.githubusercontent.com/43658658/139677065-6caaf7f2-06d8-48c2-8f7d-c4e62c3906f7.png)
 
-## 셸 스크립트 작성
+## 쉘 스크립트 작성
 
 `nano name.sh`로 셸 스크립트를 작성합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/139677740-2973fb01-0f82-4cd8-832f-39a09ea9426e.png)   
