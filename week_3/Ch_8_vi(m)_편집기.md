@@ -2,7 +2,7 @@
 
 1. Normal mode : 처음 실행한 상태
 2. Insert mode : i, a, o, I, A, O를 누른 후 텍스트를 입력할 수 있는 상태
-3. Command mode : Normal mode에서 `<Esc>`를 누르고 콜론(`:`)을 입력한 상태
+3. Command mode : Normal mode에서 `<Esc>`를 누르고 콜론(`:`)을 입력한 상태. 명령 모드에서는 방향키 위아래를 통해 이전 명령어를 불러올 수 있습니다.
 4. Visual mode : 블록 선택을 위해서 `v` 또는 `<Ctrl+V>`키를 누른 상태
 
 ## 기본 편집 명령
@@ -115,8 +115,24 @@ Normal Mode에서 `5ishell`을 입력하고 `esc`를 누르면 `shell` 단어가
 
 > <h3>문자열 치환</h3>
 
-* `:%s/기존문자열/새문자열` : 기존 문자열을 새 문자열로 치환합니다.
+* `:%s/기존문자열/새문자열` : 기존 문자열을 새 문자열로 치환합니다. 한 라인에 바꿔야 할 문자열이 여러 개 있다면 `제일 처음 문자열`만 치환합니다.   
+![image](https://user-images.githubusercontent.com/43658658/140490876-54d7d4ce-ff6a-4437-90ef-0c97cbf7b0fd.png)   
+`:%s/Shell/aaaaa` 실행
 
-![image](https://user-images.githubusercontent.com/43658658/140489932-04903103-d75b-4fce-8231-b4862cbad100.png)   
-59행부터 63행까지 `bbbbb` 문자열을 `aaaaa` 문자열로 치환.
+* `:%s/기존문자열/새문자열/g` : 기존 문자열을 새 문자열로 치환합니다. 한 라인에 바꿔야 할 문자열이 여러 개 있다면 `모두` 치환합니다.   
+![image](https://user-images.githubusercontent.com/43658658/140490940-58873a2a-25c5-4db6-bec9-211e81796f1d.png)   
+`:%s/Shell/aaaaa/g` 실행
+
+![image](https://user-images.githubusercontent.com/43658658/140491119-3bc6da21-781c-4c0d-b4ab-9c5d80c06b66.png)   
+`:2, 6s/Shell/aaaaa` : 2행부터 6행까지 `Shell` 문자열을 `aaaaa` 문자열로 치환.
+
+![image](https://user-images.githubusercontent.com/43658658/140491247-b2b4a67e-ee0d-4d5e-a21d-1e351d51ca4a.png)   
+`:2, 6s/Shell/aaaaa/g` 실행
+
+![image](https://user-images.githubusercontent.com/43658658/140491383-351384f7-ec2d-4ec9-9183-e50e39ddbca6.png)   
+`:-1, +3s/Shell/aaaaa/g` : 초기 커서 위치로부터 위로 1행, 아래로 3행까지 `Shell` 문자열을 `aaaaa` 문자열로 전체 치환.
+
+![image](https://user-images.githubusercontent.com/43658658/140491659-c2520e05-671e-4e35-b749-8d4d75353d0c.png)   
+`:%s/Shell/aaaaa/gc` : 매칭되는 문자열을 하나씩 탐색하며 치환할 것인지 물어봅니다(`a`를 누를 경우 전체 문자열을 치환, `y`는 해당 문자열 치환, `n`는 치환하지 않음)
+
 
