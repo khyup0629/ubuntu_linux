@@ -153,3 +153,46 @@ Normal Mode에서 `5ishell`을 입력하고 `esc`를 누르면 `shell` 단어가
 현재 창에서 빨간 박스 창을 지웁니다.   
 ![image](https://user-images.githubusercontent.com/43658658/140492647-b67fdd54-c4ea-4550-8e94-eb1f6d915afd.png)
 ![image](https://user-images.githubusercontent.com/43658658/140492689-485d257b-f9e6-4676-85dd-bdbddc376e36.png)   
+
+## vi 실습
+
+`vimtutor` 명령어를 통해 나오는 튜토리얼 실습.
+
+![image](https://user-images.githubusercontent.com/43658658/140638245-b25ae6da-54cb-407d-94d3-5726cf554df0.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638252-49fe916e-3632-4f7f-ba9a-c25dbbe1a7a5.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638263-c468e0f6-6735-4765-a91f-4b3ddea81daf.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638272-2c132d3c-7c54-4f25-8f9e-afa3675466ef.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638299-2f1329ff-b4e1-4f69-9567-d15fef990e64.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638309-6b6d3c60-5c7d-4b98-9881-9dec7017fca8.png)
+   
+![image](https://user-images.githubusercontent.com/43658658/140638314-fdb0b064-b0a7-4ad8-bf19-2252b1b6d1ea.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638320-cc015023-5388-4ea1-b2a4-c43302a8db00.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638349-e688fe8c-d9cc-4bf4-bf6a-62ec9cb600e4.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638383-4df833e8-312d-47a5-9c62-3a8fac99ec78.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638402-f948a8e8-0af4-478f-956f-e60946403a03.png)   
+![image](https://user-images.githubusercontent.com/43658658/140638473-66e5cd1e-d141-4f12-9754-132e81e33e79.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/140639413-884eb581-f087-4249-ac78-6d2519c309c3.png)   
+![image](https://user-images.githubusercontent.com/43658658/140639462-401555e6-fe11-4955-9eb3-8e21453240c7.png)   
+![image](https://user-images.githubusercontent.com/43658658/140639531-47db0cce-9690-45c5-875e-632262d15a45.png)   
+![image](https://user-images.githubusercontent.com/43658658/140639557-f95d3187-6f15-4cc8-b70c-46ef27025939.png)   
+
+4.1 : 파일의 특정 행으로 이동   
+![image](https://user-images.githubusercontent.com/43658658/140639646-cf73e6bc-8427-4aa1-a502-9d00c81a2bd9.png)   
+4.2 : 찾기 명령   
+![image](https://user-images.githubusercontent.com/43658658/140639707-14892f8b-cf16-4841-8b5e-10e9ce8bf28c.png)   
+4.3 : 괄호 짝 찾기   
+![image](https://user-images.githubusercontent.com/43658658/140639740-397c21cf-b66b-4b8d-8ef4-817046d2705a.png)   
+4.4 : 문자열 치환   
+![image](https://user-images.githubusercontent.com/43658658/140639865-d0a95811-9e72-41e7-b073-fb6ef83b6a53.png)   
+
+5.1 : 외부 명령 실행법   
+![image](https://user-images.githubusercontent.com/43658658/140639896-3adc602d-50f1-49bb-b5e5-87c797608167.png)   
+5.2 : 다른 이름으로 저장   
+![image](https://user-images.githubusercontent.com/43658658/140639956-f00546bc-b747-4cb1-9380-326aac9f0217.png)   
+5.3 파일의 일부를 저장   
+![image](https://user-images.githubusercontent.com/43658658/140640127-018c9e33-4a30-44aa-9c9c-3822c781e5c6.png)   
+5.4 저장한 파일의 내용을 읽어들이기
+![image](https://user-images.githubusercontent.com/43658658/140640212-35a86499-f930-4655-9535-19fa92dc0f72.png)   
+
+
