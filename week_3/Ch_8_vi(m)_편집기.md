@@ -190,9 +190,134 @@ Normal Mode에서 `5ishell`을 입력하고 `esc`를 누르면 `shell` 단어가
 ![image](https://user-images.githubusercontent.com/43658658/140639896-3adc602d-50f1-49bb-b5e5-87c797608167.png)   
 5.2 : 다른 이름으로 저장   
 ![image](https://user-images.githubusercontent.com/43658658/140639956-f00546bc-b747-4cb1-9380-326aac9f0217.png)   
-5.3 파일의 일부를 저장   
+5.3 : 파일의 일부를 저장   
 ![image](https://user-images.githubusercontent.com/43658658/140640127-018c9e33-4a30-44aa-9c9c-3822c781e5c6.png)   
-5.4 저장한 파일의 내용을 읽어들이기
+5.4 : 저장한 파일의 내용을 읽어들이기   
 ![image](https://user-images.githubusercontent.com/43658658/140640212-35a86499-f930-4655-9535-19fa92dc0f72.png)   
 
+6.1 : 새 줄 열기(Open) 명령   
+![image](https://user-images.githubusercontent.com/43658658/140643946-24a73592-b312-4ff4-9f88-bb39601114ac.png)   
+6.2 : e(단어 끝 이동)와 a(현재 커서 다음 입력 시작)   
+![image](https://user-images.githubusercontent.com/43658658/140644065-51ba3fd9-4411-4dc9-86a7-a49a41e299a6.png)   
+6.3 : 여러 글자 덮어쓰기(R)   
+![image](https://user-images.githubusercontent.com/43658658/140644099-468c567f-e17b-49a4-9359-1a5bc4391473.png)   
+6.4 : 복사(y)와 붙여넣기(p)   
+![image](https://user-images.githubusercontent.com/43658658/140644199-3bbd6c2a-5c0c-484c-9175-281d0db17107.png)   
+6.5 : 찾기(/)와 바꾸기(:s) 옵션 설정   
+![image](https://user-images.githubusercontent.com/43658658/140644665-212165f5-3d93-459d-a059-754b66da9174.png)   
+* `:set ic` : 대소문자 구분 X
+* `:set hls` : 검색어 강조
+* `:set nohls` : 검색어 강조 취소
+* `:set is` : 점진적으로 찾기(단어를 한 글자 씩 칠 때 마다 찾아줍니다)
+* `:set nois` : 점진적으로 찾기 취소
 
+7.1 : 도움말 명령(help)   
+![image](https://user-images.githubusercontent.com/43658658/140644913-5f8e23a2-1edc-4525-8d11-91fdb96810b3.png)   
+7.2 : 빔(vim) 기능 켜기   
+![image](https://user-images.githubusercontent.com/43658658/140645126-59ae8655-b49c-4115-98f8-a47a36cd1729.png)   
+
+## 유용한 유틸리티
+
+<sname 파일>   
+![image](https://user-images.githubusercontent.com/43658658/140645629-9f7207b7-8639-42c8-8fe3-d7843d773223.png)   
+<sprice 파일>   
+![image](https://user-images.githubusercontent.com/43658658/140645649-2957b940-a2e3-4482-892a-3b2d4175ff86.png)   
+
+위와 같이 2개의 파일을 만들었습니다. 각 필드는 [Tab]키로 구분 되어 있습니다.
+
+> <h3>cut</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140645782-4c495b36-8f60-46a2-924e-260e2907f458.png)   
+`cut -f2 sname` : sname 파일의 2번째 필드의 레코드들이 출력됩니다.
+
+> <h3>paste</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140645927-5b15506b-7cbc-4665-b4f3-b62d45c806ba.png)   
+`paste 파일1 파일2` : 파일1과 파일2의 필드를 합쳐서 보여줍니다.
+
+> <h3>join</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140645959-d6589412-e03e-471d-84b8-796775526343.png)   
+`join 파일1 파일2` : 두 파일에서 중복되는 필드쌍이 발견되면 그 필드를 하나로 합치고 나머지 필드를 더합니다.
+
+> <h3>tr</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140646058-49d75fac-9f2c-40d3-9449-e2bf8d707a99.png)   
+`"12" "xy"` : 1 > x, 2 > y로 변경.
+
+![image](https://user-images.githubusercontent.com/43658658/140646101-01fcb0ff-a482-4de5-b78f-e033e143655b.png)   
+`"[a-z]" "[A-Z]"` : 소문자를 대문자로 변경.
+
+> <h3>uniq</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140646192-c1dcbbb2-2a15-448d-9405-fec19ba3bad6.png)   
+`pname` 파일을 위와 같은 내용으로 생성합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140646212-83f930ad-38c1-4d62-bfb6-dc9cb3318aa9.png)   
+`uniq 파일명` : 파일의 내용에서 인접한 중복되는 행을 한 라인만 제외하고 모두 삭제합니다. 같은 내용인데 떨어져 있을 경우 중복으로 여기지 않습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140646286-bf2b186e-e1b4-45eb-be39-4cdd81b8de24.png)   
+오름차순으로 정렬한 뒤 `uniq`를 실행하면 모든 중복되는 행을 하나만 남기고 삭제해서 보여줄 수 있습니다.
+
+> <h3>split</h3>
+
+파일을 다양한 단위로 자를 수 있는 명령어입니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140646565-4616aed0-7ba8-4aeb-90fc-03d378ba941c.png)   
+* `-l` : 줄 단위로 자릅니다.
+* `wc -l` : 라인 수를 출력합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140646578-bbf441ab-5f24-4bc4-a00e-d0fcd641094a.png)   
+* `-b` : 용량 단위로 자릅니다.
+* `-d` : 자른 파일의 이름을 숫자 순서대로 매깁니다.
+
+> <h3>xargs</h3>
+
+입력된 데이터를 argument화하는 명령입니다. find과 관련된 명령어를 사용해서 경로를 입력받아 사용합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140646806-b9b1b462-52ff-4940-8419-025cb5f550f8.png)   
+* `which bash` : bash 파일의 경로인 `/usr/bin/bash`를 반환합니다.
+* `xargs ls -l` : 앞서 반환된 경로(/usr/bin/bash)를 입력 받아 argument로 대입되어 `ls -l /usr/bin/bash` 명령과 같아집니다.
+
+> <h3>find</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140647280-1785f092-2051-449e-b147-cdeed3955bc2.png)   
+홈디렉토리 아래에서 24시간 내에 내용이 수정된 파일들을 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647319-cc86204a-0f37-4851-ae7f-7f26fa83a118.png)   
+현재 디렉토리 아래에서 `fi`로 시작하는 파일명의 파일들을 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647394-614118bc-a852-4e18-a69b-fdc8e654a758.png)   
+현재 디렉토리 아래에서 허가권이 664인 파일들을 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647429-964dfdc7-dc4b-4808-8f0b-4bf6e056bd59.png)   
+현재 디렉토리 아래에서 일반 파일들을 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647459-b2a5c041-011c-4b59-b3fa-82ae2f105573.png)   
+/home 아래에서 here.sh 파일보다 최근에 수정된 파일들을 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647545-eac8a98a-dec1-4bc1-9e57-a557ab4c70d6.png)   
+/home 아래에서 파일 크기가 1024 이상인 파일을 검색하여 보여줍니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140647573-adbf4b84-c76e-4de3-b929-3c688944dd5c.png)   
+홈 디렉토리(/home/bllu) 아래에서 디렉토리들만 보여줍니다.
+
+`find /home \( -name a.out -o -name '*.o' \) -atime +7 -exec rm '{}' \;` : /home 아래에서 파일명이 a.out 또는 .o로 끝나는 파일을 검색하고 접근 시간이 7일 이상된 파일일 경우 `rm` 명령으로 해당 파일들을 삭제합니다.
+
+`find /tmp -name core -type f -print | xargs /bin/rm -f` : /tmp 아래에서 파일명이 core이면서 일반 파일을 출력하고, 검색된 파일들은 삭제합니다.
+
+`find . -type f -mtime +1 | xargs -n 100 rm -f` : 현재 디렉토리 아래에서 일반 파일이면서 내용이 수정된지 하루 이상 지난 파일들을 검색하고, 100개 단위로 파일들을 삭제합니다.
+
+> <h3>tee</h3>
+
+표준 출력과 파일로 저장하는 명령어입니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/140648068-99361f7c-6496-4cc1-bda1-8a0823c6efcd.png)   
+명령을 실행하면 위와 같이 출력이 됩니다.   
+* `grep 문자열` : 파일의 내용에서 특정 문자열이 포함된 라인을 찾아서 출력합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140648190-d80e3865-b48d-4bdd-872f-6a4147a1c68e.png)   
+`tee` 명령을 같이 사용해주면, `bllu.txt`파일에 출력된 내용이 그대로 저장됩니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140648227-791bac1c-2b3e-4c9f-8068-572d6e952059.png)   
+`-a` 옵션 : 덮어쓰지 않고 내용을 이어서 추가합니다.
