@@ -289,6 +289,8 @@ unset -f 함수명
 `source 파일명`을 통해 파일 내의 함수를 읽어 들여 다른 함수에서 사용할 수 있도록 합니다.
 `$(함수)`를 통해 함수의 결괏값을 이용할 수 있습니다.
 
+source 대신 `.`을 사용할 수도 있습니다.
+
 ## 트래핑 시그널
 
 프로그램이 실행되는 동안 `[Ctrl+C]` 또는 `[Ctrl+\]`를 누르면 프로그램이 종료됩니다. trap 명령은 시그널이 도착했을 때 프로그램이 어떤 반응을 할지 관리하도록 하는 명령어입니다.
@@ -357,4 +359,46 @@ trap을 사용한 함수가 한 번 호출되고 나면 스크립트 전체에 �
 ![image](https://user-images.githubusercontent.com/43658658/140720816-c65c93e2-9ad0-4623-bd20-7eb6a3a3074b.png)   
 * `getopts xy options` : getopts 다음에 x와 y 옵션이 있는지 체크하기 위해 `xy`가 들어갔고, 옵션들은 `options`에 할당됩니다.
 
-![image](https://user-images.githubusercontent.com/43658658/140722134-97eced0a-b95b-425a-8900-5000301eebda.png)
+> <h3>OPTARG, OPTIND</h3>
+
+* `OPTARG` : argument가 할당됩니다.
+* `OPTIND` : argument의 수(스크립트명도 포함)를 나타냅니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140722134-97eced0a-b95b-425a-8900-5000301eebda.png)   
+![image](https://user-images.githubusercontent.com/43658658/140727573-929ac61c-6e09-4985-91ce-526213fd3425.png)   
+* `ab:` : a와 b의 옵션 중 b 옵션은 argument가 필요하도록 설정합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/140728148-fc76974f-0cd2-4d6e-9971-64aaab21da4a.png)
+![image](https://user-images.githubusercontent.com/43658658/140728450-e68654bd-ad65-4697-bd0d-1c7a607765ee.png)   
+
+## Text GUI
+
+dialog 패키지를 이용해 TUI를 구현해봅시다.
+
+> <h3>메시지 박스</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140734631-422a8af6-a348-45fe-89a6-440355fcbbd7.png)   
+![image](https://user-images.githubusercontent.com/43658658/140734651-d1486f7d-c884-4f23-bc19-27140ecd1ba5.png)   
+
+> <h3>yes/no 박스</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140735116-2cae3b5f-f20c-4090-a80d-a0cf697343a2.png)   
+![image](https://user-images.githubusercontent.com/43658658/140735256-fae40dc4-9ba8-4dbd-a5fd-9a4bf7850890.png)   
+* `sel=$?` : yesno 박스에서 yes를 선택하면 0, no를 선택하면 1, esc 키를 누르면 255가 할당됩니다.
+
+> <h3>입력 박스</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140736943-ad6c9c7a-2f79-47a3-9494-68f48583ab2e.png)   
+![image](https://user-images.githubusercontent.com/43658658/140736875-5e5f5c50-c1c8-40b5-8279-82cb5e97761a.png)   
+* `2>/tmp/input.$$` : 입력값을 `/tmp/input.$$` 파일에 임시로 저장합니다.
+* 마지막에 `/tmp/input.$$` 파일을 지웁니다.
+
+> <h3>라디오 리스트</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/140738113-7c6517e6-004b-46c3-b03f-47dfcd3affb9.png)   
+![image](https://user-images.githubusercontent.com/43658658/140738158-6fdda862-eaa4-4745-8e2a-1961df062af0.png)   
+
+
+
+
+
