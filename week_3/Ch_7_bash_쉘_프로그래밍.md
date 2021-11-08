@@ -396,9 +396,5 @@ dialog 패키지를 이용해 TUI를 구현해봅시다.
 > <h3>라디오 리스트</h3>
 
 ![image](https://user-images.githubusercontent.com/43658658/140738113-7c6517e6-004b-46c3-b03f-47dfcd3affb9.png)   
-![image](https://user-images.githubusercontent.com/43658658/140738158-6fdda862-eaa4-4745-8e2a-1961df062af0.png)   
-
-
-
-
+![image](https://user-images.githubusercontent.com/43658658/140738602-52bb0187-9e0c-460f-82ed-10b6290f5d23.png)   
 
