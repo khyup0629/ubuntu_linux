@@ -131,6 +131,7 @@ awk에서 패턴을 검색할 땐 슬래시(/)로 문자열을 둘러쌉니다.
 
 `awk '비교표현식{액션}' [데이터 파일명]`
 
+![image](https://user-images.githubusercontent.com/43658658/141307144-76d84ec0-dade-4324-9d9f-c63169abf87d.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141239565-31f1cf89-0efc-4e0a-a172-91a84454727e.png)   
 3번 필드 값이 7000보다 큰 라인을 출력합니다.
 
