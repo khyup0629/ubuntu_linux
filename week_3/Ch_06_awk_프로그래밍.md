@@ -243,8 +243,8 @@ BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 
 `/etc/passwd`로부터 한 라인씩 읽어들입니다. 각 라인의 끝까지 읽으면 `lc` 변수에 1씩 더해집니다.   
 `/etc/passwd` 파일의 총 라인 수를 알 수 있습니다.   
 
-![image](https://user-images.githubusercontent.com/43658658/141248330-c40c22ad-4327-4c4c-8f6f-7f5fb5b58c3e.png)   
-"ls *"의 결과가 `getline`으로 보내집니다. 한 라인씩 읽으면서 결괏값을 출력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141310337-e5b261c9-bdb4-4a38-af44-82cca65d5c18.png)      
+`ls *`의 결과가 `getline`으로 보내집니다. 한 라인씩 읽으면서 결괏값을 출력합니다.   
 
 ## awk 파이프
 
