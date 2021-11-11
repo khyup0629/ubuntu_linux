@@ -182,6 +182,7 @@ awkfile 파일 내용에서 3번 필드의 레코드와 4번 필드의 레코드
 > <h3>명령라인에서 사용자정의 변수</h3>
 
 일반적으로 명령라인에서 사용자정의 변수를 선언할 때는 `-v` 옵션 사용하도록 합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141307762-2ef354a4-2e6b-430c-b2a9-47ef9b2b3872.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141242779-e99f167d-27d0-462c-9423-bdf3e84c5430.png)   
 var의 값이 2를 가지게 되면서 `{print $2}`의 액션이 완성되어 2번 필드를 출력하게 됩니다.
 
