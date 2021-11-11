@@ -1,9 +1,8 @@
 # sed 유틸리티
 
-리눅스에서 텍스트 처리를 위한 유틸리티는 대표적으로 `sed`와 `awk`가 있습니다.
+`sed`는 리눅스에서 텍스트 처리를 위한 유틸리티입니다.
 
-`sed` : 비대화형 모드의 텍스트 파일 에디터   
-`awk` : C 언어 형태의 문법을 가지는 필드 단위의 패턴 처리 언어    
+`sed '텍스트편집' [파일명]` : 해당하는 파일에서 텍스트편집 형식에 맞게 텍스트를 편집해서 보여줍니다.     
 
 ![image](https://user-images.githubusercontent.com/43658658/141225571-3974ffcb-29d3-4fbb-877b-70ca2bc7a242.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141225591-c74f4cfc-fe1b-4289-8cac-6879e59694ec.png)   
