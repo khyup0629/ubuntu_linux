@@ -56,6 +56,7 @@ print 함수와 다르게 printf 함수는 포매팅된 깔끔한 출력을 지�
 `%-15s`는 좌측에서 15개의 문자열을 출력하는데 %에 들어간 수만큼 15에서 빼고 나머지는 빈 칸으로 출력합니다.   
 `%15s`는 우측에서부터 15개의 문자열을 출력합니다.   
 
+![image](https://user-images.githubusercontent.com/43658658/141304203-33f29234-4e30-44b5-97d1-246f898cd2a6.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141235620-8c73e4a5-6a79-45d2-8a0d-434ba1f3005f.png)   
 1, 2번 필드의 값이 `%-20s`로 들어가고, 3번 필드의 값이 `%4d`로 들어갑니다.   
 
