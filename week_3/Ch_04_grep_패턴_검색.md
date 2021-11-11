@@ -70,3 +70,33 @@
 ![image](https://user-images.githubusercontent.com/43658658/141220061-b1664f8b-353f-4eba-9a0c-c6fc444a47e1.png)   
 현재 디렉토리의 파일 리스트에서 `d`로 시작하는 라인을 출력합니다.   
 
+## egrep(extended grep)
+
+egrep은 grep의 확장으로서 추가적인 정규표현식 메타문자들을 사용할 수 있습니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/141220546-3656ea91-ea20-4534-92d4-a0b215367f59.png)   
+![image](https://user-images.githubusercontent.com/43658658/141220566-46a9f816-48a8-4afd-8558-a8ae9022f980.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/141220803-aa1fbb1a-a260-4564-b4b7-e2bf49fc0e30.png)   
+`Kim` 또는 `Kang`이 들어간 라인을 검색   
+![image](https://user-images.githubusercontent.com/43658658/141220861-4cf0d218-d79e-4a06-b250-58fd5dc187b3.png)   
+`9`가 하나 이상 연속되는 문자열 검색   
+![image](https://user-images.githubusercontent.com/43658658/141221209-291bb38c-01b6-4ccf-b81a-6d4aca8b9d61.png)   
+`8` 다음 `.`이 없거나 하나 있고, 마지막으로 숫자가 들어가는 문자열 검색   
+![image](https://user-images.githubusercontent.com/43658658/141221337-cf3a40c1-f5ac-4edf-ac48-4a6c4608d148.png)   
+`Dae` 문자열이 하나 이상 연속되는 문자열 검색   
+![image](https://user-images.githubusercontent.com/43658658/141221810-fe9cde91-e4cf-4909-998e-a356b191a577.png)   
+`Ki` 또는 `Ka`인 문자열 검색   
+![image](https://user-images.githubusercontent.com/43658658/141221858-a36745e2-1563-4ade-b373-12755e33ed83.png)   
+`sa` 또는 `u`인 문자열 검색
+
+## fgrep
+
+fgrep에서는 정규표현식 메타문자들을 사용할 수 없기 때문에 특수 문자 및 `$` 문자들은 문자 그대로 출력됩니다.
+
+<fgrep.txt 파일 내용>   
+![image](https://user-images.githubusercontent.com/43658658/141222304-30498310-40e7-4470-8b1c-445dd048727e.png)
+
+![image](https://user-images.githubusercontent.com/43658658/141222421-c2daa304-9979-4383-9675-a5bf1d9b5bed.png)   
+`[A-Z]`를 검색하면 정규표현식인 대문자 한 글자로 검색하지 않고 문자 그대로 검색합니다.   
+
