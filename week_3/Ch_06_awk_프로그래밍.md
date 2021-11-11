@@ -78,10 +78,10 @@ awk 액션과 명령이 파일에 작성되어 있다면 -f 옵션을 사용합�
 모든 레코드는 awk에서 `$0`로 참조됩니다.   
 
 ![image](https://user-images.githubusercontent.com/43658658/141236610-e4aefeb9-7241-4c41-a60b-63586b483b07.png)   
-레코드의 번호는 `NR`이라는 변수에 저장됩니다.   
+`NR` : 레코드의 행 번호를 나타내는 빌트인 내장 변수.
 
 ![image](https://user-images.githubusercontent.com/43658658/141236737-6ff8ac15-2a9e-4677-b1cd-09d0ea6c2d70.png)   
-각 레코드의 필드의 수는 `NF` 변수에 저장됩니다.
+`NF` : 레코드의 필드 수를 나타내는 빌트인 내장 변수.
 
 > <h3>필드 분리자</h3>
 
