@@ -248,6 +248,7 @@ BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 
 
 ## awk 파이프
 
+![image](https://user-images.githubusercontent.com/43658658/141310408-0c2d1b51-58e1-425b-a79d-76e42da4038a.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141248552-8707911b-f5a0-4cdb-bc87-73808b8141a5.png)   
 리눅스 명령어를 입력할 때는 큰따옴표로 묶어주어야 합니다.   
 
