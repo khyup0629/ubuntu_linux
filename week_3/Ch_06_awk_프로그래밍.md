@@ -221,12 +221,14 @@ BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 
 
 > <h3>출력 리다이렉션</h3>
 
+![image](https://user-images.githubusercontent.com/43658658/141308857-85f3b76c-c631-45ad-8ad4-0fcbf3335571.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141244801-998673a6-f619-470b-acde-965bd57f2d48.png)   
 출력할 내용을 `new_file`로 리다이렉션 시키면, awk 명령을 수행했을 땐 모니터에 아무런 결과가 나타나지 않습니다.   
 `new_file`의 내용을 보면 출력할 내용이 저장된 것을 확인할 수 있습니다.
 
 > <h3>입력 리다이렉션</h3>
 
+![image](https://user-images.githubusercontent.com/43658658/141308892-7d9eed6e-7e27-4ecd-99dd-4d7d8da2c252.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141245397-b7d593aa-a7ae-4a3f-9f7a-763d55070740.png)   
 `date` 명령의 결괏값을 `getline` 함수를 통해 변수 `d`에 저장합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141245470-15706b60-984c-4361-a35e-2a7b1e76f5bc.png)   
