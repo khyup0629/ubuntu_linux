@@ -31,7 +31,7 @@ print 함수는 `{print}` 형식으로 awk의 액션 부분에 사용될 수 있
 문자열은 큰 따옴표로 감싸주고, 아규먼트들 사이에는 콤마로 구분지어 줍니다.   
 콤마를 사용하지 않으면 아규먼트들은 서로 연결되어버립니다.   
 
-![image](https://user-images.githubusercontent.com/43658658/141228763-2501b19a-e2d1-47be-8c22-d257d498447e.png)
+![image](https://user-images.githubusercontent.com/43658658/141228763-2501b19a-e2d1-47be-8c22-d257d498447e.png)   
 필드 변수가 연결되어 있으면 콤마를 사용해서 구분지어 주고, 문자열과 변수가 연결되어 있으면 띄어쓰기를 기준으로 구분하면 됩니다.   
 
 ![image](https://user-images.githubusercontent.com/43658658/141228936-60f90ec4-5db2-44f3-8f4b-142308178dc2.png)   
