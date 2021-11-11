@@ -206,6 +206,8 @@ var의 값이 2를 가지게 되면서 `{print $2}`의 액션이 완성되어 2�
 
 `BEGIN`은 빌트인 내장 변수(OFS, RS, FS 등)들의 값을 변경하기 위해, 사용자정의형 변수들의 초기값을 할당하기 위해 자주 사용합니다.
 
+![image](https://user-images.githubusercontent.com/43658658/141308511-9c7420cc-eb7c-498c-b4e7-9689ceba4499.png)
+
 > <h3>END 패턴</h3>
 
 BEGIN과 반대로 `END` 패턴은 입력의 모든 라인이 처리되고 난 후에 처리됩니다.   
