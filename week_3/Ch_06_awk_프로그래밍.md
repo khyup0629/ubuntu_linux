@@ -303,6 +303,7 @@ filename의 7번 필드의 레코드 값이 100보다 크면, count를 1 증가�
 
 > <h3>while 루프</h3>
 
+![image](https://user-images.githubusercontent.com/43658658/141311331-aafaf453-4358-4060-9c6e-5f9389130529.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141259592-b9ee9535-2433-489a-bae0-e70496722501.png)   
 한 라인 씩 읽어들이면서 awkdata에 있는 필드 순서대로 `NF, $i, i++`의 값을 출력합니다.
 
