@@ -351,7 +351,7 @@ id 배열에 id=(88 -1 98)을 할당하고, END 블록에서 for문을 처리합
 
 > <h3>delete</h3>
 
-![image](https://userimages.githubusercontent.com/43658658/141267642-ae784a65-b5c7-4c2c-91a9-3fe52afc417f.png)   
+![image](https://user-images.githubusercontent.com/43658658/141312854-dd6855a8-8843-499a-904b-3b19f888df30.png)   
 split으로 `7/21/2009`를 나누고 date[3]을 지웁니다.
 
 > <h3>다차원 배열</h3>
