@@ -73,6 +73,7 @@ awk 액션과 명령이 파일에 작성되어 있다면 -f 옵션을 사용합�
 
 > <h3>레코드와 필드</h3>
 
+![image](https://user-images.githubusercontent.com/43658658/141305870-e0854df9-effd-436f-850a-94c278807dcb.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141236413-e5b71f1c-abc5-466d-864d-637546bfbbe9.png)   
 모든 레코드는 awk에서 `$0`로 참조됩니다.   
 
