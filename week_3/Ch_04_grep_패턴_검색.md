@@ -11,7 +11,7 @@
 ![image](https://user-images.githubusercontent.com/43658658/141216159-da03e7e2-cb10-4016-9291-f04dccde5989.png)   
 `-n` : 파일 안에서 라인 번호를 앞에 보여줍니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141216202-34f89e10-fc56-4b7e-8d30-0c4990a7a94c.png)   
-`-c` : 매칭되는 라인 수를 보여줍니다.
+`-c` : 매칭되는 라인 수를 보여줍니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141216242-722ee945-5812-491b-84e9-71add990dd9a.png)   
 `-i` : 패턴에 사용되는 문자열의 대소문자를 무시하고 검색합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141216320-c52aaf71-ce67-4995-9760-0a5fea5c61a3.png)   
