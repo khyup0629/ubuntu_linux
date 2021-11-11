@@ -228,7 +228,6 @@ BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 
 
 > <h3>입력 리다이렉션</h3>
 
-![image](https://user-images.githubusercontent.com/43658658/141308892-7d9eed6e-7e27-4ecd-99dd-4d7d8da2c252.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141245397-b7d593aa-a7ae-4a3f-9f7a-763d55070740.png)   
 `date` 명령의 결괏값을 `getline` 함수를 통해 변수 `d`에 저장합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141245470-15706b60-984c-4361-a35e-2a7b1e76f5bc.png)   
