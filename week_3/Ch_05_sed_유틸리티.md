@@ -29,7 +29,7 @@
 파일 내용 중 `linux` 단어를 모두 삭제합니다.   
 
 <sedtest1.txt 파일 내용>   
-![image](https://user-images.githubusercontent.com/43658658/141225715-da4f8c31-df7c-4279-b927-06c6836c64d1.png)    
+![image](https://user-images.githubusercontent.com/43658658/141317163-240f3c38-c580-4862-96d4-af4e1fa8965b.png)    
 
 ![image](https://user-images.githubusercontent.com/43658658/141225991-84516576-f360-4ed6-93e8-dbb07f26328a.png)   
 연속적인 모든 0을 하나의 0으로 치환   
