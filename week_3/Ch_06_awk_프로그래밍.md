@@ -484,7 +484,7 @@ function 함수이름 (파라미터, 파라미터, 파라미터, ...) {
 <numbers 파일 내용>   
 ![image](https://user-images.githubusercontent.com/43658658/141282103-04f7e432-b0b4-4e91-a7dd-bc61e9cef08a.png)   
 <sortnumbers 파일 내용>   
-![image](https://user-images.githubusercontent.com/43658658/141281472-38f63f8f-954f-4b29-b594-24627aa6ebca.png)   
+![image](https://user-images.githubusercontent.com/43658658/141314542-703cde6f-99e7-4587-a84c-cfb031c59cd6.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141281514-571398c1-49f6-4f74-9f51-87cbcd268527.png)   
 numbers에서 라인 내용을 하나씩 받아서 sortnumbers 스크립트 내용을 수행합니다.
 
