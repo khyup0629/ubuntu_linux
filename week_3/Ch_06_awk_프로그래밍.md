@@ -174,3 +174,121 @@ awkfile 파일 내용에서 3번 필드의 레코드와 4번 필드의 레코드
 `y=x++`는 `y=x`를 먼저 수행하고, `x=x+1`를 수행해 `x = 2, y = 1`의 결과가 나온 것입니다.   
 `y=++x`는 `x=x+1`을 먼저 수행하고, 그 값을 `y`에 대입한 것이므로, `x = 2, y = 2`의 결과가 나온 것입니다.
 
+> <h3>명령라인에서 사용자정의 변수</h3>
+
+일반적으로 명령라인에서 사용자정의 변수를 선언할 때는 `-v` 옵션 사용하도록 합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141242779-e99f167d-27d0-462c-9423-bdf3e84c5430.png)   
+var의 값이 2를 가지게 되면서 `{print $2}`의 액션이 완성되어 2번 필드를 출력하게 됩니다.
+
+> <h3>빌트인 내장 변수 사용</h3>
+
+`NR`, `NF`와 같은 빌트인 내장 변수를 이용하게 되면 `변수의 값을 그대로 인식`하게 됩니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/141243541-ee364be6-017c-4546-82a8-b10e7d3da05a.png)   
+`$NF`의 경우 내장 변수인 `NF`의 값은 awkfile 파일의 필드의 수인 `5`가 되므로 `$NF = $5`와 같아집니다. 따라서 5번 레코드를 출력합니다.   
+
+> <h3>BEGIN 패턴</h3>
+
+`BEGIN` 패턴은 awk가 입력 파일의 라인들을 처리하기 이전에 실행되며 액션 블록 앞에 놓입니다.   
+`BEGIN` 블록은 awk가 BEGIN 액션 블록이 완료될 때까지 입력을 읽어들이지 않기 때문에 `입력 파일 없이 테스트`할 때 쓰일 수 있습니다.
+
+`BEGIN`은 빌트인 내장 변수(OFS, RS, FS 등)들의 값을 변경하기 위해, 사용자정의형 변수들의 초기값을 할당하기 위해 자주 사용합니다.
+
+> <h3>END 패턴</h3>
+
+BEGIN과 반대로 `END` 패턴은 입력의 모든 라인이 처리되고 난 후에 처리됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/141244451-3fc099c7-8862-4dc3-9205-594b79d709a0.png)   
+awkfile 파일에서 `Hong`이 들어간 라인이 있으면 `count`가 1씩 증가합니다.   
+모든 입력 라인 처리가 끝나면 `END` 블록의 내용이 처리되면서 문자열이 출력됩니다.
+
+BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 아규먼트가 반드시 필요합니다.
+
+## awk 리다이렉션
+
+> <h3>출력 리다이렉션</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141244801-998673a6-f619-470b-acde-965bd57f2d48.png)   
+출력할 내용을 `new_file`로 리다이렉션 시키면, awk 명령을 수행했을 땐 모니터에 아무런 결과가 나타나지 않습니다.   
+`new_file`의 내용을 보면 출력할 내용이 저장된 것을 확인할 수 있습니다.
+
+> <h3>입력 리다이렉션</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141245397-b7d593aa-a7ae-4a3f-9f7a-763d55070740.png)   
+`date` 명령의 결괏값을 `getline` 함수를 통해 변수 `d`에 저장합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141245470-15706b60-984c-4361-a35e-2a7b1e76f5bc.png)   
+`date` 명령의 결괏값을 `getline` 함수를 통해 변수 `d`에 저장하고, `d`의 값을 나눠서 `year` 배열을 형성한 후, `year[1]`을 출력합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141246299-8fc2ce2b-42ca-409f-a51f-7c3cdf543baa.png)   
+먼저 BEGIN 블록이 실행됩니다. 이름을 물어보고 입력 리다이렉션으로 정보를 입력 받아 `name` 변수에 저장합니다.   
+그리고 awkfile을 읽어들이면서 1번 필드 레코드 값 중에 일치하는 라인이 있는지 체크하면서 일치하는 라인이 있다면 문자열과 레코드 번호를 출력합니다.   
+마지막으로 END 블록이 실행됩니다. 문자열과 `name` 변수의 값을 출력합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141247214-1701b059-bd94-4033-b587-73c2c51aae54.png)   
+`/etc/passwd`로부터 한 라인씩 읽어들입니다. 각 라인의 끝까지 읽으면 `lc` 변수에 1씩 더해집니다.   
+`/etc/passwd` 파일의 총 라인 수를 알 수 있습니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/141248330-c40c22ad-4327-4c4c-8f6f-7f5fb5b58c3e.png)   
+"ls *"의 결과가 `getline`으로 보내집니다. 한 라인씩 읽으면서 결괏값을 출력합니다.   
+
+## awk 파이프
+
+![image](https://user-images.githubusercontent.com/43658658/141248552-8707911b-f5a0-4cdb-bc87-73808b8141a5.png)   
+리눅스 명령어를 입력할 때는 큰따옴표로 묶어주어야 합니다.   
+
+> <h3>파일과 파이프 닫기</h3>
+
+awk 프로그램에서는 파일이나 파이프를 다시 읽고 쓰기 위해서는 첫 번째 파이프를 닫아주어야 합니다.   
+왜냐하면 awk가 종료될 때까지 오픈된 상태로 남아있기 때문입니다.   
+오픈된 상태로 남아 있으면 END 블록에서 문장들은 파이프에 영향을 받게 됩니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141248970-b1b33f73-f16c-4e4d-baad-97b0bfa81640.png)   
+앞에서 오픈된 파이프를 END 블록에서 close를 이용해 닫아주는 모습입니다. 
+
+> <h3>system 명령</h3>
+
+빌트인 내장 함수인 system 함수는 리눅스 시스템 명령들을 실행합니다.
+
+`system("리눅스 명령어")`
+
+리눅스 명령어는 반드시 큰따옴표로 감싸주어야 합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141249554-14873161-67af-47c5-996a-2a765a2bda5b.png)   
+`awkscript` 파일에서 `system`함수가 사용되었습니다. `awktext` 파일의 1번 필드의 레코드들을 `cat`하는 명령인데,   
+`awktext` 파일의 1번 필드의 레코드들은 데이터 테이블 파일을 가리키고 있습니다.   
+즉, `cat awkfile`과 `cat awkfile_FS`를 명령한 것과 같은 의미가 됩니다.   
+따라서, awkfile의 내용과 awkfile_FS의 내용을 보여줍니다.
+
+## 조건문
+
+> <h3>if</h3>
+
+`awk '{if($7 > 100) print $1 "는(은) 100보다 크다"}' filename`   
+filename의 7번 필드의 레코드 값이 100보다 크면, "[1번 필드의 레코드 값]는(은) 100보다 크다"라는 문자열을 출력합니다.
+
+`awk '{if($7 > 20 && $8 <= 100){safe++; print "OK"}}' filename`   
+filename의 7번 필드의 레코드 값이 20보다 크고, 8번 필드의 레코드 값이 100 이하이면, safe 변수의 값을 1 증가시키고, "OK" 문자열을 출력합니다.
+
+> <h3>if/else</h3>
+
+`awk '{if($7 > 100) print $1 "100보다 크다"; else print "100보다 작다"}' filename`   
+filename의 7번 필드의 레코드 값이 100보다 크면, "[1번 필드의 레코드 값] 100 보다 크다" 문자열을 출력하고,   
+아니라면, "100보다 작다" 문자열을 출력합니다.
+
+`awk '{if($7 > 100) {count++; print $1} else { x+1; print $2 }}' filename`   
+filename의 7번 필드의 레코드 값이 100보다 크면, count를 1 증가시키고, 1번 필드의 레코드를 출력하고,   
+아니라면, x를 1 증가시키고, 2번 필드의 레코드를 출력합니다.
+
+> <h3>if/else if/else</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141252642-b0591dc5-099d-4fa4-b321-351b819159eb.png)
+
+
+
+
+
+
+
+
+
+
+
