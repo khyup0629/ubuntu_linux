@@ -110,6 +110,7 @@ awk에서 패턴을 검색할 땐 슬래시(/)로 문자열을 둘러쌉니다.
 
 틸드(`~`)로 표기되는 match 연산자는 하나의 레코드 또는 필드 안에서 표현식과 매칭되는 것이 있는지 검사하는 연산자입니다.
 
+![image](https://user-images.githubusercontent.com/43658658/141306870-550b905b-2e27-4cc3-8a1d-439f541b0d79.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141238588-66c603e6-588c-4c99-bff6-52395b33c86f.png)   
 두 번째 필드 중에서 레코드가 `Gil` 또는 `gil`이 있는 라인을 출력합니다.   
 
