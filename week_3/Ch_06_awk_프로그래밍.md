@@ -91,7 +91,7 @@ awk는 필드 분리자인 FS의 값을 기준으로 필드를 분리합니다.
 `awk -F:` : `:`를 기준으로 필드를 분리합니다.   
 `awk -F'[ :\t]'` : `공백`, `:`, `Tab`을 기준으로 필드를 분리합니다.
 
-![image](https://user-images.githubusercontent.com/43658658/141237423-b04a3325-e921-4846-aecb-2a72819682bc.png)
+![image](https://user-images.githubusercontent.com/43658658/141237423-b04a3325-e921-4846-aecb-2a72819682bc.png)   
 `:`를 기준으로 필드를 분리합니다.   
 
 ## awk와 정규표현식
