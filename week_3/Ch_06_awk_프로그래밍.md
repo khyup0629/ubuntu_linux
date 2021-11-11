@@ -99,6 +99,7 @@ awk는 필드 분리자인 FS의 값을 기준으로 필드를 분리합니다.
 awk에서 패턴을 검색할 땐 슬래시(/)로 문자열을 둘러쌉니다.   
 이때 패턴에는 정규표현식을 사용할 수 있습니다.
 
+![image](https://user-images.githubusercontent.com/43658658/141306650-3d07d5b3-0377-498f-bf9f-1202854d39c2.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141238059-058d58c8-035c-4f0a-8598-465aaa7f2bd8.png)   
 `Jung`으로 시작하는 라인의 1, 2, 3번 필드의 레코드를 출력합니다.   
 
