@@ -26,7 +26,7 @@
 <testfile 파일 내용>   
 ![image](https://user-images.githubusercontent.com/43658658/141217155-df33393c-1b26-4cb1-a49e-c159fb1490a0.png)   
 
-![image](https://user-images.githubusercontent.com/43658658/141300369-cbfd6f56-06fa-49d9-98d5-b1b92ab54075.png)
+![image](https://user-images.githubusercontent.com/43658658/141300369-cbfd6f56-06fa-49d9-98d5-b1b92ab54075.png)   
 단순히 `Kim`과 일치하는 패턴 검색   
 ![image](https://user-images.githubusercontent.com/43658658/141217329-96184fe7-b0a5-46fa-8f42-f039cf68da19.png)   
 제일 첫 글자가 `K` 또는 `k`이고 뒷 글자가 im인 패턴 검색   
