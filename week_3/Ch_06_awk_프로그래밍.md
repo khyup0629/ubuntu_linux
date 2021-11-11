@@ -386,7 +386,7 @@ Hello에서 lo는 4번째 위치부터 나오므로 4가 반환됩니다.
 > <h3>substr 함수</h3>
 
 `substr(문자열, 시작 위치)` : 주어진 문자열에서 시작 위치의 앞까지 모두 자른 후 남아있는 문자열을 반환   
-`substr(문자열, 시작 위치, 문자열 길이)` : 주어진 문자열에서 시작 위치의 앞까지 모두 자른 후 남아있는 문자열을 문자열 길이만큼 반환
+`substr(문자열, 시작 위치, 문자열 길이)` : `주어진 문자열`에서 `시작 위치`의 앞까지 모두 자른 후 남아있는 문자열을 `문자열 길이`만큼 반환
 
 ![image](https://user-images.githubusercontent.com/43658658/141275162-2d18f7b1-bfa5-4b79-9ce4-3b64023f965f.png)   
 7번째 위치인 `C` 전인 공백까지 자르고 `C`부터 길이 2의 문자열인 `Cl`을 반환합니다.
@@ -398,7 +398,103 @@ Hello에서 lo는 4번째 위치부터 나오므로 4가 반환됩니다.
 ![image](https://user-images.githubusercontent.com/43658658/141275427-f3ac9d35-aa70-463d-b33b-94f6576f882a.png)   
 `/[A-Z]+$/`는 라인의 끝이 대문자가 1개 이상인 문자열을 의미합니다. LINUX가 만족하는 문자열이고 위치는 `8번째`입니다.
 
+> <h3>split 함수</h3>
 
+`split(문자열, 배열, 필드분리자)` : 문자열을 필드분리자로 나눠서 배열에 요소로 넣습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141275965-d732db27-a7b2-4f94-a8d5-638e74bfc46c.png)   
+`/`를 기준으로 `7/21/2009`를 나눠서 date 배열에 1부터 집어넣습니다.
+
+> <h3>sprintf 함수</h3>
+
+`변수=sprintf("포맷 형식의 문자열", 표현식1, 표현식2, ... , 표현식n)` : 변수에 포맷 형식으로 출력된 표현식을 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141276597-c07f673d-3c43-4a8e-9fc7-3e47e9ba6697.png)   
+`%-10s %6.2f`형식의 문자열을 변수에 할당하고 변수를 출력합니다.
+
+> <h3>toupper와 tolower 함수</h3>
+
+`toupper(문자열)` : 소문자를 대문자로 변경하는 함수   
+`tolower(문자열)` : 대문자를 소문자로 변경하는 함수
+
+![image](https://user-images.githubusercontent.com/43658658/141284792-3631c807-161f-4de1-9e9b-a2eb7a38d21f.png)
+
+> <h3>systime 함수</h3>
+
+`systime()` : 1970년 1월 1일부터 현재 시간까지의 초단위 시간을 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141285020-07b92a23-1aec-45ba-8f65-c5e84236ac02.png)
+
+> <h3>strftime 함수</h3>
+
+`strftime(포맷, 시간)` : 시간을 포맷의 형태로 보여줍니다.
+
+<시간 포맷>   
+![image](https://user-images.githubusercontent.com/43658658/141285276-028c203b-7328-4f82-8ec5-4c50e434ae08.png)   
+
+![image](https://user-images.githubusercontent.com/43658658/141285546-c50dd661-5e96-4027-834d-45b478fccef5.png)   
+시간을 포맷의 형태로 보여줍니다. 시간을 입력하지 않으면 현재 시간으로 포맷합니다.
+
+## awk 수학적 빌트인 함수
+
+> <h3>정수형 함수</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141279410-3d737a6e-a198-47de-8c63-9806536cec02.png)   
+`int`를 쓰면 소수점을 버리고 정수로 만들어줍니다.
+
+> <h3>rand 함수</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141280069-d45c5da9-6d7b-4200-bcc6-ea2fdd48c2f2.png)   
+rand 함수는 난수를 만들어줍니다. 하지만 한 번 실행하게 되면 같은 난수가 발생하게 됩니다.
+
+> <h3>srand 함수</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141280480-02fefda7-7bef-4d16-9537-244ad6290acf.png)   
+srand 함수를 앞에 써주고 뒤에 rand 함수를 써주면 난수가 매번 다르게 발생합니다.
+
+## 사용자정의형 함수
+
+```
+function 함수이름 (파라미터, 파라미터, 파라미터, ...) {
+  문장
+  return 표현식
+}
+```
+
+> <h3>행의 숫자를 오름차순으로 정렬</h3>
+
+<numbers 파일 내용>   
+![image](https://user-images.githubusercontent.com/43658658/141282103-04f7e432-b0b4-4e91-a7dd-bc61e9cef08a.png)   
+<sortnumbers 파일 내용>   
+![image](https://user-images.githubusercontent.com/43658658/141281472-38f63f8f-954f-4b29-b594-24627aa6ebca.png)   
+![image](https://user-images.githubusercontent.com/43658658/141281514-571398c1-49f6-4f74-9f51-87cbcd268527.png)   
+numbers에서 라인 내용을 하나씩 받아서 sortnumbers 스크립트 내용을 수행합니다.
+
+## 기타
+
+> <h3>고정폭 필드</h3>
+
+파일 내용이 고정된 너비를 가지고 있을 때 필드 분리자로 분리할 수 없으면 `substr`를 활용할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141283272-2dd3dec0-f920-4260-92dc-37a64f114897.png)   
+`substr`를 이용해 6자리, 6자리, 나머지 자리로 구분해서 문자열을 자르고 중간에 공백을 써넣어서 필드를 생성할 수 있습니다.
+
+> <h3>`$`, 콤마(`,`) 속 숫자 총합 구하기</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141284355-3b634d3b-c899-426d-b84a-747d49cdc309.png)   
+먼저 필드를 `:`를 기준으로 나눠주고, `gsub`를 통해 `$`와 `,`를 null값으로 바꿔준 후, 4번 필드값을 모두 더해줍니다.
+
+> <h3>멀티라인 레코드</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141286388-805c6787-3e25-4810-ac79-ac81ef4a4af3.png)   
+![image](https://user-images.githubusercontent.com/43658658/141286349-780e2354-079a-4b45-bf9f-b1b39c9dd542.png)   
+RS(입력 레코드 분리자) : 각 레코드를 무엇을 기준으로 분리할 것인지      
+FS(입력 필드 분리자) : 필드를 무엇을 기준으로 분리할 것인지   
+QRS(출력 레코드 분리자) : 레코드가 출력될 때 어떻게 분리할 것인지
+
+> <h3>다차원 배열에서 특정 값 뽑아내기</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141279036-dc83689f-dabf-4193-a447-28103270c64d.png)
 
 
 
