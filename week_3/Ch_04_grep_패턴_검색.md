@@ -96,6 +96,6 @@ fgrep에서는 정규표현식 메타문자들을 사용할 수 없기 때문에
 <fgrep.txt 파일 내용>   
 ![image](https://user-images.githubusercontent.com/43658658/141222304-30498310-40e7-4470-8b1c-445dd048727e.png)
 
-![image](https://user-images.githubusercontent.com/43658658/141222421-c2daa304-9979-4383-9675-a5bf1d9b5bed.png)   
+![image](https://user-images.githubusercontent.com/43658658/141302406-102d7c50-0795-4cb4-904c-894f5441ac01.png)   
 `[A-Z]`를 검색하면 정규표현식인 대문자 한 글자로 검색하지 않고 문자 그대로 검색합니다.   
 
