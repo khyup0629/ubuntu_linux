@@ -37,9 +37,9 @@
 ![image](https://user-images.githubusercontent.com/43658658/141217686-de4916b6-2233-4c5f-86bf-68b9b315304c.png)   
 띄어쓰기가 포함된 패턴을 검색할 때는 작은 따옴표(')로 패턴을 묶어줘야 합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141301327-0a701dc1-bc65-4200-b8d2-42ddad4c1d02.png)   
-백 슬래쉬는 메타문자를 일반 문자로 인식시킵니다. `5.?`인 단어를 검색   
+백 슬래쉬는 메타문자를 일반 문자로 인식시킵니다. `5.?`인 문자열 검색   
 ![image](https://user-images.githubusercontent.com/43658658/141218229-030ba27f-ec67-41cd-9d02-67ab3b9e9735.png)   
-`.5`로 끝나는 단어를 검색   
+`.5` 문자열을 검색   
 ![image](https://user-images.githubusercontent.com/43658658/141218259-fef7da13-98c7-4ab6-84ed-be6ce95348f6.png)   
 `S` 또는 `B`로 시작하는 라인을 검색   
 ![image](https://user-images.githubusercontent.com/43658658/141218279-46981987-9ba7-443c-9d34-e07847d1f441.png)   
