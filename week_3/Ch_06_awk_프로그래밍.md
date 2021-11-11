@@ -282,6 +282,129 @@ filename의 7번 필드의 레코드 값이 100보다 크면, count를 1 증가�
 
 ![image](https://user-images.githubusercontent.com/43658658/141252642-b0591dc5-099d-4fa4-b321-351b819159eb.png)
 
+## loop 순환문
+
+> <h3>while 루프</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141259592-b9ee9535-2433-489a-bae0-e70496722501.png)   
+한 라인 씩 읽어들이면서 awkdata에 있는 필드 순서대로 `NF, $i, i++`의 값을 출력합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141260068-4d1a0639-b649-4703-903d-8bdd37b5ec4f.png)   
+위의 while문을 for문으로 바꾼 것입니다.  
+
+## 프로그램 관리 문장
+
+> <h3>next 문장</h3>
+
+`next`는 입력 파일로부터 입력의 다음 라인을 가져오고, awk 스크립트의 시작부터 다시 실행합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141260433-2e30dc77-c793-4e7c-9c28-e4a8abd8a077.png)
+1번 필드의 레코드값이 `Jane`이라면 awk는 이 라인을 스킵하고 입력 파일로부터 다음 라인을 가져옵니다.
+
+> <h3>exit 함수</h3>
+
+`exit`는 awk 문장을 종료하기 위해 사용합니다. 레코드 처리는 중단하지만 END 문장은 스킵하지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141261176-55c8102b-3c5a-4896-b7d2-66cbcd05c57a.png)   
+`exit (1)`로 종료하게 되면 종료상태 변수값은 1인 것을 확인할 수 있습니다.
+
+## 배열
+
+> <h3>연관 배열을 위한 서브 스크립트</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141262241-ab5c9618-7c67-448f-ba11-488411b3274c.png)   
+name이라는 배열에 name=(85 91 74)를 저장합니다.   
+END 블록에서 for문을 처리합니다. NR은 액션이 진행되면서 NR=2까지 증가된 상태입니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141263585-f6e6e664-134c-46f9-bd82-a52b0d3ae0a5.png)   
+id 배열에 id=(88 -1 98)을 할당하고, END 블록에서 for문을 처리합니다.   
+
+> <h3>특수 for문</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141264797-15af9e6e-05f9-411d-8d9a-5ffebc671bd7.png)   
+`for(i in name)`으로 반복문을 돌리면 i에 들어가는 값은 name에 할당된 인덱스를 순서로 출력됩니다.
+
+![image](https://user-images.githubusercontent.com/43658658/141266735-d569e505-8f97-4306-aa3b-4c476096bf8e.png)   
+인덱스에는 문자가 들어갈 수도 있습니다. count 배열의 인덱스는 각 이름의 성이 들어가고, 같은 성이 나올 경우 count[성]의 값을 1 증가시킵니다.
+
+> <h3>split</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141267334-35cbefa4-18f0-40de-9bb1-ad002d4ecb86.png)   
+`7/21/2009`를 date라는 배열에 `/`를 기준으로 나눠서 저장합니다.
+
+> <h3>delete</h3>
+
+![image](https://userimages.githubusercontent.com/43658658/141267642-ae784a65-b5c7-4c2c-91a9-3fe52afc417f.png)   
+split으로 `7/21/2009`를 나누고 date[3]을 지웁니다.
+
+> <h3>다차원 배열</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/141268939-68c5bc11-8a9f-481b-a5c2-5c7db3bcb8a5.png)   
+NR : 행, NF : 열, NR은 END 블록 전에는 for문이 한 번씩 돌때마다 1씩 증가합니다.   
+matrix에 2차원 배열로 저장됩니다.   
+END 블록에서 출력을 담당하는데, x는 행, y는 열로 해서 한 행을 모두 출력하면 한 줄을 띄우도록 했습니다.
+
+> <h3>ARGV와 ARGC</h3>
+
+`ARGV` : 명령라인에서 아규먼트를 요소로 가지는 빌트인 내장 배열입니다.   
+`ARGC` : 명령라인에서 아규먼트 수를 가지는 빌트인 내장 변수입니다.   
+
+![image](https://user-images.githubusercontent.com/43658658/141270992-f5bcca1a-36c2-493e-8b7e-5066ac68029a.png)   
+ARGV[0]에는 항상 `awk`이 들어가고, 1부터 아규먼트들이 들어있는 것을 확인할 수 있습니다.
+
+## awk 빌트인 함수
+
+> <h3>sub, gsub</h3>
+
+`sub (정규표현식, 치환할 문자열);` : 각 라인별로 첫 번째로 정규표현식에 해당하는 문자를 치환할 문자열로 치환합니다.   
+`gsub (정규표현식, 치환할 문자열);` : sub와 역할이 같은데 전체 문자를 치환합니다.
+
+`awk '{sub(/Li/, "Linux"); print}' filename`   
+![image](https://user-images.githubusercontent.com/43658658/141273029-c8459b9f-c3c2-4df9-b5dd-855607dc42ef.png)   
+filename에서 `Li` 문자열을 Linux로 치환합니다.   
+
+`awk '{sub(/Li/, "Linux", $1); print}' filename`   
+![image](https://user-images.githubusercontent.com/43658658/141273142-bfd4b3e0-339a-4bc0-a003-86e1dca679a2.png)   
+filename의 1번 필드에서 `Li` 문자열을 Linux로 치환합니다.
+
+`awk '{gsub(/Li/, "Linux"); print}' filename`   
+![image](https://user-images.githubusercontent.com/43658658/141273258-fff6e585-187e-4834-819b-0f5ef819bbba.png)   
+전체 문자열이 바뀐 것을 볼 수 있습니다.
+
+> <h3>index 함수</h3>
+
+`index(string, substring)` : string에서 substring이 나오는 위치를 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141274573-10e5930d-1802-4cfd-b2a2-34730849b018.png)   
+Hello에서 lo는 4번째 위치부터 나오므로 4가 반환됩니다.   
+
+> <h3>length 함수</h3>
+
+`length(문자열)` : 문자열의 길이를 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141274765-6594e623-e716-454d-a866-736b9dbf1ed1.png)   
+
+> <h3>substr 함수</h3>
+
+`substr(문자열, 시작 위치)` : 주어진 문자열에서 시작 위치의 앞까지 모두 자른 후 남아있는 문자열을 반환   
+`substr(문자열, 시작 위치, 문자열 길이)` : 주어진 문자열에서 시작 위치의 앞까지 모두 자른 후 남아있는 문자열을 문자열 길이만큼 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141275162-2d18f7b1-bfa5-4b79-9ce4-3b64023f965f.png)   
+7번째 위치인 `C` 전인 공백까지 자르고 `C`부터 길이 2의 문자열인 `Cl`을 반환합니다.
+
+> <h3>match 함수</h3>
+
+`match(문자열, 정규표현식)` : 문자열에서 정규표현식을 만족하는 문자열의 인덱스를 반환
+
+![image](https://user-images.githubusercontent.com/43658658/141275427-f3ac9d35-aa70-463d-b33b-94f6576f882a.png)   
+`/[A-Z]+$/`는 라인의 끝이 대문자가 1개 이상인 문자열을 의미합니다. LINUX가 만족하는 문자열이고 위치는 `8번째`입니다.
+
+
+
+
+
+
+
+
 
 
 
