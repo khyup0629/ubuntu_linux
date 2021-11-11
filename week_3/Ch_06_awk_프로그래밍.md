@@ -233,6 +233,7 @@ BEGIN은 파일명 아규먼트 없이 실행될 수 있지만 END는 파일명 
 ![image](https://user-images.githubusercontent.com/43658658/141245470-15706b60-984c-4361-a35e-2a7b1e76f5bc.png)   
 `date` 명령의 결괏값을 `getline` 함수를 통해 변수 `d`에 저장하고, `d`의 값을 나눠서 `year` 배열을 형성한 후, `year[1]`을 출력합니다.
 
+![image](https://user-images.githubusercontent.com/43658658/141309616-d72914ba-700d-41bb-aaac-d5d973e95edf.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141246299-8fc2ce2b-42ca-409f-a51f-7c3cdf543baa.png)   
 먼저 BEGIN 블록이 실행됩니다. 이름을 물어보고 입력 리다이렉션으로 정보를 입력 받아 `name` 변수에 저장합니다.   
 그리고 awkfile을 읽어들이면서 1번 필드 레코드 값 중에 일치하는 라인이 있는지 체크하면서 일치하는 라인이 있다면 문자열과 레코드 번호를 출력합니다.   
