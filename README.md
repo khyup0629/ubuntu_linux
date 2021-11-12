@@ -15,3 +15,16 @@
 - [Ch 14. NFS 서버 설치와 운영](https://github.com/khyup0629/ubuntu_linux/blob/main/week_2/NFS_%EC%84%9C%EB%B2%84_%EC%84%A4%EC%B9%98%EC%99%80_%EC%9A%B4%EC%98%81.md#nfs-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98%EC%99%80-%EC%9A%B4%EC%98%81)   
 - [Ch 15. Samba 서버 설치와 운영](https://github.com/khyup0629/ubuntu_linux/blob/main/week_2/Samba_%EC%84%9C%EB%B2%84_%EC%84%A4%EC%B9%98%EC%99%80_%EC%9A%B4%EC%98%81.md#samba-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98%EC%99%80-%EC%9A%B4%EC%98%81)   
 
+---
+
+# 쉘 스크립트 학습 자료
+「김태용의 리눅스 쉘스크립트 프로그래밍 입문」 참조
+
++ [Ch 1. 리눅스 쉘과 명령어 기초](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_01_%EB%A6%AC%EB%88%85%EC%8A%A4_%EC%89%98%EA%B3%BC_%EB%AA%85%EB%A0%B9%EC%96%B4_%EA%B8%B0%EC%B4%88.md#%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%89%98%EA%B3%BC-%EB%AA%85%EB%A0%B9%EC%96%B4-%EA%B8%B0%EC%B4%88)
++ [Ch 2. 쉘 스크립트 맛보기](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_02_%EC%89%98_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_%EB%A7%9B%EB%B3%B4%EA%B8%B0.md#%EC%89%98-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%A7%9B%EB%B3%B4%EA%B8%B0)
++ [Ch 3. 정규표현식과 패턴 검색](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_03_%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC_%ED%8C%A8%ED%84%B4_%EA%B2%80%EC%83%89.md#%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%ED%8C%A8%ED%84%B4-%EA%B2%80%EC%83%89)
++ [Ch 4. grep 패턴 검색](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_04_grep_%ED%8C%A8%ED%84%B4_%EA%B2%80%EC%83%89.md#grep-%ED%8C%A8%ED%84%B4-%EA%B2%80%EC%83%89)
++ [Ch 5. sed 유틸리티](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_05_sed_%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0.md#sed-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0)
++ [Ch 6. awk 프로그래밍](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_06_awk_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md#awk-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
++ [Ch 7. bash 쉘 프로그래밍](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_07_bash_%EC%89%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md#bash-%EC%89%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
++ [Ch 8. vim 편집기](https://github.com/khyup0629/ubuntu_linux/blob/main/week_3/Ch_08_vi(m)_%ED%8E%B8%EC%A7%91%EA%B8%B0.md#vim-%ED%8E%B8%EC%A7%91%EA%B8%B0)
