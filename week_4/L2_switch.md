@@ -77,8 +77,9 @@ pc와 스위치를 콘솔 포트로 연결(USB-LAN) 한 뒤, 장치관리자에�
 * `VLAN(Virtual Local Area Network)` : 물리적 배치와 상관없이 가상에서 논리적으로 LAN을 구성할 수 있는 기술입니다.
 
 ![image](https://user-images.githubusercontent.com/43658658/141728997-3a13c7d2-a0ec-4efe-8acf-241f4b048a9f.png)   
-![image](https://user-images.githubusercontent.com/43658658/141729025-2bb869db-1ad0-4ac6-902a-f3f3af3f672d.png)   
+![image](https://user-images.githubusercontent.com/43658658/141748338-0ebee2fc-d473-4b8d-a6fe-d7f488cdc1ea.png)   
 vlan에 IP와 서브넷을 먼저 설정해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/141748443-2cea5464-3b73-4cf3-9fae-1fc06f1ec7e9.png)   
 no sh(no shutdown)을 통해 해당 인터페이스를 끄지 않고 유지하도록 합니다.
 
 ![image](https://user-images.githubusercontent.com/43658658/141747818-00c7cd23-79f0-4892-993d-1bbd96784948.png)   
