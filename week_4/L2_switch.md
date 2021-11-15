@@ -112,7 +112,7 @@ no sh(no shutdown)을 통해 해당 인터페이스를 끄지 않고 유지하�
 스위치를 인터넷 연결 또는 pc와 로컬로 연결합니다.   
 
 정상적으로 접속되는 것을 확인할 수 있습니다.   
-![image](https://user-images.githubusercontent.com/43658658/141740688-6b33302f-58d7-481c-8032-b70d539f355c.png)
+![image](https://user-images.githubusercontent.com/43658658/141748761-0cebe5ad-a3f1-4f6f-a277-6c4152ccb322.png)
 
 
 
