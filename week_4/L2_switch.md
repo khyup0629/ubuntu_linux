@@ -121,7 +121,19 @@ Remote 백업 : 물리적으로 떨어져 있는 서버와 같은 장비에 원�
 
 > <h3>Local 백업 및 복원</h3>
 
+![image](https://user-images.githubusercontent.com/43658658/141754698-ae1e9177-b10c-4101-9c5f-e151d364fab7.png)   
+* `copy running-config flash:test.txt` : 현재 작동중인 config를 flash 메모리에 test.txt라는 이름으로 백업합니다.
 
+flash 메모리에 test.txt 파일이 제대로 저장되었는지 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141754880-feb69a5e-e61f-4296-90a7-eac01cb98081.png)   
+![image](https://user-images.githubusercontent.com/43658658/141755061-9919f285-4a08-431f-861c-1cdd2d6b92b1.png)   
 
+복구가 제대로 되는지 확인하기 위해 호스트 이름을 먼저 test로 바꿉니다.   
+![image](https://user-images.githubusercontent.com/43658658/141755328-d351a719-de0b-4071-b167-9d36564269ca.png)   
 
+아까 백업한 test.txt 파일로 복구를 하면 백업할 때 호스트였던 `switch`로 호스트가 다시 변경되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141755556-59c7115a-565d-448b-bd39-8ec8abfc28b9.png)   
+이를 통해 정상적으로 백업이 된다는 것을 알 수 있습니다.   
+
+> <h3>Remote 백업 FTP</h3>
 
