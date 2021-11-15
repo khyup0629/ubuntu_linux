@@ -137,3 +137,14 @@ flash 메모리에 test.txt 파일이 제대로 저장되었는지 확인할 수
 
 > <h3>Remote 백업 FTP</h3>
 
+`show tech 정보` : 해당 장비의 모든 정보들을 한 번에 볼 수 있습니다. 모든 HW/SW 정보를 한 번에 요약하여 보여주는 기능으로, 보통은 트러블 슈팅 또는 오작동 등의 문제 해결에 많이 활용되고 있으며, 원인 분석 및 문제 해결을 위해 장비 제조사에서는 항상 이 show tech 정보를 요구합니다.   
+
+`show tech-support`를 하면 방대한 양의 자료가 출력됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/141760188-6b7e3c26-e90c-455f-a9b2-0819f596020f.png)   
+
+방대한 양의 `show tech-support` 정보를 FTP 방식으로 pc에 백업할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141760494-0527cf83-773f-4705-a5af-74105d2bd33a.png)   
+
+파이프 이전의 명령어가 미완성이라고 하는데, 몇 번을 다시 보아도 오타는 없었습니다.   
+계속해서 해결해보겠습니다.
+
