@@ -20,9 +20,29 @@ PuTTy를 열고 `Serial` 방식으로 연결합니다.
 콘솔 창이 뜨면 [Enter]키를 입력합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141877268-c3f148b5-1272-4373-926d-05b3c28d7924.png)   
 
-## 라우터 초기화
+## 라우터 공장 초기화
 
+글로벌 모드에서 컨피그레이션 레지스터를 `0x2102`로 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141878996-1b831211-d138-483b-aecb-be87351fd28c.png)   
+* `0x2102` : 라우터의 IOS 이미지를 flash 메모리로부터 로딩합니다. 만약 flash 메모리에 IOS이미지가 없다면 TFTP, ROM의 순서로 이미지를 찾아 부팅하고 NVRAM에서 설정값을 읽어옵니다.
+* `0x2141` : 손실 복구. 라우터의 IOS 이미지를 ROM으로부터 로딩합니다. NVRAM은 무시합니다.
+* `0x2142` : 패스워드 복구. 라우터의 IOS 이미지를 FLASH로부터 로딩합니다. NVRAM은 무시합니다.
+* `시스코 IOS` : 시스코 시스템즈의 대부분의 라우터와 현행 모든 스위치에 사용되고 있는 소프트웨어. IOS는 멀티태스킹 OS와 통합된 라우팅, 스위칭, 인터네트워킹, 텔레커뮤니케이션 기능의 패키지입니다.
+* `NVRAM, FLASH, ROM` : 모두 비휘발성 메모리입니다. `ROM`은 사용자가 임의로 건드릴 수 없고, `FLASH`는 IOS 이미지파일을 저장하는데 사용됩니다. `NVRAM`은 설정파일(부팅과정 중 환경설정파일을 로드)을 저장하는데 사용됩니다. `RAM`은 장비의 전원이 켜져있는 동안 설정되는 모든 설정파일을 저장하는데, 이를 `NVRAM`에 저장하지 않으면 모두 사라져버립니다.
+  * 장비를 복구할 때(비밀번호 분실) ROM과 FLASH는 운영체제가 로딩되기 전, RAM, NVRAM은 운영체제가 로딩된 후의 단계입니다. 
 
+`show version` 명령을 통해 제일 마지막 줄에 해당 내용이 추가되었는지 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141879755-58a48b84-d752-468f-ba63-e39b0d80ab40.png)
+
+`write erase` 명령을 사용하여 라우터의 현재 시작 컨피그레이션을 지웁니다.   
+![image](https://user-images.githubusercontent.com/43658658/141879859-70913be4-5283-41f6-abef-402ae76a80ed.png)
+
+`reload`를 통해 재부팅합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141879933-3e96ed3d-a959-4e65-b264-40c3b7e78da2.png)   
+컨피그레이션을 저장하겠냐는 메시지가 나오면 `no`를 입력합니다.
+
+라우터가 다시 로드되면 `System Configuration Dialog` 대화상자가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/141880538-9be035bb-996f-486d-bab1-374d1e503572.png)   
 
 ## AUX 포트
 
@@ -33,3 +53,8 @@ PuTTy를 열고 `Serial` 방식으로 연결합니다.
 모뎀을 연결해 놓으면 원격지에서도 모뎀을 통해 라우터에 명령어를 입력할 수 있습니다.
 모뎀을 이용한 라우터 구성은 기존의 네트워크에 문제가 발생해 텔넷으로 접근이 불가능할 때, 그리고 콘솔을 연결하자니 너무 거리가 먼 곳일 때 원격지에서 라우터에 접근을 가능하게 합니다.
 
+---
+
+[참고 사이트]   
+* https://www.cisco.com/c/ko_kr/support/docs/ios-nx-os-software/ios-software-releases-123-mainline/46509-factory-default.html
+* 
