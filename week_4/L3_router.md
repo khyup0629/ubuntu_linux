@@ -85,6 +85,21 @@ IP 설정이 잘 되었는지 확인합니다.
 모뎀을 연결해 놓으면 원격지에서도 모뎀을 통해 라우터에 명령어를 입력할 수 있습니다.
 모뎀을 이용한 라우터 구성은 기존의 네트워크에 문제가 발생해 텔넷으로 접근이 불가능할 때, 그리고 콘솔을 연결하자니 너무 거리가 먼 곳일 때 원격지에서 라우터에 접근을 가능하게 합니다.
 
+## 라우터 로컬 백업
+
+현재 `running-config`(현재 작동중인 설정에 관한 모든 것이 적힌 파일)를 플래시 메모리에 `aa.txt`라는 이름으로 복사합니다.   
+복사가 끝나면 `more flash:aa.txt`로 잘 복사되었는지 파일을 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141887366-a048add4-6693-404f-9e13-4e724ba18f03.png)   
+
+`hostname test`로 호스트이름을 `test`로 바꿉니다.   
+![image](https://user-images.githubusercontent.com/43658658/141887596-eac95b38-fce9-44fd-bed8-7f87e1c8fbef.png)   
+
+`configure replace flash aa.txt`를 통해 백업을 시작하고, 중간에 `y`를 입력해 백업을 진행시킵니다.   
+![image](https://user-images.githubusercontent.com/43658658/141887728-86bc27fd-f83a-4d0e-aecd-a745847f48bf.png)   
+다시 `hostname`이 `Router`로 돌아간 것을 확인할 수 있습니다.
+
+
+
 ---
 
 [참고 사이트]   
