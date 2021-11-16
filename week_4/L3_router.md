@@ -102,7 +102,7 @@ IP 설정이 잘 되었는지 확인합니다.
 
 ## TFTP를 통한 리모트 백업과 복원
 
-TFTP는 원격 pc에 TFTP 서버를 구축하고 라우터의 설정 파일을 백업해 보겠습니다.
+원격 pc에 TFTP 서버를 구축하고 라우터의 설정 파일을 백업해 보겠습니다.
 
 먼저, 원격 pc에 TFTP 서버를 구축하기 위해 TFTP 툴을 다운로드 받습니다.   
 => https://tftp.kr.uptodown.com/windows/download
