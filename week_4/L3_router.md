@@ -17,5 +17,6 @@ pc와 라우터를 콘솔로 연결합니다.
 PuTTy를 열고 `Serial` 방식으로 연결합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141877145-ae774f10-9f4b-470d-845b-81abf9b44827.png)   
 
-
+콘솔 창이 뜨면 [Enter]키를 입력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141877268-c3f148b5-1272-4373-926d-05b3c28d7924.png)   
 
