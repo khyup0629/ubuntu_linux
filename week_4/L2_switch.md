@@ -135,16 +135,42 @@ flash 메모리에 test.txt 파일이 제대로 저장되었는지 확인할 수
 ![image](https://user-images.githubusercontent.com/43658658/141755556-59c7115a-565d-448b-bd39-8ec8abfc28b9.png)   
 이를 통해 정상적으로 백업이 된다는 것을 알 수 있습니다.   
 
-> <h3>Remote 백업 FTP</h3>
+> <h3>Remote TFTP</h3>
 
-`show tech 정보` : 해당 장비의 모든 정보들을 한 번에 볼 수 있습니다. 모든 HW/SW 정보를 한 번에 요약하여 보여주는 기능으로, 보통은 트러블 슈팅 또는 오작동 등의 문제 해결에 많이 활용되고 있으며, 원인 분석 및 문제 해결을 위해 장비 제조사에서는 항상 이 show tech 정보를 요구합니다.   
+원격 pc에 TFTP 서버를 구축하고 라우터의 설정 파일을 백업해 보겠습니다.
 
-`show tech-support`를 하면 방대한 양의 자료가 출력됩니다.   
-![image](https://user-images.githubusercontent.com/43658658/141760188-6b7e3c26-e90c-455f-a9b2-0819f596020f.png)   
+먼저, 원격 pc에 TFTP 서버를 구축하기 위해 TFTP 툴을 다운로드 받습니다.   
+=> https://tftp.kr.uptodown.com/windows/download
 
-방대한 양의 `show tech-support` 정보를 FTP 방식으로 pc에 백업할 수 있습니다.   
-![image](https://user-images.githubusercontent.com/43658658/141760494-0527cf83-773f-4705-a5af-74105d2bd33a.png)   
+[설치 완료]   
+![image](https://user-images.githubusercontent.com/43658658/141956271-690da348-6326-43b2-8367-69601339f6ef.png)
 
-파이프 이전의 명령어가 미완성이라고 하는데, 몇 번을 다시 보아도 오타는 없었습니다.   
-계속해서 해결해보겠습니다.
+스위치에서 running-config를 TFTP 전송합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141961087-195b7d87-6229-45bc-a733-c63a93536269.png)   
+copy running-config tftp : running-config를 TFTP 전송.   
+원격 pc의 IP와 백업 파일의 이름을 설정합니다.
+* `[Permission denied]`라는 이슈가 발생했는데, tftp 폴더에 대한 권한을 `모두(Everyone)`에게 `읽기/쓰기` 권한을 지정해서 해결했습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141962920-f45f5875-7bf0-4022-a24e-f3485fb2bcba.png)   
+
+TFTP 툴로 가서 [Show Dir]를 선택하면 백업 파일이 전송된 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141961340-f6d1da71-2f29-4ae1-98c3-9604b4ed0273.png)
+
+파일 탐색기로 TFTP가 설치된 경로로 들어가면 백업 파일이 존재하는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141961403-a919f323-2888-4cd0-b4b6-daa98fa5f9bf.png)
+
+복원 테스트를 위해서 스위치를 초기화합니다.
+
+텔넷으로 접속해 보면 접속이 되지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141964886-dbab4f48-3b7e-480f-920e-32cfb22b671d.png)
+
+원격 pc에 있는 백업 파일을 스위치의 `running-config` 파일로 다시 가져옵니다.   
+![image](https://user-images.githubusercontent.com/43658658/141964371-37f1b874-3f54-4703-9fee-42ddac6e4cb3.png)   
+* `copy tftp running-config` : tftp 서버에 있는 파일을 running-config로 가져옵니다.
+* 가져올 원격 pc의 IP를 입력하고, 백업 파일의 이름을 작성한 뒤, Destination filename은 running-config가 맞으므로 엔터를 누릅니다.
+
+백업 파일을 만들 당시 텔넷 접속 설정을 모두 완료한 상태이기 때문에 초기화를 하면 텔넷 접속이 불가능하고,   
+백업 파일을 통해 복원을 완료한다면 텔넷 접속이 가능할 것입니다.
+
+복원을 완료하고 텔넷 서버를 통해 접속해 보면 접속이 원활히 되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141964526-dc8c1408-33c6-4f2b-ba24-c6a01bae0960.png)
 
