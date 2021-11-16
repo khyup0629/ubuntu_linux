@@ -44,6 +44,13 @@ PuTTy를 열고 `Serial` 방식으로 연결합니다.
 라우터가 다시 로드되면 `System Configuration Dialog` 대화상자가 나타납니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141880538-9be035bb-996f-486d-bab1-374d1e503572.png)   
 
+이 과정을 거치면 라우터의 공장 초기화가 완료됩니다.
+
+## 라우터 텔넷 설정
+
+![image](https://user-images.githubusercontent.com/43658658/141883019-6373035b-2412-47f3-93de-28f3e58dbb31.png)   
+
+
 ## AUX 포트
 
 콘솔 포트 밑에 `AUX` 포트라는 것이 있습니다.
