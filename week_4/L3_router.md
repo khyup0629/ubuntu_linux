@@ -123,8 +123,16 @@ TFTP는 원격 pc에 TFTP 서버를 구축하고 라우터의 설정 파일을 �
 
 복원 테스트를 위해서 라우터를 초기화합니다.   
 
+원격 pc에 있는 백업 파일을 라우터의 `running-config` 파일로 다시 가져옵니다.   
+![image](https://user-images.githubusercontent.com/43658658/141928102-b3d37e49-bc60-4c9a-9e85-fc0e6a52a064.png)   
+* `copy tftp running-config` : tftp 서버에 있는 파일을 running-config로 가져옵니다.
+* 가져올 원격 pc의 IP를 입력하고, 백업 파일의 이름을 작성한 뒤, `Destination filename`은 `running-config`가 맞으므로 엔터를 누릅니다.
 
+백업 파일을 만들 당시 텔넷 접속 설정을 모두 완료한 상태이기 때문에 초기화를 하면 텔넷 접속이 불가능하고,   
+백업 파일을 통해 복원을 완료한다면 텔넷 접속이 가능할 것입니다.
 
+복원을 완료하고 텔넷 서버를 통해 접속해 보면 접속이 원활히 되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141928393-99705941-182c-41fb-b625-4e3ea0dc6b73.png)
 
 ---
 
