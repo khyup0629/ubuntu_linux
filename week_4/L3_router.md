@@ -48,7 +48,7 @@ PuTTy를 열고 `Serial` 방식으로 연결합니다.
 
 ## 라우터 텔넷 설정
 
-![image](https://user-images.githubusercontent.com/43658658/141883019-6373035b-2412-47f3-93de-28f3e58dbb31.png)   
+![image](https://user-images.githubusercontent.com/43658658/141883394-4aae3230-fe38-4304-aa2f-c0e6c2f160e7.png)   
 
 
 ## AUX 포트
