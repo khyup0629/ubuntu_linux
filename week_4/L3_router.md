@@ -100,7 +100,9 @@ IP 설정이 잘 되었는지 확인합니다.
 ![image](https://user-images.githubusercontent.com/43658658/141887728-86bc27fd-f83a-4d0e-aecd-a745847f48bf.png)   
 다시 `hostname`이 `Router`로 돌아간 것을 확인할 수 있습니다.
 
+## TFTP를 통한 리모트 백업과 복원
 
+TFTP는 원격 pc에 TFTP 서버를 구축하고
 
 ---
 
