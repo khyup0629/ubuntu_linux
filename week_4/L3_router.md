@@ -123,6 +123,9 @@ IP 설정이 잘 되었는지 확인합니다.
 
 복원 테스트를 위해서 라우터를 초기화합니다.   
 
+텔넷으로 접속해보면 접속이 되지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/141965294-5c831f46-cac0-464e-8222-6ca47b4ca2bc.png)
+
 원격 pc에 있는 백업 파일을 라우터의 `running-config` 파일로 다시 가져옵니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141928102-b3d37e49-bc60-4c9a-9e85-fc0e6a52a064.png)   
 * `copy tftp running-config` : tftp 서버에 있는 파일을 running-config로 가져옵니다.
