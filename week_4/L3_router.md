@@ -14,8 +14,10 @@
 1. 콘솔
 2. 텔넷
 3. TFTP
-4. AUX
-5. 네트워크 관리 시스템(Network Management System)
+4. AUX : 모뎀을 통해 원격 접근
+5. 네트워크 관리 시스템(Network Management System) : GUI 환경을 통한 접근
+
+실제로 실습해 볼 방법은 `콘솔, 텔넷, TFTP`입니다.
 
 ## 라우터 콘솔 접근
 
