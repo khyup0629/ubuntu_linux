@@ -76,4 +76,5 @@ IP 설정이 잘 되었는지 확인합니다.
 
 [참고 사이트]   
 * https://www.cisco.com/c/ko_kr/support/docs/ios-nx-os-software/ios-software-releases-123-mainline/46509-factory-default.html
-* 
+* https://blog.naver.com/triride/220422393712
+* https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=triride&logNo=220424906254
