@@ -58,7 +58,9 @@ IP 설정이 잘 되었는지 확인합니다.
 ![image](https://user-images.githubusercontent.com/43658658/141884781-80a9be60-6bb8-4dfe-b1df-a2f938861682.png)
 
 텔넷 접속 패스워드와 enable 패스워드를 설정합니다.   
-![image](https://user-images.githubusercontent.com/43658658/141883394-4aae3230-fe38-4304-aa2f-c0e6c2f160e7.png)   
+![image](https://user-images.githubusercontent.com/43658658/141886139-2612996b-408a-499d-b5c9-71cde1f1679b.png)   
+![image](https://user-images.githubusercontent.com/43658658/141886174-532d980e-5211-4129-97b9-aaca54e6d638.png)   
+* `transport input telnet` : 해당 0~4 라인을 텔넷으로 접속한다고 설정.
 
 텔넷으로 설정한 IP로 접속해보면 접속이 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/141885076-07c96ef5-3f92-4b30-99c9-c2d29971f85b.png)
