@@ -48,6 +48,16 @@ PuTTy를 열고 `Serial` 방식으로 연결합니다.
 
 ## 라우터 텔넷 설정
 
+`do sh ip int bri` 명령을 통해 사용가능한 인터페이스의 목록을 봅니다.   
+![image](https://user-images.githubusercontent.com/43658658/141884645-ee8d0ba1-5158-4e13-9bf8-de8eccea5fd7.png)
+
+인터페이스 하나를 골라 IP를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141884813-b4df284e-7494-4a71-9ff2-45fb1b22cc2f.png)
+
+IP 설정이 잘 되었는지 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/141884781-80a9be60-6bb8-4dfe-b1df-a2f938861682.png)
+
+
 ![image](https://user-images.githubusercontent.com/43658658/141883394-4aae3230-fe38-4304-aa2f-c0e6c2f160e7.png)   
 
 
