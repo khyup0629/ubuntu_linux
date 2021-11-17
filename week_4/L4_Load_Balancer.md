@@ -56,6 +56,10 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 정상적으로 방화벽에 로그인 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142123136-1fdb0eec-83f9-4a01-bd8b-0ea051f6722d.png)
 
+## 방화벽 정책 설정
+
+방화벽 정책의 우선순위는 `Top-Down 방식`으로 정책 리스트의 위쪽 정책 우선입니다.
+
 
 
 ---
