@@ -56,11 +56,23 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 정상적으로 방화벽에 로그인 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142123136-1fdb0eec-83f9-4a01-bd8b-0ea051f6722d.png)
 
-## 방화벽 정책 설정
+## 방화벽 인터넷 통신 정책 설정
 
 방화벽 정책의 우선순위는 `Top-Down 방식`으로 정책 리스트의 위쪽 정책 우선입니다.
 
+* `Incoming interface` : 출발지 인터페이스
+* `Outcoming interface` : 목적지 인터페이스
+* `Source` : 출발지 ip
+* `Destination` : 목적지 ip
+* `schedule` : 스케줄 설정
+* `Service` : 서비스 포트 설정
+* `NAT(Network Address Translation)` : 사설 네트워크에 속한 여러 개의 호스트가 하나의 공인 IP 주소를 사용하여 인터넷에 접속하게 해주는 기술입니다.
+  - 방화벽에 적용 되었을 때는 들어오는 쪽(내부) 인터페이스 ip가 정책을 통과 시에 나가는 쪽(외부) 인터페이스 ip로 변환되어 나가도록 해줍니다.
+  - 예를 들어, A, B 인터페이스가 있고, A -> B로 통과할 때 A에서 1.1.1.1인 ip를 B쪽으로 통과 시에 B의 ip로 변환되도록 해줍니다.
 
+## VPN(가상사설망)
+
+사용자가 안전하게 비공개로 인터넷 브라우징을 할 수 있도록 해주는 도구입니다.
 
 ---
 
