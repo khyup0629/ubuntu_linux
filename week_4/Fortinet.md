@@ -70,9 +70,49 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
   - 방화벽에 적용 되었을 때는 들어오는 쪽(내부) 인터페이스 ip가 정책을 통과 시에 나가는 쪽(외부) 인터페이스 ip로 변환되어 나가도록 해줍니다.
   - 예를 들어, A, B 인터페이스가 있고, A -> B로 통과할 때 A에서 1.1.1.1인 ip를 B쪽으로 통과 시에 B의 ip로 변환되도록 해줍니다.
 
-## VPN(가상사설망)
+## SSL-VPN
 
-사용자가 안전하게 비공개로 인터넷 브라우징을 할 수 있도록 해주는 도구입니다.
+SSL은 웹 브라우저와 서버 간의 통신에서 정보를 암호화함으로써 도중에 해킹을 통해 정보가 유출되더라도 정보의 내용을 보호할 수 있는 기능을 갖춘 보안 솔루션입니다.   
+SSL-VPN은 SSL을 기반으로 한 VPN입니다.
+
+SSL-VPN은 IPSec VPN의 방식의 단점을 보완한 방식입니다.   
+기본적으로 그냥 VPN보다 IPSec, SSL-VPN이 보안적인 측면에서 뛰어나다는 공통점이 있지만,   
+IPSec의 경우 클라이언트 소프트웨어를 설치해야 하기 때문에, 방화벽단에서의 추가적인 설정이 필요하고, 클라이언트가 설치될 하드웨어에 대한 호환성이 문제가 됩니다.   
+반면에 SSL-VPN은 웹 브라우저가 클라이언트의 역할을 하기 때문에 클라이언트 소프트웨어를 설치해야 하는 번거로운 문제가 사라지고, 관리와 유지보수에 있어 수월합니다.
+
+> <h3>SSL-VPN 구축</h3>
+
+먼저 VPN을 사용할 로컬 사용자를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142147290-71a67ea2-cc2d-4795-8622-6aa4c12e0d0b.png)   
+![image](https://user-images.githubusercontent.com/43658658/142147350-e95e237e-ddb8-4d14-9da1-d631e3c698a0.png)   
+![image](https://user-images.githubusercontent.com/43658658/142148429-ac7c0a10-b100-44c8-921d-e62e5c2642d9.png)   
+
+이제 방화벽 사용자 그룹 유형을 만듭니다.   
+![image](https://user-images.githubusercontent.com/43658658/142148542-38645f0a-be58-4be8-8fb5-69b81f5c0ac4.png)   
+![image](https://user-images.githubusercontent.com/43658658/142148603-ec69b7e8-6ad3-4d30-a448-87f65b99b943.png)   
+
+[SSL-VPN 포털]로 들어가면 SSL-VPN 포탈을 편집해서 커스터마이징 할 수 있습니다.   
+저희는 `full access`라는 이름의 SSL-VPN을 사용할 것입니다.   
+![image](https://user-images.githubusercontent.com/43658658/142148835-600bcce1-109c-47e2-a921-47fb20c7fa96.png)   
+![image](https://user-images.githubusercontent.com/43658658/142155314-c4e0ede3-1eef-4871-b804-7d1040d60086.png)
+
+[SSL-VPN 설정]으로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/142155537-86f7d0bb-1d67-4ad3-a453-ac42948646e0.png)   
+WAN을 통해 나가는 외부 인터페이스 IP의 포트 번호를 할당해주면, `외부 IP:포트번호`의 SSL-VPN의 주소가 나타납니다.
+
+SSL-VPN 주소로 접속해보면 아직 정책을 설정해주지 않았기 때문에 접속이 되지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142156763-4c10bef3-61c1-47dc-a8a8-bffc2fe70ee8.png)
+
+이전에 생성한 로컬 사용자가 소속된 그룹을 앞으로 사용할 SSL-VPN 포털인 `full-access`로 접근하도록 허용해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/142156325-fc4fb420-6ebb-46ad-a955-f66357af2ac4.png)   
+![image](https://user-images.githubusercontent.com/43658658/142156393-d35ab6c7-00af-4328-b48b-011c2ffbf52c.png)   
+![image](https://user-images.githubusercontent.com/43658658/142156270-0eb84855-fe73-465e-bb1f-94c7122559b1.png)   
+
+> <h3>SSL-VPN 정책 설정</h3>
+
+
+
+
 
 ---
 
