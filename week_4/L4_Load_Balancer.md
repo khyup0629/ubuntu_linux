@@ -1,5 +1,9 @@
 # L4 로드 밸런서
 
+## FortiGate 200E
+
+중견기업과 대기업을 위한 차세대 방화벽기능을 제공하는 보안장비입니다.
+
 ## 콘솔 접근
 
 ![image](https://user-images.githubusercontent.com/43658658/142091243-7afa12ec-8d05-432a-a71e-715edc67ef9c.png)   
@@ -32,6 +36,21 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 ![image](https://user-images.githubusercontent.com/43658658/142092964-db5ed58c-d980-49ed-ba45-f73278b41fdb.png)   
 로그인 유저 이름과 비밀번호는 장비에 붙어 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142093084-435a871e-cb61-47de-9b49-288e9329d451.png)
+
+## 방화벽 접속
+
+장비의 `MGMT` 포트와 pc를 연결합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142118491-9d2aec7a-a1ba-4308-8e79-a73fb03ca5a3.png)
+
+개인 네트워크의 방화벽을 끕니다.   
+![image](https://user-images.githubusercontent.com/43658658/142119105-128ff452-5d43-4a65-a0a3-7b1c54be37cc.png)   
+
+웹 브라우저에서 `192.168.1.99`로 연결합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142119611-0ad957dd-fcc8-4845-8f24-8ada50c55fcb.png)   
+이전에 지정했던 `유저이름/비밀번호`를 적고 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142119807-ea045d96-b584-47ba-ba1a-c3577d7b2559.png)
+
+
 
 ---
 
