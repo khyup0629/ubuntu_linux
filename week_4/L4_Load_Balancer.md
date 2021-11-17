@@ -50,6 +50,12 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 이전에 지정했던 `유저이름/비밀번호`를 적고 접속합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142119807-ea045d96-b584-47ba-ba1a-c3577d7b2559.png)
 
+호스트이름을 지정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142121065-0db7725f-7b18-4214-ab4c-dbfc5fc8de7a.png)
+
+정상적으로 방화벽에 로그인 되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142123136-1fdb0eec-83f9-4a01-bd8b-0ea051f6722d.png)
+
 
 
 ---
