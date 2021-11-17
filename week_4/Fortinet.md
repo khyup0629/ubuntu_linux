@@ -95,7 +95,6 @@ IPSec의 경우 클라이언트 소프트웨어를 설치해야 하기 때문에
 [SSL-VPN 포털]로 들어가면 SSL-VPN 포탈을 편집해서 커스터마이징 할 수 있습니다.   
 저희는 `full access`라는 이름의 SSL-VPN을 사용할 것입니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142148835-600bcce1-109c-47e2-a921-47fb20c7fa96.png)   
-![image](https://user-images.githubusercontent.com/43658658/142155314-c4e0ede3-1eef-4871-b804-7d1040d60086.png)
 
 [SSL-VPN 설정]으로 들어갑니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142155537-86f7d0bb-1d67-4ad3-a453-ac42948646e0.png)   
