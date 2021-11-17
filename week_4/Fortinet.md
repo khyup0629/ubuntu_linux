@@ -56,13 +56,7 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 정상적으로 방화벽에 로그인 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142123136-1fdb0eec-83f9-4a01-bd8b-0ea051f6722d.png)
 
-## 방화벽 인터넷 통신 정책 설정
-
-방화벽 정책의 우선순위는 `Top-Down 방식`으로 정책 리스트의 위쪽 정책 우선입니다.
-
-
-
-## SSL-VPN
+## SSL-VPN 구축
 
 SSL은 웹 브라우저와 서버 간의 통신에서 정보를 암호화함으로써 도중에 해킹을 통해 정보가 유출되더라도 정보의 내용을 보호할 수 있는 기능을 갖춘 보안 솔루션입니다.   
 SSL-VPN은 SSL을 기반으로 한 VPN입니다.
@@ -72,7 +66,7 @@ SSL-VPN은 IPSec VPN의 방식의 단점을 보완한 방식입니다.
 IPSec의 경우 클라이언트 소프트웨어를 설치해야 하기 때문에, 방화벽단에서의 추가적인 설정이 필요하고, 클라이언트가 설치될 하드웨어에 대한 호환성이 문제가 됩니다.   
 반면에 SSL-VPN은 웹 브라우저가 클라이언트의 역할을 하기 때문에 클라이언트 소프트웨어를 설치해야 하는 번거로운 문제가 사라지고, 관리와 유지보수에 있어 수월합니다.
 
-> <h3>SSL-VPN 구축</h3>
+> <h3>SSL-VPN 포탈 설정</h3>
 
 먼저 VPN을 사용할 로컬 사용자를 생성합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142157645-83324f8a-8936-4402-a87f-ad7ff70b3f3c.png)   
@@ -90,7 +84,7 @@ IPSec의 경우 클라이언트 소프트웨어를 설치해야 하기 때문에
 
 [SSL-VPN 설정]으로 들어갑니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142155537-86f7d0bb-1d67-4ad3-a453-ac42948646e0.png)   
-WAN을 통해 나가는 외부 인터페이스 IP의 포트 번호를 할당해주면, `외부 IP:포트번호`의 SSL-VPN의 주소가 나타납니다.
+WAN을 통해 나가는 외부 인터페이스 IP의 포트 번호를 할당해주면, `외부IP:포트번호`의 SSL-VPN의 주소가 나타납니다.
 
 SSL-VPN 주소로 접속해보면 아직 정책을 설정해주지 않았기 때문에 접속이 되지 않습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142156763-4c10bef3-61c1-47dc-a8a8-bffc2fe70ee8.png)
@@ -123,11 +117,20 @@ SSL-VPN 주소로 접속해보면 아직 정책을 설정해주지 않았기 때
 ![image](https://user-images.githubusercontent.com/43658658/142160261-c0395059-be3c-4bbb-ad2d-cc548d7ad151.png)   
 `khyup`라는 허가된 사용자가 SSL-VPN에 접근하면 `정책`으로 인해 `wan1` 포트로 빠져나와 원격 사용자의 웹 브라우저에 표시됩니다.   
 
-정책 설정을 모두 완료하게 되면 다시 `외부 IP:포트번호`에 접속 했을 때 `SSL-VPN 포털 클라이언트`에 접속할 수 있습니다.   
+> <h3>SSL-VPN 구축 테스트</h3>
+
+정책 설정을 모두 완료하게 되면 다시 `외부IP:포트번호`에 접속 했을 때 `SSL-VPN 포털 클라이언트`에 접속할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142161404-bdc18b38-dbe9-47cb-93a6-d2d9dc9933a8.png)   
 앞서 허가한 사용자에 대한 정보를 입력하면 접속이 가능합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142161605-612de39c-14db-4a93-b08d-065eea6fbb80.png)
 
+마지막으로 외부에서 공인 ip의 10443번 포트로 접속 했을 때, SSL-VPN Client로 접속될 수 있도록 포트포워딩을 해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/142171155-a412d048-5935-43b5-938e-7e8f4dfcbec6.png)
+
+테스트를 위해 FortiClient 프로그램을 실행하고, 외부 게이트웨이에 공인 ip, 포트 번호를 10443, 이전에 허용한 사용자 정보로 접속을 시도합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142171696-d4409eda-6bff-47b7-a591-b16c4098a4f0.png)   
+SSL-VPN Client로 접속이 되는 것을 확인해 볼 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142172078-e766a77d-9a76-4d62-b7fc-60b7122341a5.png)
 
 ---
 
