@@ -83,7 +83,8 @@ IPSec의 경우 클라이언트 소프트웨어를 설치해야 하기 때문에
 > <h3>SSL-VPN 구축</h3>
 
 먼저 VPN을 사용할 로컬 사용자를 생성합니다.   
-![image](https://user-images.githubusercontent.com/43658658/142147290-71a67ea2-cc2d-4795-8622-6aa4c12e0d0b.png)   
+![image](https://user-images.githubusercontent.com/43658658/142157645-83324f8a-8936-4402-a87f-ad7ff70b3f3c.png)   
+![image](https://user-images.githubusercontent.com/43658658/142157791-6288743d-f5e2-4344-b822-d7eb3bf5c00e.png)      
 ![image](https://user-images.githubusercontent.com/43658658/142147350-e95e237e-ddb8-4d14-9da1-d631e3c698a0.png)   
 ![image](https://user-images.githubusercontent.com/43658658/142148429-ac7c0a10-b100-44c8-921d-e62e5c2642d9.png)   
 
