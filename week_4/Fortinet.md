@@ -1,4 +1,4 @@
-# L4 로드 밸런서
+# Fortinet
 
 ## FortiGate 200E
 
