@@ -105,7 +105,9 @@ SSL-VPN 주소로 접속해보면 아직 정책을 설정해주지 않았기 때
 
 이전에 생성한 로컬 사용자가 소속된 그룹을 앞으로 사용할 SSL-VPN 포털인 `full-access`로 접근하도록 허용해줍니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142156325-fc4fb420-6ebb-46ad-a955-f66357af2ac4.png)   
+---
 ![image](https://user-images.githubusercontent.com/43658658/142156393-d35ab6c7-00af-4328-b48b-011c2ffbf52c.png)   
+---
 ![image](https://user-images.githubusercontent.com/43658658/142156270-0eb84855-fe73-465e-bb1f-94c7122559b1.png)   
 
 > <h3>SSL-VPN 정책 설정</h3>
