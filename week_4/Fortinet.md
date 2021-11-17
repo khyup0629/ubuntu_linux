@@ -60,15 +60,7 @@ FortiGate 장비는 전원 스위치를 껐다 켜면 항상 `maintainer/bcpb+S/
 
 방화벽 정책의 우선순위는 `Top-Down 방식`으로 정책 리스트의 위쪽 정책 우선입니다.
 
-* `Incoming interface` : 출발지 인터페이스
-* `Outcoming interface` : 목적지 인터페이스
-* `Source` : 출발지 ip
-* `Destination` : 목적지 ip
-* `schedule` : 스케줄 설정
-* `Service` : 서비스 포트 설정
-* `NAT(Network Address Translation)` : 사설 네트워크에 속한 여러 개의 호스트가 하나의 공인 IP 주소를 사용하여 인터넷에 접속하게 해주는 기술입니다.
-  - 방화벽에 적용 되었을 때는 들어오는 쪽(내부) 인터페이스 ip가 정책을 통과 시에 나가는 쪽(외부) 인터페이스 ip로 변환되어 나가도록 해줍니다.
-  - 예를 들어, A, B 인터페이스가 있고, A -> B로 통과할 때 A에서 1.1.1.1인 ip를 B쪽으로 통과 시에 B의 ip로 변환되도록 해줍니다.
+
 
 ## SSL-VPN
 
@@ -105,19 +97,41 @@ SSL-VPN 주소로 접속해보면 아직 정책을 설정해주지 않았기 때
 
 이전에 생성한 로컬 사용자가 소속된 그룹을 앞으로 사용할 SSL-VPN 포털인 `full-access`로 접근하도록 허용해줍니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142156325-fc4fb420-6ebb-46ad-a955-f66357af2ac4.png)   
----
+[새로 만들기]를 클릭하고, 이전에 생성한 사용자 그룹과 포털을 지정합니다.
 ![image](https://user-images.githubusercontent.com/43658658/142156393-d35ab6c7-00af-4328-b48b-011c2ffbf52c.png)   
----
+사용자 그룹과 포털이 지정된 것을 확인합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142156270-0eb84855-fe73-465e-bb1f-94c7122559b1.png)   
 
 > <h3>SSL-VPN 정책 설정</h3>
 
+이제 방화벽 정책을 설정해서 SSL-VPN에 접속이 가능하도록 해보겠습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142158615-c43178cd-4d07-4ed2-8ffd-b986d896b802.png)   
+![image](https://user-images.githubusercontent.com/43658658/142160098-5c4a3dbe-4f90-4351-937a-3393f2e028e6.png)   
+* `Input 인터페이스` : 출발지 인터페이스
+* `Output 인터페이스` : 목적지 인터페이스
+* `출발지` : 출발지 ip, 접속을 허용할 사용자까지 지정.
+* `목적지` : 목적지 ip
+* `스케줄` : 얼마를 주기로 반복할 것이냐
+* `서비스` : 어떤 포트로의 접근을 허용할 것이냐
+* `NAT(Network Address Translation)` : 사설 네트워크에 속한 여러 개의 호스트가 하나의 공인 IP 주소를 사용하여 인터넷에 접속하게 해주는 기술입니다.
+  - 방화벽에 적용 되었을 때는 들어오는 쪽(내부) 인터페이스 ip가 정책을 통과 시에 나가는 쪽(외부) 인터페이스 ip로 변환되어 나가도록 해줍니다.
+  - 예를 들어, A, B 인터페이스가 있고, A -> B로 통과할 때 A에서 1.1.1.1인 ip를 B쪽으로 통과 시에 B의 ip로 변환되도록 해줍니다.
 
+모두 입력한 후 [승인]을 누르면 아래와 같이 정책이 생성됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/142161222-523160a4-0454-4305-b83f-511dc5fc74ab.png)
 
+![image](https://user-images.githubusercontent.com/43658658/142160261-c0395059-be3c-4bbb-ad2d-cc548d7ad151.png)   
+`khyup`라는 허가된 사용자가 SSL-VPN에 접근하면 `정책`으로 인해 `wan1` 포트로 빠져나와 원격 사용자의 웹 브라우저에 표시됩니다.   
+
+정책 설정을 모두 완료하게 되면 다시 `외부 IP:포트번호`에 접속 했을 때 `SSL-VPN 포털 클라이언트`에 접속할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142161404-bdc18b38-dbe9-47cb-93a6-d2d9dc9933a8.png)   
+앞서 허가한 사용자에 대한 정보를 입력하면 접속이 가능합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142161605-612de39c-14db-4a93-b08d-065eea6fbb80.png)
 
 
 ---
 
 [참고 사이트]   
 * https://blog.naver.com/PostView.nhn?blogId=mamsmin&logNo=221181438339&parentCategoryNo=&categoryNo=23&viewDate=&isShowPopularPosts=true&from=search
-* 
+* https://ppocssac.tistory.com/4
+* https://m.blog.daum.net/haionnet/705?tp_nil_a=2
