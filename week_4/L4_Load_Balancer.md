@@ -13,7 +13,7 @@
 ![image](https://user-images.githubusercontent.com/43658658/142091483-271a3b5d-5019-4efa-9353-f6d5679bda96.png)
 
 이제 로그인 유저 이름과 비밀번호를 변경해줍니다.   
-![image](https://user-images.githubusercontent.com/43658658/142091824-3fca0f5a-17df-4dd9-89bb-e0a0fe1c8213.png)
+![image](https://user-images.githubusercontent.com/43658658/142091824-3fca0f5a-17df-4dd9-89bb-e0a0fe1c8213.png)   
 `config system admin` : 관리자(admin) 모드로 들어갑니다.   
 `edit [사용자명]` : 유저 이름을 [사용자명]으로 변경합니다.   
 `set password [패스워드]` : 비밀번호를 [패스워드]로 변경합니다.
