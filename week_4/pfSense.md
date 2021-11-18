@@ -98,8 +98,16 @@ XML 파일로 백업 파일을 다운로드 받습니다.
 
 `[설정 복원]` 버튼을 누르면 백업 파일을 복원한 뒤 pfsense가 재부팅됩니다.
 
+## 언어 변경 - 한글
 
+상단의 `[General Setup]` 메뉴로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/142344467-6332b2db-beb1-4828-8d72-005ce0e06b3d.png)   
 
+로컬라이제이션 항목에서 언어를 한국어로 변경합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142344515-8bc7c025-57c6-4a6a-b7f5-9a1aedecb223.png)   
+
+페이지 하단에 `[Save]`를 누르고, 가상 머신에서 pfsense를 재부팅하면 언어가 변경됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/142344923-042351f5-b120-4152-8547-bda3baf16608.png)   
 
 ---
 
