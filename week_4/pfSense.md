@@ -110,10 +110,74 @@ XML 파일로 백업 파일을 다운로드 받습니다.
 페이지 하단에 `[Save]`를 누르고, 가상 머신에서 pfsense를 재부팅하면 언어가 변경됩니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142344923-042351f5-b120-4152-8547-bda3baf16608.png)   
 
+## IP 충돌로 인한 WAN IP 변경
+
+DHCP로 WAN IP를 동적으로 할당 받으니 IP 충돌이 일어나서 호스트 `141`로 변경하였습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142353975-3696d4a3-4185-48d3-83bc-20475db754f1.png)   
+![image](https://user-images.githubusercontent.com/43658658/142354083-70b3c5b2-172a-4909-a826-ed484ab64f20.png)   
+
 ## openVPN 구축
+
+> <h3>VPN 인증 설정</h3>
+
+openVPN을 사용하기 위해서는 인증서가 필요합니다.   
+먼저 인증 기관을 생성합니다.
 
 [시스템] > [인증서 관리자]   
 ![image](https://user-images.githubusercontent.com/43658658/142351509-9c2430fd-c6e5-4a18-a975-532262e29b44.png)   
+
+[CAs] > [추가] 버튼을 눌러줍니다.   
+인증 기관 이름과 인증 기관 생성 방법을 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142354556-927869ea-8911-4f64-bc03-8dd7e25ff4bb.png)   
+* `내부 인증 기관 생성` : pfsense 자체에서 관리하는 인증 기관 생성
+
+나머지 내부 인증 기관 항목은 인증 기관에 대한 설정을 해주는 것인데, 기본값으로 설정되어 있는 것을 그대로 적용합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142355171-45912af5-f642-4bc9-a16d-f75517a98aa8.png)
+
+인증 기관이 생성된 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142355304-083b664a-63ea-4555-b00e-41f6002701dc.png)
+
+다음으로 인증서를 생성합니다.   
+
+[인증서] > [추가] 버튼을 눌러줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/142356173-5cb22873-3978-4295-840e-04a2eb928932.png)   
+* 인증서 역시 pfsense에서 사용될 것이므로 내부 인증서로 선택합니다.
+* 인증 기관은 아까 생성했던 인증 기관을 선택합니다.
+* 공통 이름에는 인증서의 도메인을 적습니다.
+* 인증서 유형은 서버를 위한 인증서이므로 `Server Certificate`를 선택합니다.
+
+인증서가 생성되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142356371-91118097-464c-48a8-b74d-0640ef68e9cc.png)
+
+> <h3>VPN 유저 생성</h3>
+
+VPN을 사용할 사용자를 생성해보겠습니다.
+
+[시스템] > [사용자 관리자]   
+![image](https://user-images.githubusercontent.com/43658658/142356486-f050828a-bf9b-42cb-8a15-8a037da91020.png)   
+
+[사용자] > [추가] 버튼을 눌러줍니다.   
+사용자를 생성하는 부분인데, 앞서 인증 설정 단계를 거쳤다면 대부분의 항목이 이미 채워져 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142356823-daa0dd89-15db-4123-9c48-27b84df7d42b.png)   
+* 인증서 항목을 체크하여 사용자 인증서를 만들어줍니다. 인증 기관은 이전에 생성한 인증 기관을 선택합니다.
+
+사용자가 생성되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142356921-81373bcc-37e7-463b-a32f-44107512019f.png)   
+
+> <h3>VPN 클라이언트 패키지 설치</h3>
+
+openVPN에서 사용할 클라이언트 패키지를 설치합니다.
+
+[시스템] > [패키지 관리자]   
+![image](https://user-images.githubusercontent.com/43658658/142357280-5beab16c-e6fb-446e-b3b6-e6ef14c611ef.png)   
+
+[사용 가능한 패키지] > 검색어 : openvpn   
+![image](https://user-images.githubusercontent.com/43658658/142357380-f56ac6c2-5b0a-45d9-94df-2955556ba962.png)
+
+[Install]을 눌러 설치를 진행합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142357565-fa724d9c-907b-4f26-b9bc-52aad05bd6bb.png)
+
+설치가 완료되었습니다.   
 
 
 
