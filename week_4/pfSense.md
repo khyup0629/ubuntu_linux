@@ -178,8 +178,69 @@ openVPN에서 사용할 클라이언트 패키지를 설치합니다.
 ![image](https://user-images.githubusercontent.com/43658658/142357565-fa724d9c-907b-4f26-b9bc-52aad05bd6bb.png)
 
 설치가 완료되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142362527-a9cf6da9-4576-4610-99b7-ca113ab362e1.png)
 
+> <h3>VPN 설정</h3>
 
+VPN 설정을 위해서 [VPN] > [openVPN]으로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/142362613-6767c93c-d70d-4038-863d-bf6b7c008c8d.png)
+
+클라이언트 패키지를 설치하였기 때문에 [마법사] 이후의 탭 항목 [Client Export], [Shared key Export]이 생성되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142362816-4c629ee0-e768-4e59-8dbf-ead12097187e.png)
+
+openVPN을 설정하는데, 단계적으로 시행하기 위해 [마법사]를 통해서 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142362993-2b139906-5541-44b3-b86a-14d3e7f01303.png)   
+
+서버 타입은 인증을 어떻게 할 것인지를 선택하는 것인데, pfsense에서 자체적으로 인증할 것이기 때문에 `Local User Access`로 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142363221-64eb6199-ea31-4e11-8ab4-3296d0d08a1d.png)   
+![image](https://user-images.githubusercontent.com/43658658/142363248-175eab28-d934-4893-86a2-d2ced25f3c40.png)      
+
+VPN은 외부에서 접속이 들어오기 때문에 `WAN`을 사용합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142366111-09eab81e-075a-47cd-ae34-c4f49aaf44a4.png)   
+
+`터널 네트워크` : openVPN은 클라이언트가 서버에 접속할 때 `터널`을 생성하고 `터널`을 통해서 서버에 접속합니다. 이 터널의 네트워크 ID를 할당해줍니다.   
+`Local Network` : 원격에서 접속할 수 있는 로컬 네트워크 ID를 입력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142366001-566db883-6d95-4611-8b69-76b593325be7.png)
+
+방화벽, openVPN 규칙을 자동으로 생성하도록 체크합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142365050-c43320dd-922f-453c-8563-95f39ba5d2d2.png)
+
+openVPN 서버가 생성되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142365206-8b1ce9fd-3a73-4b6d-b311-d0eae4417317.png)
+
+> <h3>클라이언트에게 배포</h3>
+
+openVPN 탭에서 Client Export 탭을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142366394-29c37804-88af-4675-ab2c-b18f8b3711ae.png)
+
+페이지의 아래쪽에 openVPN Client 소프트웨어를 자신의 운영체제에 맞게 다운로드 할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142366345-785faa64-cf38-4963-845e-60dffb8c1185.png)
+
+다운로드한 파일을 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142367441-1e94c60e-4371-457a-a5f9-cba4a7968bef.png)   
+
+> <h3>openVPN GUI 실행</h3>
+
+이전에 생성한 사용자 정보를 통해 로그인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142367507-6f981ad1-1330-450c-9136-64a206e80f0c.png)
+
+openVPN을 설정할 때 생성했던 터널 IP가 할당되고, 연결이 되는 것을 볼 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142367541-2f60073a-e8d1-43b5-b589-d36afa649b09.png)
+
+`ipconfig`로 연결 정보를 살펴보면, openVPN에 대해 `192.168.2.2`를 IP 주소로 가진 것을 볼 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142368418-6cdec131-9386-4a82-8228-d647c277b32c.png)
+
+> <h3>VPN 상태 확인</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/142368748-756a94ca-e8bd-4c96-a5e3-e4ad9ea06de4.png)   
+상태가 초록색 체크 표시가 떠 있으면, openVPN이 활성화 되어 있는 것을 의미합니다.   
+실제 IP인 `172.16.0.85`의 `1194`번 포트로 접속하면 터널 IP인 `192.168.2.2`를 통해 서버에 접속됩니다.
+
+로그를 보기 위해 [상태] > [시스템 로그]로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/142369327-e057c7a0-5e4f-43bb-9a16-5966e9f3afe9.png)
+
+이곳에서 openVPN에 대한 로그를 볼 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142369400-b306fae9-6016-4b14-a48e-e1f4f1a4c27b.png)
 
 
 ---
