@@ -58,7 +58,7 @@ pfsense 셋업 마법사가 표시됩니다.
 ![image](https://user-images.githubusercontent.com/43658658/142338963-dacdd3d0-5a8b-4e4e-8a4c-35e0775f1886.png)   
 호스트이름, 도메인, DNS 구성을 수행합니다.   
 (DNS 서버 8.8.8.8 은 구글 DNS 서버를 의미)   
-![image](https://user-images.githubusercontent.com/43658658/142339154-3c97c19f-d9f3-4aa6-9ca2-5bee401b0167.png)   
+![image](https://user-images.githubusercontent.com/43658658/142358110-3d792d01-9f4b-4eb0-88f0-cd61e57283ab.png)   
 표준 시간대를 설정합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142339598-d7c32dbd-caf6-4d39-b433-3679aced9fdd.png)   
 내부 인터페이스의 ip와 서브넷마스크를 확인합니다.   
