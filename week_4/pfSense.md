@@ -112,9 +112,9 @@ XML 파일로 백업 파일을 다운로드 받습니다.
 ---
 
 [참고 사이트]   
-* https://techexpert.tips/ko/pfsense-ko/pfsense-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98/
-* https://edushare.tistory.com/45
-* https://techexpert.tips/ko/pfsense-ko/pfsense-%ea%b3%b5%ec%9e%a5-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%84%b1%ec%9c%bc%eb%a1%9c-%ec%9e%ac%ec%84%a4%ec%a0%95/
+* [설치 방법 가이드 메뉴얼](https://techexpert.tips/ko/pfsense-ko/pfsense-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98/)
+* [설치 방법 영상](https://edushare.tistory.com/45)
+* [공장 초기화](https://techexpert.tips/ko/pfsense-ko/pfsense-%ea%b3%b5%ec%9e%a5-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%84%b1%ec%9c%bc%eb%a1%9c-%ec%9e%ac%ec%84%a4%ec%a0%95/)
 * [백업 및 복원](https://techexpert.tips/ko/pfsense-ko/pfsense-%eb%b0%b1%ec%97%85-%eb%b0%8f-%eb%b3%b5%ec%9b%90/)
 * [언어 한글화](https://techexpert.tips/ko/pfsense-ko/pfsense-%ec%9b%b9-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%ec%96%b8%ec%96%b4-%eb%b3%80%ea%b2%bd/)
 * [openVPN 구축 영상](https://www.youtube.com/watch?v=NABC4XeRBWQ&list=PL_1Pc_OMhiCg16-QSMXUoxDZJRUo2lRHM&index=2)
