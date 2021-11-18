@@ -70,6 +70,27 @@ pfsense를 재부팅합니다.
 ![image](https://user-images.githubusercontent.com/43658658/142340723-6818f2fd-dfe5-4446-a66a-57c5aac73eb8.png)
 
 pfsense GUI 환경의 대시보드가 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/142341908-71ac5f87-60ca-40c0-b99f-b4a1e1e4f831.png)
+
+## pfsense 백업 및 복원
+
+> <h3>pfsense 백업</h3>
+
+상단의 [백업 및 복원] 메뉴로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/142342265-4d2b96de-298e-4e97-8d57-4db3fd4e8d1b.png)   
+모든 영역의 데이터를 백업하도록 합니다. 암호화를 체크한 후 암호화를 위한 패스워드를 입력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142342587-5b0ce482-344a-44da-be41-dfc1f21fd859.png)   
+XML 파일로 백업 파일을 다운로드 받습니다.
+
+> <h3>pfsense 복원</h3>
+
+상단의 [백업 및 복원] 메뉴로 들어가서 페이지의 아래쪽에 복원 항목을 봅니다.   
+![image](https://user-images.githubusercontent.com/43658658/142342843-b389a0f9-e2f1-44d6-bbf6-bb91df33cc78.png)   
+모든 영역의 데이터를 복원하도록 합니다. 백업 파일(XML)을 선택하고, 암호화가 되어 있으므로 체크한 뒤, 백업 파일을 생성할 때 설정한 패스워드를 입력합니다.   
+
+`[설정 복원]` 버튼을 누르면 백업 파일을 복원한 뒤 pfsense가 재부팅됩니다.
+
+
 
 
 ---
