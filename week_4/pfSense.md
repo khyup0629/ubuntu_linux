@@ -87,7 +87,7 @@ pfsense GUI 환경의 대시보드가 나타납니다.
 
 상단의 [백업 및 복원] 메뉴로 들어갑니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142342265-4d2b96de-298e-4e97-8d57-4db3fd4e8d1b.png)   
-모든 영역의 데이터를 백업하도록 합니다. 암호화를 체크한 후 암호화를 위한 패스워드를 입력합니다.   
+모든 영역의 데이터를 백업하도록 합니다. 백업 파일 암호화를 체크한 후 패스워드를 입력합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142342587-5b0ce482-344a-44da-be41-dfc1f21fd859.png)   
 XML 파일로 백업 파일을 다운로드 받습니다.
 
