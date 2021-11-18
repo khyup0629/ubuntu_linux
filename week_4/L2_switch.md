@@ -74,7 +74,9 @@ pc와 스위치를 콘솔 포트로 연결(USB-LAN) 한 뒤, 장치관리자에�
 텔넷으로 원격 접속이 가능하려면 서로 간에 인터넷 통신이 연결되어 있어야 합니다.   
 
 먼저 스위치에 VLAN에 대한 IP 정보를 입력해줍니다.   
-* `VLAN(Virtual Local Area Network)` : 물리적 배치와 상관없이 가상에서 논리적으로 LAN을 구성할 수 있는 기술입니다.
+* `VLAN(Virtual Local Area Network)` : 스위치에서 지원하는 기능입니다. 한 대의 스위치를 여러 개의 네트워크로 나누기 위해 사용합니다.
+생성된 각각의 vlan이 한 대의 스위치 안에서 나눠진 여러 대의 스위치가 됩니다.
+네트워크가 나눠졌기 때문에 통신은 라우터로만 가능합니다.
 
 ![image](https://user-images.githubusercontent.com/43658658/141728997-3a13c7d2-a0ec-4efe-8acf-241f4b048a9f.png)   
 ![image](https://user-images.githubusercontent.com/43658658/141748338-0ebee2fc-d473-4b8d-a6fe-d7f488cdc1ea.png)   
