@@ -39,9 +39,75 @@ DELL용 ESXi를 선택하겠습니다.
 `시작`을 누르고 설치를 진행합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142854668-a462cade-d1f7-4671-a7d5-d3fd18a59435.png)
 
+## DELL사 장비 ESXi 설치
+
+부팅 USB를 꽂고, 모니터와 키보드를 연결합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142868581-f480d944-188f-4404-8411-7798dd3cb204.png)
+
+장비를 부팅시키고 `[Ctrl]+[R]` RAID 컨트롤러 BIOS로 진입합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142869833-08113caa-ed6c-4572-b1cf-25671a90cd51.png)
+
+레이드를 모두 지웁니다.   
+![image](https://user-images.githubusercontent.com/43658658/142867591-57db318a-d608-4e3e-b7a6-23063855a08f.png)
+
+새로운 가상 디스크를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142868017-cb9716ef-29cc-45cf-aff4-9d4e0f71087e.png)
+
+레이드를 구성해주고 `초기화` 옵션을 선택한 다음 가상 디스크를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142867974-510adfe0-5639-4f82-81f6-6de9e932f233.png)
+
+BIOS 모드를 빠져나와 `[Ctrl]+[Alt]+[Delete]`를 눌러 재부팅합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142868766-5aae597d-a4d1-4d7a-9a62-4725739eb8e8.png)
+
+[F11]을 눌러 Boot Manager로 들어 가서 Hard Disk에서 부팅 USB를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142869720-a55a07c2-8d9e-42d1-a351-06cd1823ce99.png)   
+
+그럼 설치가 진행됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870477-b9a65847-0111-4cc5-a8ab-c577eb3cb019.png)   
+![image](https://user-images.githubusercontent.com/43658658/142870436-beb9d72e-07a8-4f19-961a-0887a67c059a.png)   
+
+라이센스를 동의합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870587-49cf20ba-2357-4c22-a8cf-0f233e46bd4f.png)
+
+ESXi를 설치할 디스크를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870665-4ac9fe48-2dae-4c4b-96eb-4fe74951c2ab.png)
+
+키보드 레이아웃을 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870743-4572c1aa-173a-4e85-ba30-aa840cd1bc8e.png)
+
+패스워드를 입력합니다. 유저 아이디는 자동으로 `root`입니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870822-efa7a89e-5437-4f7b-8cab-173a721f04bd.png)
+
+설치를 시작합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870878-21a2ea02-d44b-4a2f-9ec0-d4dd35de4ee4.png)
+
+설치가 진행됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/142870923-e7ebe7ff-1469-436a-a7df-a6bd80ccf11b.png)
+
+설치가 완료되면 재부팅합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142871045-4b6a3838-5f4e-4b43-8db4-1d360b83ce9c.png)
+
+랜선을 연결하고, [F2]를 눌러 시스템 커스터마이즈 모드에 진입합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142871422-249153cc-fff9-4aeb-bd00-f6f0007907ce.png)
+
+Static모드로 IP 주소를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142871492-feadbe75-863c-4908-b941-1f8b444553fa.png)
+
+정적 IP 주소가 설정되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142871575-7e39ce1f-2312-4a7c-be7f-31006b77cedc.png)
+
+설정한 IP 주소로 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142873371-18ce738c-a74b-4ec3-888f-a7ece73b70be.png)
+
+유저 아이디(root)와 설정한 비밀번호로 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/142873441-8f633bde-fa54-4c1e-9b40-26bd8f2eaf90.png)
+
+접속이 정상적으로 되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142873470-93fd344d-e6ae-4e7e-8b6d-7435025f7188.png)
+
 ---
 
 참고 사이트   
 - [rufus 설치 후 부팅 USB 만들기](https://blog.akionz.com/74)
 - [MBR과 GPT의 차이](https://m.blog.naver.com/kangyh5/221846708215)
-- 
+- [가상 디스크 삭제 및 설치 방법](https://www.dell.com/support/kbdoc/ko-kr/000139093/a-a-a-dell-a-a-a-a-a-a-a-a-a-a-a-a-a-a-dell-poweredge)
