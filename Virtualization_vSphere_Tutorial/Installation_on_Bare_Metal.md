@@ -57,8 +57,6 @@ DELL용 ESXi를 선택하겠습니다.
 ![image](https://user-images.githubusercontent.com/43658658/142867974-510adfe0-5639-4f82-81f6-6de9e932f233.png)
 
 BIOS 모드를 빠져나와 `[Ctrl]+[Alt]+[Delete]`를 눌러 재부팅합니다.   
-![image](https://user-images.githubusercontent.com/43658658/142868766-5aae597d-a4d1-4d7a-9a62-4725739eb8e8.png)
-
 [F11]을 눌러 Boot Manager로 들어 가서 Hard Disk에서 부팅 USB를 선택합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142869720-a55a07c2-8d9e-42d1-a351-06cd1823ce99.png)   
 
