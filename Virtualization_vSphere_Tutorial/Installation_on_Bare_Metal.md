@@ -18,7 +18,10 @@ DELL용 ESXi를 선택하겠습니다.
 ![image](https://user-images.githubusercontent.com/43658658/142853537-c1039273-a4da-42f7-bb99-19deb1e31eb7.png)
 
 하단의 시작을 누릅니다.   
-![image](https://user-images.githubusercontent.com/43658658/142853706-6ff06b36-b28f-45dd-99a9-ed647d8c17ba.png)
+![image](https://user-images.githubusercontent.com/43658658/142855314-8917451e-48b0-415e-925a-a5e8fd3b99f5.png)
+* 파티션 형식 
+  - MBR : 부팅 시 BIOS 모드와 UEFI 모드에서 모두 지원
+  - GPT : 부팅 시 UEFI 모드만 지원. 2020년 이후부터 생산되는 메인보드는 UEFI 모드만 지원.
 
 표시되는 메시지는 모두 `확인`을 누릅니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142854045-d4c2ffa7-bdcd-412f-b766-0ca9147521b3.png)
@@ -40,3 +43,5 @@ DELL용 ESXi를 선택하겠습니다.
 
 참고 사이트   
 - [rufus 설치 후 부팅 USB 만들기](https://blog.akionz.com/74)
+- [MBR과 GPT의 차이](https://m.blog.naver.com/kangyh5/221846708215)
+- 
