@@ -45,7 +45,7 @@ DELL용 ESXi를 선택하겠습니다.
 ![image](https://user-images.githubusercontent.com/43658658/142868581-f480d944-188f-4404-8411-7798dd3cb204.png)
 
 장비를 부팅시키고 `[Ctrl]+[R]` RAID 컨트롤러 BIOS로 진입합니다.   
-![image](https://user-images.githubusercontent.com/43658658/142869833-08113caa-ed6c-4572-b1cf-25671a90cd51.png)
+![image](https://user-images.githubusercontent.com/43658658/142873797-61492100-d6af-4e48-9ecf-b6354a135da0.png)
 
 레이드를 모두 지웁니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142867591-57db318a-d608-4e3e-b7a6-23063855a08f.png)
