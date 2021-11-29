@@ -115,7 +115,7 @@ VMtools 중 Driver를 이용해서 오버헤드를 일으켜 스왑파일로 오
 
 #### RAID 0+1
 
-![image](https://user-images.githubusercontent.com/43658658/143804320-3d8f6e2c-a8ea-4b38-a6ec-ef0cf3e95b36.png)
+![image](https://user-images.githubusercontent.com/43658658/143804320-3d8f6e2c-a8ea-4b38-a6ec-ef0cf3e95b36.png)   
 `4개`의 하드디스크를 사용해 RAID 0 방식으로 데이터를 `스트라이핑`하고, RAID 1 방식으로 `미러링`합니다.
 
 장점   
@@ -123,7 +123,7 @@ VMtools 중 Driver를 이용해서 오버헤드를 일으켜 스왑파일로 오
 
 #### RAID 1+0
 
-![image](https://user-images.githubusercontent.com/43658658/143803512-f42d6795-d2bb-4acc-9c85-3695e8fc2307.png)
+![image](https://user-images.githubusercontent.com/43658658/143803512-f42d6795-d2bb-4acc-9c85-3695e8fc2307.png)   
 `4개`의 하드디스크를 사용해 RAID 1 방식으로 데이터를 `미러링`하고, 이를 다시 RAID 0 방식으로 `스트라이핑`하는 방식입니다.   
 
 예를 들어, RAID 10 에 있는 4개의 400GB 하드디스크(총 1600GB)는 운영체제에서 하나의 800GB 하드디스크로 나타납니다.
