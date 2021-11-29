@@ -222,7 +222,7 @@ SSO로 사용할 도메인 이름 및 계정을 설정합니다.
 설치가 모두 완료되면, 설정한 `vCenter IP 주소/ui`로 접속합니다(`172.16.0.169/ui`).   
 ![image](https://user-images.githubusercontent.com/43658658/143843744-16c6ac15-a763-4e5b-8574-d00932d9f0d3.png)
 
-`administrator@설정한도메인/설정한패스워드`를 입력하면 정상적으로 접속이 되는 것을 확인할 수 있습니다.   
+SSO에서 설정한 `administrator@설정한도메인/설정한패스워드`를 입력하면 정상적으로 접속이 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143844313-05ee7714-16ad-4d74-9d53-d3e3bbd8f96d.png)
 
 설치한 ESXi 서버에 들어가보면 VM으로 위에서 설치한 vCenter Server가 생성되어 있는 것을 확인할 수 있습니다.   
