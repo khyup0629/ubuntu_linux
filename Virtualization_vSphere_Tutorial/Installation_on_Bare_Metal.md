@@ -144,6 +144,56 @@ IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모
 
 정적 IP가 구성되었습니다.   
 
+## vCenter 설치하기
+
+vCenter Server iso 파일이 들어있는 USB를 PC에 마운트하고 iso 파일 위에서 [우클릭] > [탑재]를 누릅니다.   
+![image](https://user-images.githubusercontent.com/43658658/143832280-40f04b24-ca63-493d-9100-0847962d212f.png)
+
+해당 경로로 들어가서 `installer`를 실행합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143832372-7f01ae85-6551-495d-b707-b39d341dd0de.png)
+
+설치 마법사를 시작합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143832768-1e8accb6-2dca-4a3b-83ce-15a4fbab8df8.png)
+
+라이센스에 동의합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143833032-e7adc478-b644-46bd-b998-210362f1ffd3.png)
+
+ESXi 서버에 VM을 올릴 것이므로 내장형(Embedded)로 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143833162-56db0233-431e-47ed-a348-3178c90c9cca.png)
+
+vCenter Server가 설치될 ESXi 호스트주소와 root 계정 정보를 입력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143833402-be751a7c-f7b0-4186-ad8c-f405b1216376.png)   
+![image](https://user-images.githubusercontent.com/43658658/143833489-fb54f460-63d9-411c-9eba-ce8e68db64d6.png)
+
+생성될 vCenter Server 이름과 계정 정보를 입력합니다(`G*********!`).   
+![image](https://user-images.githubusercontent.com/43658658/143833701-6d2903bf-52e1-4f8e-9524-46fefeeed9ca.png)
+
+`Deployment size` 별로 리소스가 표시되어 있습니다. 큰 스펙은 필요하지 않으므로 `Tiny`로 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143834091-53bbaca9-1979-4c66-9fff-c40afe364c95.png)
+
+vCenter Server가 저장될 스토리지를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143834189-da479cfd-308a-4ac6-b391-73e6283cf6fd.png)
+
+IP 정보 및 시스템 이름을 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143836204-bd287fdf-d28a-4584-ae30-95fe5342d707.png)
+
+전체 설정을 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143836976-5404f99d-5b13-4ae7-a75c-550e562e0edd.png)
+
+설치가 끝나면 설정 마법사가 나타납니다.   
+ESXi 서버와 시간을 동기화하고, SSH 접근을 활성화 합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143839568-986e0dc5-26bb-4539-86bb-9d9d5fb25a2f.png)   
+* `SSH` : 원격지에 접속하기 위한 보안 프로토콜.
+
+SSO로 사용할 도메인 이름 및 계정을 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143839838-6c74e052-d216-423b-a550-f95e5dc28650.png)
+* `SSO` : 여러 개의 사이트에서 한번의 로그인으로 다른 사이트들에 자동으로 접속할 수 있는 것을 말합니다.   
+  - 하나의 사용자 정보를 기반으로 여러 시스템을 하나의 통합 인증으로 사용하게 하는 것을 말합니다.
+
+전체 설정을 확인합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143840473-ab51acac-60f3-4dd1-bcc7-45f9b58e7d6a.png)
+
+
 
 
 
@@ -154,4 +204,6 @@ IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모
 - [MBR과 GPT의 차이](https://m.blog.naver.com/kangyh5/221846708215)
 - [가상 디스크 삭제 및 설치 방법](https://www.dell.com/support/kbdoc/ko-kr/000139093/a-a-a-dell-a-a-a-a-a-a-a-a-a-a-a-a-a-a-dell-poweredge)
 - [HP 장비 RAID 구성 방법](https://soldier5683.tistory.com/29)
-- 
+- [vCenter Server 설치 방법](https://imbang.net/2019/05/18/vcsa-vcenter-server-appliance-6-5-gui-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0/)
+
+
