@@ -114,35 +114,61 @@ Static모드로 IP 주소를 설정합니다.
 부팅 USB와 모니터, 키보드를 서버 장비에 연결하고, 서버 장비를 인터넷에 연결합니다.
 
 부팅이 진행되면 `F8`을 열심히 눌러 가상 디스크 설정 화면으로 들어갑니다.   
+![image](https://user-images.githubusercontent.com/43658658/143846999-d72fc704-13c3-4dfc-953d-3058bda6bd43.png)
 
 기존에 존재하는 가상 디스크를 지웁니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847061-118c1d4c-a1e6-409f-9485-ebd0bc6b9ab0.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847115-62fc11e3-d558-4e91-a0e9-dcb86ec4d571.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847163-728a64d2-21b2-4137-b772-d86579f48133.png)
 
 새로운 가상 디스크를 만듭니다.   
-
+![image](https://user-images.githubusercontent.com/43658658/143847211-d5fbd980-41b0-4ab4-9f89-0a6d1cc52aef.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847288-7d9072a2-db67-44e2-8de4-0b2a9846fb17.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847339-5f7df86b-9d39-4acd-ac9c-2f8188ad3dcb.png)   
 * `maxmum boot partition` : OS를 설치할 때 설치 파일들이 저장되기 위한 파티션 용량을 설정합니다.   
   - 구형 OS의 경우 4GB 로도 공간이 충분했으나, 점점 설치 파일의 용량이 커지기 시작하면서 8GB를 선택하는 옵션이 추가되었습니다.
 
 부팅 USB에 있는 iso 파일을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847409-6c1d20c8-2a34-4234-b669-038265a3779e.png)
+![image](https://user-images.githubusercontent.com/43658658/143847457-9d58853a-7071-449a-bc63-d1db06820100.png)
 
 라이센스를 허용합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847488-ad0581cb-7a4c-4932-bc9f-0c95d1e09c98.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847527-8840ecb2-b2da-46f1-a671-3e0bebd25655.png)
 
 생성한 가상 디스크를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847560-fb0d539f-67cc-4d7f-a0c6-30a19b9c9d53.png)
 
 키보드 레이아웃을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847586-48ad7e40-a21b-4bba-9487-4cd35da4cf80.png)
 
 비밀번호를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847612-9d3fb8ff-ad09-4070-9c52-a0e1be45973a.png)
 
 설치를 시작합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847646-f2610db6-86f7-464b-a110-62f24f1c277e.png)   
+![image](https://user-images.githubusercontent.com/43658658/143847676-84d03d56-3edd-4991-beb9-ed5d82163096.png)
 
 설치가 완료되면 재부팅하고 부팅 USB를 언마운트합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847708-2693e811-2626-47b8-97fc-35bf15a09ff8.png)
 
 IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모드로 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847779-2a47cccb-740e-4dee-a0a6-a1ba72c5bcdd.png)
 
-`Configure Management Network` > `IPv4 Configuration`   
+`Configure Management Network`에 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143847856-941f267e-74b6-48e7-a50d-a4b7329e2d91.png)
 
-정적 IP를 구성합니다.   
+랜선을 1번 포트에 꽂습니다.   
+![image](https://user-images.githubusercontent.com/43658658/143848077-94bb0cc6-02ff-442b-b385-1cc7032746ce.png)
+
+`Network Adapters` 탭으로 들어가서 랜선을 꽂은 포트를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143848209-2616b5d7-e8a0-449f-9084-18f497b1c759.png)
+
+`IPv4 Configuration`에서 IP 정보를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143848309-675e4963-6a47-41f7-b4f6-d28ae67a7c49.png)
 
 정적 IP가 구성되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/143848373-05849397-4c9a-4b6a-af2f-ff461eaf0893.png)
 
 ## vCenter 설치하기
 
@@ -198,6 +224,9 @@ SSO로 사용할 도메인 이름 및 계정을 설정합니다.
 
 `administrator@설정한도메인/설정한패스워드`를 입력하면 정상적으로 접속이 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143844313-05ee7714-16ad-4d74-9d53-d3e3bbd8f96d.png)
+
+설치한 ESXi 서버에 들어가보면 VM으로 위에서 설치한 vCenter Server가 생성되어 있는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/143844926-346aea8b-30e6-4fc4-bcba-e150ef32187a.png)
 
 ---
 
