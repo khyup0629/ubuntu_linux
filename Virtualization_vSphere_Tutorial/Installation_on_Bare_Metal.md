@@ -172,7 +172,12 @@ IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모
 
 IP 주소로 접속하면 아래와 같은 화면이 나타납니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143851063-0c9fd9db-3327-443a-a468-5b84e57ea9a5.png)
-* Dell 장비의 이미지 파일의 경우 별도로 vSphere Client 프로그램을 설치하지 않아도 ESXi 서버로 접속이 가능했었는데, HP 장비는 아니었습니다.
+* Dell 장비의 이미지 파일의 경우 별도로 vSphere Client 프로그램을 설치하지 않아도 ESXi 서버로 접속이 가능했었는데, HP 장비는 아니었습니다.   
+* vSphere는 3가지의 클라이언트를 지원합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143861459-e5016a19-e12c-437b-8167-68c4519aa16a.png)   
+`Host Client`는 `vSphere 6.0 Update 2` 버전부터 지원합니다.   
+앞서 Dell에 설치한 ESXi의 버전은 `6.0 Update 3` 버전이고, HP에 설치한 ESXi의 버전은 `6.0`버전이라 Dell은 `Host Client`가 있었고, HP는 없었습니다.   
+따라서 HP의 경우 별도로 `vSphere Client` 프로그램을 설치해서 `ESXi 서버`에 접근해야 합니다.
 
 vSphere Client를 설치합니다.
 ![image](https://user-images.githubusercontent.com/43658658/143856984-144a0d8d-47b7-45c5-924b-454237d171a0.png)
@@ -241,6 +246,22 @@ SSO에서 설정한 `administrator@설정한도메인/설정한패스워드`를 
 설치한 ESXi 서버에 들어가보면 VM으로 위에서 설치한 vCenter Server가 생성되어 있는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143844926-346aea8b-30e6-4fc4-bcba-e150ef32187a.png)
 
+## vSphere의 3가지 클라이언트
+
+vSphere를 사용하다 보면 혼동되는 개념이 있습니다. 바로 클라이언트입니다.   
+`vSphere Client`는 프로그램 버전이 있고, 웹 버전이 있습니다.    
+그리고 어떤 것은 `Host Client`로 웹 접근이 가능하고 어떤 것은 `vSphere Client` 프로그램으로 접근해야 합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/143862361-bc5aa883-cb8f-4221-8463-6c321a1c653c.png)   
+초기 vSphere는 `vSphere Client`라는 이름의 클라이언트 `프로그램`을 별도로 설치해서 vCenter와 ESXi 서버에 접근이 가능했습니다.   
+이후 클라이언트 프로그램을 별도로 설치해야 하는 번거로움을 개선하고자 `웹 클라이언트를 개발`했습니다.   
+그래서 `vCenter`는 Adobe Flash 웹 기반의 `vSphere Web Client`로, `ESXi`는 HTML 웹 기반의 `Host Client`로 접근할 수 있게 되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/142873371-18ce738c-a74b-4ec3-888f-a7ece73b70be.png)   
+하지만 Adobe Flash가 더 이상 웹에서 지원하지 않게 되면서, 같은 이름의 HTML 웹 기반 `vSphere Client`가 새롭게 등장하게 되었습니다.
+
+요약하자면, 현재 `vSphere Client`는 프로그램이 아닌 `vCenter`에 접근하기 위한 웹 클라이언트를 지칭합니다.   
+`Host Client`는 `vSphere 6.0 Update 2` 버전부터 지원하는 `ESXi` 접근용 웹 클라이언트를 지칭합니다.
+
 ---
 
 참고 사이트   
@@ -249,5 +270,5 @@ SSO에서 설정한 `administrator@설정한도메인/설정한패스워드`를 
 - [가상 디스크 삭제 및 설치 방법](https://www.dell.com/support/kbdoc/ko-kr/000139093/a-a-a-dell-a-a-a-a-a-a-a-a-a-a-a-a-a-a-dell-poweredge)
 - [HP 장비 RAID 구성 방법](https://soldier5683.tistory.com/29)
 - [vCenter Server 설치 방법](https://imbang.net/2019/05/18/vcsa-vcenter-server-appliance-6-5-gui-%EC%84%A4%EC%B9%98-%ED%95%98%EA%B8%B0/)
-
+- [vSphere 클라이언트 종류](https://kb.vmware.com/s/article/2147929)
 
