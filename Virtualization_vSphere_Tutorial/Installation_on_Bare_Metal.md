@@ -174,7 +174,14 @@ IP 주소로 접속하면 아래와 같은 화면이 나타납니다.
 ![image](https://user-images.githubusercontent.com/43658658/143851063-0c9fd9db-3327-443a-a468-5b84e57ea9a5.png)
 * Dell 장비의 이미지 파일의 경우 별도로 vSphere Client 프로그램을 설치하지 않아도 ESXi 서버로 접속이 가능했었는데, HP 장비는 아니었습니다.
 
+vSphere Client를 설치합니다.
+![image](https://user-images.githubusercontent.com/43658658/143856984-144a0d8d-47b7-45c5-924b-454237d171a0.png)
 
+IP 주소로 접속합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143857005-7e1ab0be-5d06-4114-b27f-b1ca7016494d.png)
+
+정상적으로 접속 되는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/143857038-99142293-664f-44ce-aa9d-c847332f8596.png)
 
 ## vCenter 설치하기
 
