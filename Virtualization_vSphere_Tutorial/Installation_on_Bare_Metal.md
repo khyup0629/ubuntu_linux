@@ -170,6 +170,12 @@ IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모
 정적 IP가 구성되었습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143848373-05849397-4c9a-4b6a-af2f-ff461eaf0893.png)
 
+IP 주소로 접속하면 아래와 같은 화면이 나타납니다.   
+![image](https://user-images.githubusercontent.com/43658658/143851063-0c9fd9db-3327-443a-a468-5b84e57ea9a5.png)
+* Dell 장비의 이미지 파일의 경우 별도로 vSphere Client 프로그램을 설치하지 않아도 ESXi 서버로 접속이 가능했었는데, HP 장비는 아니었습니다.
+
+
+
 ## vCenter 설치하기
 
 vCenter Server iso 파일이 들어있는 USB를 PC에 마운트하고 iso 파일 위에서 [우클릭] > [탑재]를 누릅니다.   
