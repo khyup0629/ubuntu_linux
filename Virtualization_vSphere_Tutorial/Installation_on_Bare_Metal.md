@@ -109,9 +109,49 @@ Static모드로 IP 주소를 설정합니다.
 접속이 정상적으로 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/142873470-93fd344d-e6ae-4e7e-8b6d-7435025f7188.png)
 
+## HP사 장비 ESXi 설치
+
+부팅 USB와 모니터, 키보드를 서버 장비에 연결하고, 서버 장비를 인터넷에 연결합니다.
+
+부팅이 진행되면 `F8`을 열심히 눌러 가상 디스크 설정 화면으로 들어갑니다.   
+
+기존에 존재하는 가상 디스크를 지웁니다.   
+
+새로운 가상 디스크를 만듭니다.   
+
+* `maxmum boot partition` : OS를 설치할 때 설치 파일들이 저장되기 위한 파티션 용량을 설정합니다.   
+  - 구형 OS의 경우 4GB 로도 공간이 충분했으나, 점점 설치 파일의 용량이 커지기 시작하면서 8GB를 선택하는 옵션이 추가되었습니다.
+
+부팅 USB에 있는 iso 파일을 선택합니다.   
+
+라이센스를 허용합니다.   
+
+생성한 가상 디스크를 선택합니다.   
+
+키보드 레이아웃을 선택합니다.   
+
+비밀번호를 설정합니다.   
+
+설치를 시작합니다.   
+
+설치가 완료되면 재부팅하고 부팅 USB를 언마운트합니다.   
+
+IP를 설정해야 합니다. `F2`키를 눌러 시스템 커스터마이즈 모드로 접속합니다.   
+
+`Configure Management Network` > `IPv4 Configuration`   
+
+정적 IP를 구성합니다.   
+
+정적 IP가 구성되었습니다.   
+
+
+
+
 ---
 
 참고 사이트   
 - [rufus 설치 후 부팅 USB 만들기](https://blog.akionz.com/74)
 - [MBR과 GPT의 차이](https://m.blog.naver.com/kangyh5/221846708215)
 - [가상 디스크 삭제 및 설치 방법](https://www.dell.com/support/kbdoc/ko-kr/000139093/a-a-a-dell-a-a-a-a-a-a-a-a-a-a-a-a-a-a-dell-poweredge)
+- [HP 장비 RAID 구성 방법](https://soldier5683.tistory.com/29)
+- 
