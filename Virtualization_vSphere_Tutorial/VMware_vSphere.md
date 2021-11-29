@@ -180,9 +180,56 @@ VMtools 중 Driver를 이용해서 오버헤드를 일으켜 스왑파일로 오
   - 2개의 패리티 연산과 기록이 필요하기 때문입니다.
 * 복잡한 기술인 만큼, 데이터를 복원할 때 시간이 더욱 소요됩니다.
 
+## 스토리지 연결 방식
+
+> <h3>DAS(Direct Attached Storage)</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/143812672-86f21cce-2269-49df-8861-98e56bbce04e.png)   
+서버(컴퓨팅 노드)와 스토리지가 `직접 연결`되는 방식입니다. 네트워크 상의 다른 서버는 저장된 데이터에 액세스할 수 없습니다.   
+이때 쓰이는 프로토콜은 FC이며 FC 케이블을 통해서 서로 연결됩니다.
+
+* FC(Fibre Channel) : 서버 및 하이퍼바이저인 ESXi 호스트와 고성능 스토리지를 연결하는 특수한 고속 네트워크입니다.
+  - FC는 FC 프로토콜을 통해 SCSI 트래픽을 가상 시스템에서 FC SAN 장비로 전송합니다.
+  - FC는 물리적인 서버에 HBA이 설치되어 있어야 합니다.
+
+> <h3>NAS(Network Attached Storage)</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/143812703-f8bd8678-28b3-45ce-8e3a-020f6f139ffe.png)   
+`네트워크`를 통해 스토리지에 연결하는 방식입니다. 구축이 용이하고 저렴하며, 여러 컴퓨터가 동일한 저장소 공간을 공유할 수 있습니다.   
+`NFS`와 같은 프로토콜을 통해 접속할 수 있습니다.
+
+> <h3>SAN(Storage Area Network)</h3>
+
+![image](https://user-images.githubusercontent.com/43658658/143812523-28c25af6-5de8-4135-8022-204338e291cd.png)   
+서버와 스위치, 스위치와 스토리지가 연결된 방식입니다. 스위치는 SAN 방식을 지원하는 FC(Fibre Channel) 스위치입니다.   
+서버와 스위치 사이에 FC 케이블을 통해 연결되어 있습니다. 고속이며 여러 서버에서 접근할 수 있습니다.
+
+## VMware 전송 방식
+
+> <h3>FC</h3>
+
+FC(Fibre Channel) : 서버 및 하이퍼바이저인 ESXi 호스트와 고성능 스토리지를 연결하는 특수한 고속 네트워크입니다.
+- FC는 FC 프로토콜을 통해 SCSI 트래픽을 가상 시스템에서 FC SAN 장비로 전송합니다.
+- FC는 물리적인 서버에 `HBA`이 설치되어 있어야 합니다.
+
+> <h3>iSCSI</h3>
+
+SCSI 트래픽을 LAN 케이블을 사용하는 네트워크에서도 사용이 가능하도록 TCP/IP 프로토콜로 패키징해서 전송하는 방식입니다.
+
+> <h3>FCoE(Fibre Channel over Ethernet)</h3>
+
+네트워크를 통해 FC 프로토콜을 전송하는 방식입니다. SAN 네트워크를 위한 별도의 장비가 필요하지 않고 고속의 네트워크만 있다면 기존 네트워크 라인을 통해서도
+SAN 형태의 스토리지를 연결할 수 있는 방식입니다.
+
+> <h3>NFS(Network File Share)</h3>
+
+NAS 방식으로 연결할 때 NFS 프로토콜을 통해 스토리지에 접근합니다.
+`NIC`를 이용해 연결됩니다.
+
 ---
 
 [참고 사이트]   
 * [RAID 개념 1](https://hellowoori.tistory.com/53)
 * [RAID 개념 2](https://www.prepressure.com/library/technology/raid)
+* [스토리지 연결 방식](https://ma-you-ing.tistory.com/16)
 
