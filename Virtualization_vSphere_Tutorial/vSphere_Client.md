@@ -29,10 +29,32 @@ VM 위치를 확인합니다.
 같은 방법으로 나머지 호스트도 추가합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143969301-74db4716-6b9b-4318-b700-7a537cabebcc.png)
 
+## iSCSI 공유 스토리지
+
+RJ45를 통한 네트워크 환경에서 서버와 스토리지를 연결하기 위해 iSCSI 프로토콜을 이용합니다.   
+(SAN 방식 FC 프로토콜을 통해 SCSI 명령어를 전달하는데, 네트워크 환경에서는 iSCSI 프로토콜을 이용해 SCSI 명령어를 전달합니다).
+iSCSI 공유 스토리지를 구축하고, ESXi 호스트들을 공유 스토리지와 연결합니다.   
+
+클러스터를 구성할 때 공유 스토리지가 없다면 클러스터 구성을 할 수 없습니다.
 
 
-클러스터
 
-복수의 ESXi 호스트를 논리적으로 그룹화한 것입니다. vCenter는 동일한 클러스터에 속한 ESXi들의 리소스를 클러스터 단위의 리소스로 관리합니다.
+## 클러스터 구성하기
 
+`클러스터` : 복수의 ESXi 호스트를 논리적으로 그룹화한 것입니다. vCenter는 동일한 클러스터에 속한 ESXi들의 리소스를 클러스터 단위의 리소스로 관리합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/143991875-e2e48f04-dd6a-4ecd-adf0-0d8b81f51669.png)   
+![image](https://user-images.githubusercontent.com/43658658/143991994-bcfeacaa-1310-476e-a656-7b731bd85771.png)   
+ESXi 호스트 2개를 드래그 앤 드롭하여 클러스터 안으로 넣습니다.   
+![image](https://user-images.githubusercontent.com/43658658/143992141-23096bd5-e1ee-421e-834f-9e9b372e584a.png)
+
+## 데이터스토어 생성하기
+
+`데이터스토어` : 데이터베이스 뿐만이 아니라 모든 데이터를 저장하고 관리하기 위한 저장소
+
+클러스터 위에서 우클릭해서 데이터스토어를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/143993998-e1af44c9-43ad-456d-b76e-385a6e3b544a.png)
+
+![image](https://user-images.githubusercontent.com/43658658/143994027-54f93cdd-f75c-4727-962a-9293ee717368.png)   
+* `VMFS` : 여러 물리적 호스트가 동일 스토리지에 대하여 동시에 읽기 및 쓰기 작업을 수행할 수 있는 클러스터 파일 시스템.
 
