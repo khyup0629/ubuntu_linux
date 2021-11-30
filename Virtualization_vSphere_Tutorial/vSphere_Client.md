@@ -29,7 +29,7 @@ VM 위치를 확인합니다.
 같은 방법으로 나머지 호스트도 추가합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143969301-74db4716-6b9b-4318-b700-7a537cabebcc.png)
 
-## iSCSI 공유 스토리지
+## 가상 iSCSI 공유 스토리지
 
 RJ45를 통한 네트워크 환경에서 서버와 스토리지를 연결하기 위해 `iSCSI 프로토콜`을 이용합니다.   
 (SAN 방식 FC 프로토콜을 통해 SCSI 명령어를 전달하는데, NAS 환경에서는 iSCSI 프로토콜을 이용해 SCSI 명령어를 전달합니다).
@@ -37,8 +37,57 @@ iSCSI 공유 스토리지를 구축하고, ESXi 호스트들을 공유 스토리
 
 클러스터를 구성할 때 클러스터 내 ESXi들의 `공유 스토리지가 없다면` 클러스터 구성을 할 수 없습니다.
 
+> <h3>Window Server 2016 설치</h3>
+
 가상머신을 하나 생성하고 윈도우 서버 OS를 설치합니다.   
+
+iso 파일로 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144007731-b1a5c49c-26dd-4933-95f5-5b11ff44b222.png)   
+![image](https://user-images.githubusercontent.com/43658658/144007904-c6087e6c-8040-4da2-aa3f-1aea7da6d009.png)   
+GUI로 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144008046-e66e7263-529b-42a5-97d1-cc0179b514b4.png)   
+윈도우만 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144008169-7963ebfa-e8f6-40c2-addf-cfc17e1a75ce.png)   
+설치가 완료되면 비밀번호를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144009137-5367eb59-b36d-4fec-a9e9-6c85c5cd3adb.png)
+`Ctrl+Alt+Del`을 누르라고 나와있는데, 실제로 키보드로 누르면 눌러지지 않습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144009207-b3251da2-3ad0-4bb1-bcb2-a4954a0d3c59.png)   
+해결 방법은 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144009305-467c441c-3dbb-4d18-a7a6-65a2876045f1.png)   
+
+> <h3>Window Server 한글화</h3>
+
+[Settings] > [Time & Language] > [Region & Language]에서 `한국어`를 선택하고 `Options`를 선택합니다.   
+(만약 한국어가 없다면 `Add a language`를 클릭해서 한국어를 추가합니다)   
+![image](https://user-images.githubusercontent.com/43658658/144009745-e7156b8e-e116-4b90-870f-b58cab4607b9.png)
+
+언어 팩을 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144009905-b553d5e5-98cf-40d9-9207-adfd48f99214.png)
+
+설치를 완료하고 재부팅을 하면 언어가 한글로 바뀌어 있음을 알 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144010107-54ae8eab-6ace-4b05-b7bc-538d1effe74b.png)
+
+> <h3>가상 iSCSI 공유 스토리지 구성</h3>
+
 이 윈도우 서버에 `가상 iSCSI 공유 스토리지`를 구성할 것입니다.   
+
+먼저 [서버 관리자]로 접속합니다.   
+iSCSI를 이용하기 위해 필요한 것들을 설치합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144021568-202c969f-6479-4b55-b7c9-b61459ed3c23.png)
+* iSCSI에서 연결하려는 주체는 초기자(initiator), 접속 디바이스 대상을 타겟(Target)이라고 부릅니다.
+* VMware 환경에서는 연결의 주체(`초기자`)가 ESXi 호스트, 연결 대상 디바이스(`타겟`)는 스토리지입니다.
+
+[파일 및 저장소 서비스]   
+![image](https://user-images.githubusercontent.com/43658658/144010949-f41eb87f-b5a0-4525-8d5c-95d9e16151d9.png)
+
+iSCSI 탭에서 iSCSI 가상 스토리지를 만듭니다.   
+![image](https://user-images.githubusercontent.com/43658658/144022620-a44f7177-6ffd-4514-a933-837997dca720.png)   
+![image](https://user-images.githubusercontent.com/43658658/144022747-66c7a027-5195-4509-9530-16f8c6019a67.png)   
+![image](https://user-images.githubusercontent.com/43658658/144023516-da018aae-3ff3-4549-ac1e-5823995cc8e7.png)   
+![image](https://user-images.githubusercontent.com/43658658/144023185-0f5fa422-e066-40d2-a94b-2a5b9b334404.png)   
+![image](https://user-images.githubusercontent.com/43658658/144023564-c90fb10e-fda4-4f6b-894e-5f083e1affae.png)   
+
+
 
 
 
