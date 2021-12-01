@@ -31,6 +31,24 @@ vMotion을 수행할 것이므로 `계산 리소스만 변경`을 클릭합니�
 * `스토리지만 변경` : Storage vMotion을 수행.
 * `계산 리소스 및 스토리지 모두 변경` : vMotion + Storage vMotion
 
+> <h3>EVC 설정</h3>
+
+CPU 간의 호환성을 맞추기 위해 EVC를 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234434-358d7f63-4800-4115-a18f-6c41cc0ca193.png)
+
+`172.16.0.172`와 `172.16.0.173`의 CPU는 아래와 같이 동일하지만 ESXi 버전이 다릅니다.   
+![image](https://user-images.githubusercontent.com/43658658/144233957-7fa3995f-e4b6-4c59-979d-5bb436e4a8d4.png)   
+![image](https://user-images.githubusercontent.com/43658658/144233967-653d10c1-20bb-4102-85ba-6c8d3aa12c99.png)
+
+`172.16.0.172`의 가능한 EVC 모드는 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234134-030fddc0-f537-49aa-ba7a-3c773f486ca5.png)
+
+`172.16.0.173`의 가능한 EVC 모드는 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234304-5a361af3-1073-4181-8432-4fd121eee4c3.png)
+
+인텔의 `Merom`으로 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234564-c46b98ad-5d7d-4c6c-8393-e671a8892512.png)
+
 
 
 
