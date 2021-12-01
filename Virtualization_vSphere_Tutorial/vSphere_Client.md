@@ -237,11 +237,12 @@ ISO 파일을 업로드 해봅니다.
 ![image](https://user-images.githubusercontent.com/43658658/144162065-1b4c4a81-7cca-430a-9a53-d2dfa05e8988.png)   
 현재 1개의 포트에만 vSwitch가 연결되어 있는 것을 확인할 수 있습니다.
 
-> <h3>VM 네트워크를 별도의 가상 스위치로 이동</h3>
+> <h3>별도의 가상 스위치에 VM 네트워크 생성</h3>
 
 앞서 Management 네트워크와 VM 네트워크가 하나의 가상 스위치에 구성되어 있고, 가상 스위치와 물리 서버가 하나의 라인으로 연결되면 발생할 수 있는 문제점에 대해 설명해드렸습니다.   
 
-그래서 별도의 가상 스위치를 생성해주고, VM 네트워크를 새로 생성한 가상 스위치에 옮겨서 Management 네트워크와 VM 네트워크를 분리해주도록 하겠습니다.
+그래서 별도의 `가상 스위치를 생성`해주고, `가상머신의 네트워크`를 새로 생성한 가상 스위치로 바꿔서 
+Management 네트워크와 VM 네트워크의 `역할을 서로 다른 스위치에 분리`해주도록 하겠습니다.
 
 별도의 `가상 스위치를 생성`합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144163211-f816c096-5c2f-492f-987d-80dbb21d0953.png)
@@ -267,11 +268,49 @@ VM 네트워크를 옮길 것이므로 `표준 스위치용 가상 시스템 포
 ![image](https://user-images.githubusercontent.com/43658658/144164319-fb59c6d6-0245-4790-8e3a-81231384b30c.png)   
 ![image](https://user-images.githubusercontent.com/43658658/144164544-d936fe71-917f-49bd-a8bd-8fa48743759f.png)
 
-`vSwitch0`의 VM 네트워크를 `vSwitch1`로 옮겨보겠습니다.   
-`vSwitch0`, `vSwitch1`이 있는 ESXi 호스트 위의 VM의 네트워크 어댑터를 `vSwitch1`로 변경해줍니다.   
-![image](https://user-images.githubusercontent.com/43658658/144171987-8daad2ec-c8ba-4ea2-84a3-2ef73b47b89e.png)   
-![image](https://user-images.githubusercontent.com/43658658/144172192-6f6cd7be-e635-4ca2-a625-28cb08d188e5.png)   
-![image](https://user-images.githubusercontent.com/43658658/144172232-6d0f6a50-c122-4937-8b33-bddf6b1e7b69.png)
+`vSwitch0`의 VM 네트워크가 아닌 `vSwitch1`의 `1층 VM 네트워크`로 가상머신의 네트워크를 변경해주겠습니다.
 
+테스트를 위해 호스트 `172`에 윈도우 서버 가상머신을 하나 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144178039-7c2bc3ba-1354-4b03-bb11-d0ba09d15171.png)
+
+윈도우 서버 VM의 네트워크 어댑터를 `vSwitch1`의 `1층 VM 네트워크`로 변경해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144178110-db154f2e-79e2-43d3-a9ee-108b07766a87.png)   
+![image](https://user-images.githubusercontent.com/43658658/144178158-bfd2c13e-288f-4be5-811e-72debb1550a1.png)   
+![image](https://user-images.githubusercontent.com/43658658/144178191-07038750-c182-413e-847f-f3d506edfe35.png)
+
+> <h3>Teaming을 통한 NIC 이중화</h3>
+
+`Teaming` : 2개 이상의 물리 NIC를 묶어서 하나의 이더넷 포트로 사용하는 기술입니다.   
+
+이렇게 티밍을 하는 것을 `이중화`라고 부릅니다.   
+
+`이중화`를 하는 이유는 가용성 때문입니다. VM 네트워크 담당 NIC가 1개 밖에 없다면 1개의 라인에 문제가 생겼을 때 그 즉시 네트워크가 끊기게 됩니다.   
+이중화를 하면 한 라인이 끊겨도 다른 라인을 통해 연결이 가능하기 때문에 `가용성이 높아`집니다.
+
+서버 이중화, 네트워크 스위치 이중화, 네트워크 라인 이중화, 스토리지 이중화 등 `모든 구성요소의 이중화는 필수`입니다.
+
+`[물리적 어댑터 관리]`를 클릭합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144180674-ad744a79-1916-4ca3-87c7-53b6f780e5ba.png)   
+
+어댑터를 추가합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144180934-0d3def8a-270c-4fe6-a3f3-5150db5b67af.png)
+
+`vmnic2`와 `vmnic3`을 티밍할 것이므로 `vmnic3`를 선택해주고, `대기 어댑터`로 화살표를 이용해 내립니다.   
+![image](https://user-images.githubusercontent.com/43658658/144181039-cc1dda48-dab7-4c58-876a-e87e9be79b8d.png)
+
+설정을 모두 완료하면 `vmnic2`와 `vmnic3`가 묶인 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144181146-406b257e-6539-4521-8d11-f24a2a45c0d3.png)
+* 지금 활성화된 어댑터는 `vmnic2`이고, 대기 중인 어댑터는 `vmnic3`입니다.
+* `vmnic2`에 장애가 발생하면, 트래픽이 `vmnic3`로 페일오버(failover)되어 전송됩니다.
+
+vmnic2, vmnic3로 모두 트래픽이 전송되도록 하고 싶다면 둘 다 활성화하고 로드 밸런싱을 하면 됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/144181692-c2ca4072-3ce7-46ab-9c4f-bae6f2e6ec53.png)
+
+`vmnic0`과 `vmnic1`도 마찬가지로 티밍해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144184492-1585b12f-9306-4a37-9b28-38fadb03802e.png)
+
+## 가상머신 관리
+
+> <h3>가상머신 생성</h3>
 
 
