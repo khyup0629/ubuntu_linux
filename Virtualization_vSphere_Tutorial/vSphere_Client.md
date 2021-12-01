@@ -213,3 +213,65 @@ ISO 파일을 업로드 해봅니다.
 
 용량을 증가시키면 아래와 같이 용량이 1GB 확장된 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144156095-d5dafcce-98cb-4428-b3f9-5b117806821f.png)
+
+## VMware 표준 가상 네트워크 연결 및 관리하기
+
+> <h3>vSphere 표준 가상화 스위치의 개념</h3>
+
+최초 ESXi를 설치하면 가장 먼저 가상 표준 스위치(vSwitch)가 생성됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/144157411-9566361e-5edf-4d1b-92aa-f3ccd56cccf3.png)   
+* vSwitch : 단순히 L2 트래픽이 흐르기만 하는 스위치입니다. 다른 네트워크 스위치처럼 OS가 있지도 않고, telnet으로 접속할 수도 없습니다.
+
+포트 그룹 : 같은 역할을 하는 포트의 논리적인 그룹입니다. vSwitch에는 2종류의 포트 그룹이 있습니다.   
+* `VMkernel 포트(Management 포트)` : ESXi와 vCenter 관리를 위한 전용 포트.
+* `VM 포트` : VM이 가지는 일반적인 포트.
+
+![image](https://user-images.githubusercontent.com/43658658/144160993-11366215-1c9f-4ff0-b205-7463399fac39.png)   
+현재는 테스트 환경이므로, `Management 포트`와 `VM 포트`가 같은 환경에 있습니다.   
+이렇게 되면 같은 라인으로 ESXi 트래픽과 VM 트래픽이 동시에 흐르게 되어 효율적이지 못하고 서로 영향을 줄 수 있습니다.   
+그래서 실무에서는 두 포트를 서로 분리합니다.
+
+그리고 현재 물리적인 DELL 서버 장비는 4개의 포트가 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144161913-11bf8c60-cad0-47c1-ab05-352cbbecc5d9.png)   
+`vSphere Client`를 통해 서버 장비의 pNIC(physical NIC)를 볼 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144162065-1b4c4a81-7cca-430a-9a53-d2dfa05e8988.png)   
+현재 1개의 포트에만 vSwitch가 연결되어 있는 것을 확인할 수 있습니다.
+
+> <h3>VM 네트워크를 별도의 가상 스위치로 이동</h3>
+
+앞서 Management 네트워크와 VM 네트워크가 하나의 가상 스위치에 구성되어 있고, 가상 스위치와 물리 서버가 하나의 라인으로 연결되면 발생할 수 있는 문제점에 대해 설명해드렸습니다.   
+
+그래서 별도의 가상 스위치를 생성해주고, VM 네트워크를 새로 생성한 가상 스위치에 옮겨서 Management 네트워크와 VM 네트워크를 분리해주도록 하겠습니다.
+
+별도의 `가상 스위치를 생성`합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144163211-f816c096-5c2f-492f-987d-80dbb21d0953.png)
+
+VM 네트워크를 옮길 것이므로 `표준 스위치용 가상 시스템 포트 그룹`을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144163441-ce773a14-f3fe-42fb-ac47-1114168178be.png)
+
+새로운 스위치를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144163633-07ccd7b3-ef66-4dfd-9a08-d405e88ee174.png)   
+* MTU : 패킷의 최대 용량.
+
+가상 스위치에 할당할 어댑터를 추가합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144163901-35f99510-a0d8-45e0-a492-8faa387889c3.png)   
+
+`vmnic2`를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144163948-2ae6cbda-bb7b-47db-b1df-413dc202aa46.png)   
+* `1`이 아닌 `2`를 선택하는 이유는 이후에 `vmnic0`과 `vmnic1`은 `Teaming`을 구성할 것이기 때문입니다.
+
+활성 어댑터 및으로 올 수 있도록 화살표를 통해서 옮겨줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144164172-d4ee4ed2-ca3d-468e-be2d-16d7f31acb95.png)
+
+전체 설정을 확인하고 가상 스위치를 생성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144164319-fb59c6d6-0245-4790-8e3a-81231384b30c.png)   
+![image](https://user-images.githubusercontent.com/43658658/144164544-d936fe71-917f-49bd-a8bd-8fa48743759f.png)
+
+`vSwitch0`의 VM 네트워크를 `vSwitch1`로 옮겨보겠습니다.   
+`vSwitch0`, `vSwitch1`이 있는 ESXi 호스트 위의 VM의 네트워크 어댑터를 `vSwitch1`로 변경해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144171987-8daad2ec-c8ba-4ea2-84a3-2ef73b47b89e.png)   
+![image](https://user-images.githubusercontent.com/43658658/144172192-6f6cd7be-e635-4ca2-a625-28cb08d188e5.png)   
+![image](https://user-images.githubusercontent.com/43658658/144172232-6d0f6a50-c122-4937-8b33-bddf6b1e7b69.png)
+
+
+
