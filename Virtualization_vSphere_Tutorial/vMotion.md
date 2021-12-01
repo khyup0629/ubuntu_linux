@@ -36,6 +36,8 @@ vMotion을 수행할 것이므로 `계산 리소스만 변경`을 클릭합니�
 CPU 간의 호환성을 맞추기 위해 EVC를 설정합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144234434-358d7f63-4800-4115-a18f-6c41cc0ca193.png)
 
+[CPU/EVC Matrix](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=cpu) 참고 사이트
+
 `172.16.0.172`와 `172.16.0.173`의 CPU는 아래와 같이 동일하지만 ESXi 버전이 다릅니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144233957-7fa3995f-e4b6-4c59-979d-5bb436e4a8d4.png)   
 ![image](https://user-images.githubusercontent.com/43658658/144233967-653d10c1-20bb-4102-85ba-6c8d3aa12c99.png)
