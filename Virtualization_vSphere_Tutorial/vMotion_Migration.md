@@ -14,11 +14,11 @@
 
 `172.16.0.172` 위의 윈도우 서버 가상머신을 `172.16.0.173`으로 옮기는 `마이그레이션` 실습을 해보겠습니다.   
 
-먼저 `172` ESXi 호스트에 가상머신을 생성합니다. 이때 스토리지는 공유 스토리지를 선택합니다.   
+먼저 `172` ESXi 호스트에 가상머신을 생성합니다. 이때 스토리지는 `공유 스토리지를 선택`합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144239360-045be610-8217-4ad7-9332-c7e8db57ae0b.png)
 
 마이그레이션을 시작합니다.   
-![image](https://user-images.githubusercontent.com/43658658/144228589-69d557d2-eff2-4ad9-924e-f99b1ddfa503.png)
+![image](https://user-images.githubusercontent.com/43658658/144239598-4ace6ee2-8028-4eb7-87e5-55b544e2a4b4.png)
 
 vMotion을 수행할 것이므로 `계산 리소스만 변경`을 클릭합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144229181-0dc26f6b-6ea1-4f08-827e-c413d07b1229.png)
