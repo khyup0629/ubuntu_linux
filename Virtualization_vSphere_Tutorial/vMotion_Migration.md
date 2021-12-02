@@ -105,8 +105,66 @@ DRS를 `수동`으로 설정했기 때문에 가상머신의 전원을 켤 때 �
 > <h3>Storage vMotion 실습</h3>
 
 먼저 50GB 정도의 신규 데이터스토어를 생성합니다.
+![image](https://user-images.githubusercontent.com/43658658/144348633-74e58dbb-41fe-4fa5-add4-ba4b20de275a.png)
 
+현재 첫 번째 공유 스토리지에 `Migration_Test` 가상머신 파일이 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144348794-a8fc16b3-ae6a-47b5-ab7c-ad9f50adb25c.png)
 
+`Migration_Test` 가상머신의 스토리지를 마이그레이션 하겠습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144348941-8c896d80-99b4-4bfc-8a19-2dec17cc41e7.png)
+
+`스토리지만 변경`을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144349018-2589849d-4f35-4e73-b0c9-257c159e9a21.png)
+
+50GB의 두 번째 공유 스토리지를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144349084-32388e0d-d959-4e03-b24e-eefd7a7c4f3d.png)
+
+마이그레이션이 완료되면 두 번째 공유 스토리지에 정상적으로 이동이 된 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144349203-c0ecc6a0-97e1-47eb-a24b-3d91520ea857.png)
+
+마이그레이션이 끝나고 이러한 메시지가 나타났는데,   
+![image](https://user-images.githubusercontent.com/43658658/144350234-67a34ba2-4377-4f39-b213-51c9c336333f.png)
+
+재부팅을 하면 해결됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/144350842-623c90bd-8d46-4b19-b009-330e0a509a18.png)
+![image](https://user-images.githubusercontent.com/43658658/144350873-73d7fc64-1737-4219-8a41-23db06483349.png)
+
+## Storage DRS
+
+`Storage DRS` : 데이터스토어에서 가상머신의 디스크인 VMDK를 `자동으로 이동`시키는 기능입니다.
+
+> <h3>Storage DRS 구성</h3>
+
+`Storage DRS`는 데이터스토어 클러스터를 통해 구성합니다.   
+
+[데이터스토어 탭] > [Datacenter] > [우클릭] > [스토리지] > [새 데이터스토어 클러스터]   
+![image](https://user-images.githubusercontent.com/43658658/144351828-d3a16b30-6b23-4719-8c27-093b4a78cd86.png)
+
+`[자동화 안 함(수동 모드)]`를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144352073-f7369379-4811-49a8-bbb4-ee5e4cdaa46a.png)   
+밑의 각 옵션은 세부적으로 자동/수동 모드를 지정하는 부분입니다.   
+* `공간 조정 자동화 수준` : 클러스터 내 공간 불균형의 로드밸런싱 자동화 여부
+* `I/O 조정 자동화 수준` : 인풋/아웃풋 부하 불균형의 로드밸런싱 자동화 여부
+* `규칙 적용 자동화 수준` : 클러스터의 선호도 규칙 위반 수정 자동화 여부
+* `정책 적용 자동화 수준` : 스토리지 및 VM 정책 위반 수정 자동화 여부
+* `VM 제거 자동화 수준` : VM 제거 자동화 여부
+
+고급 기능 설정 부분입니다.   
+![image](https://user-images.githubusercontent.com/43658658/144358389-957ec591-71c7-4a26-bedb-07ce5d04128c.png)
+`I/O 메트릭` : 가상머신 및 전체 데이터스토어의 I/O를 모니터링하다가 설정값보다 높아지면 자동으로 마이그레이션합니다.   
+`Storage DRS 임계값` : 사용된 공간이 일정 수준 이상이 되면 마이그레이션을 권장합니다.
+
+DRS 기능이 적용되는 클러스터를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144358782-c7c06a75-671e-4dba-a201-3e6198966202.png)
+
+DRS 기능이 적용되는 데이터스토어를 모두 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144358830-307bf9d5-21b9-4311-b9db-cc3f0e354ae0.png)
+
+전체 설정을 확인하고 데이터스토어 클러스터를 구성합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144359066-fd8b8978-483f-449d-8b60-90a4f3c305c5.png)
+
+이렇게 데이터스토어를 구성하면 Storage DRS가 활성화 됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/144359368-5bde7dbc-8a56-4b90-90b4-54da9a9884c0.png)
 
 ## EVC 설정
 
