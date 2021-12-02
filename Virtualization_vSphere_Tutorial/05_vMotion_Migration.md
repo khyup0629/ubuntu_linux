@@ -165,7 +165,7 @@ DRS 기능이 적용되는 데이터스토어를 모두 선택합니다.
 전체 설정을 확인하고 데이터스토어 클러스터를 구성합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144359066-fd8b8978-483f-449d-8b60-90a4f3c305c5.png)
 
-이렇게 데이터스토어를 구성하면 Storage DRS가 활성화 됩니다.   
+이렇게 데이터스토어 클러스터를 구성하면 `Storage DRS가 활성화`됩니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144359368-5bde7dbc-8a56-4b90-90b4-54da9a9884c0.png)
 
 
