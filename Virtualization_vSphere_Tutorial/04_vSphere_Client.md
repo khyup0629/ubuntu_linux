@@ -95,7 +95,7 @@ iSCSI 탭에서 iSCSI 가상 스토리지를 만듭니다.
 ![image](https://user-images.githubusercontent.com/43658658/144042593-c9574d46-f0f3-4d8b-802e-03da8194951f.png)   
 이 항목에서 초기자를 선택해야 합니다. 초기자는 ESXi 호스트들을 가리킵니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144043101-35cbc1c8-6200-498c-b8b7-b2d0499cf095.png)   
-캐시에 ESXi 호스트가 뜨게 하려면 `vSphere Client`의 ESXi 호스트에서 iSCSI 유형의 스토리지 어댑터를 추가해 스토리지와 연결시켜주어야 합니다.   
+캐시에 ESXi 호스트가 뜨게 하려면 `vSphere Client`의 ESXi 호스트에서 iSCSI 유형의 스토리지 어댑터를 추가해 스토리지 서버를 가리키도록 설정해야 합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144043644-2f0eb5b0-56ad-4306-bd91-150b6852c24b.png)   
 ![image](https://user-images.githubusercontent.com/43658658/144043682-c64241ab-3208-49fd-b6c3-d71ff5317cec.png)   
 ![image](https://user-images.githubusercontent.com/43658658/144043852-6869526f-2262-44b5-b179-25c6c55a898f.png)   
