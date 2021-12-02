@@ -104,7 +104,7 @@ iSCSI 탭에서 iSCSI 가상 스토리지를 만듭니다.
 ![image](https://user-images.githubusercontent.com/43658658/144047276-600d4782-2b0f-4106-92c4-14eb6b4f4394.png)   
 그리고 다시 스토리지로 돌아와보면, 캐시에 식별자가 추가된 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144047321-e17dbc68-f34e-4142-b207-653a1b04ab02.png)   
-전체 설정을 확인하고 iSCSI 가상 스토리지를 생성합니다.   
+전체 설정을 확인하고 iSCSI 공유 스토리지를 생성합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144047464-b0044297-ee4d-48b5-bb67-8b508fd155dc.png)   
 
 > <h3>ESXi와 공유 스토리지 연결</h3>
