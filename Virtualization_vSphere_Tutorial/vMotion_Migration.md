@@ -35,6 +35,79 @@ vMotion을 수행할 것이므로 `계산 리소스만 변경`을 클릭합니�
 마이그레이션을 수행하면 아래와 같이 호스트가 `173`으로 넘어간 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144238988-24fc273b-f52d-4764-b5b1-6250ddd8306e.png)
 
+## DRS
+
+`DRS` : 여러 개의 호스트가 하나의 거대한 리소스 풀을 형성하고, 하나의 호스트에서 특정 가상머신에 많은 부하가 발생할 경우 그 가상머신을 다른쪽 호스트로 강제 마이그레이션하는 기능을 처리합니다.
+
+즉, `전체 ESXi 호스트의 리소스를 로드밸런싱`할 수 있습니다.
+
+> <h3>DRS 구성</h3>
+
+DRS를 구성해봅시다.   
+![image](https://user-images.githubusercontent.com/43658658/144337975-c8f765ca-3956-41db-91dd-872c36772279.png)   
+
+`vSphere DRS` 기능을 켭니다.
+![image](https://user-images.githubusercontent.com/43658658/144338256-f6704b00-1e74-4945-aa5f-458efea42c18.png)   
+* `자동화 수준`
+  - `완전히 자동화됨` : 가상머신의 전원을 켜면 가상머신이 적당한 ESXi 서버에 자동으로 배치. 이후 작동 중에는 클러스터 내의 부하를 확인하여 자동 배치.
+  - `부분적으로 자동화됨` :  가상머신의 전원을 켜면 적당한 ESXi 서버에 자동 배치. 이후 작동 중에는 클러스터 내의 부하를 확인하여 관리자에게 배치 추천.
+  - `수동` : 가상머신의 전원을 켤 때 관리자가 ESXi 서버 선택. 이후 클러스터 내의 부하를 확인하여 관리자에게 배치 추천.
+
+![image](https://user-images.githubusercontent.com/43658658/144338608-a3939dab-cb74-4986-8d52-c82fcc31f0e6.png)   
+* `마이그레이션 임계값` : 클러스터 내 부하의 변동폭이 크다면 `적극적`으로 해두고, 그렇지 않은 경우에는 `보수적` 쪽을 선택.
+
+![image](https://user-images.githubusercontent.com/43658658/144339284-67c608a8-4b71-4fcb-887f-093d2ce53c39.png)   
+`DRS`는 최근 5분 동안의 가상 시스템 요구량을 참고하여 클러스터 내 호스트의 로드를 조정하는 반면, 
+`Predictive DRS`는 `vRealize Operations Manager`가 제공한 데이터를 기반으로 작업을 수행합니다.   
+vRealize Operations Manager는 vCenter Server에서 실행 중인 가상 시스템을 모니터링하고, 장기적인 기간별 데이터를 분석하여, 예측 가능한 패턴의 리소스 사용량에 대한 예상 데이터를
+Predictive DRS에 제공합니다.
+
+![image](https://user-images.githubusercontent.com/43658658/144339250-3262552f-4e8d-4402-aa81-23c2b7629198.png)   
+* DPM : ESXi 호스트의 리소스가 사용되고 있지 않은 경우, DRS 기능을 이용해 가상머신을 자동으로 다른 호스트로 옮기고 호스트의 전원을 끄는 기능입니다.
+
+클러스터의 DRS가 구성 되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144339869-88fdfea0-9373-4219-86a2-16f5f6d5f1ad.png)
+
+> <h3>DRS 수동 설정 테스트</h3>
+
+DRS의 경우 자동으로 테스트하는 것이 쉽지 않으므로, 수동으로 설정하고 실습을 진행해보겠습니다.
+
+`vSphere DRS` 설정에서 다시 `[편집]`을 누릅니다. 자동화 기능을 수동으로 입력합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144340238-e21094b8-fff0-465f-a17d-ea354fecd280.png)
+
+`172.16.0.173` 호스트 위의 가상머신 하나를 선택해서 전원을 켭니다.   
+![image](https://user-images.githubusercontent.com/43658658/144340723-b0b2aeb5-38c1-4f05-9533-c02c6ca78c00.png)
+
+DRS를 `수동`으로 설정했기 때문에 가상머신의 전원을 켤 때 클러스터 내 적당한 호스트를 추천해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144340778-bcbdda97-af8e-4738-bf3b-916c90af24d4.png)
+
+`172` 호스트를 선택하고 [확인]을 누르면 호스트가 이동됩니다.   
+![image](https://user-images.githubusercontent.com/43658658/144340903-07aecba4-8167-494a-b911-ba1b8a6f947d.png)
+
+> <h3>DRS 자동 설정 테스트</h3>
+
+다시 클러스터의 `vSphere DRS`로 들어가 [편집]을 클릭합니다. DRS를 `완전히 자동화됨`으로 바꿔줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144341052-5464e726-eedf-43d9-b48e-2035645b2197.png)
+
+가상머신을 생성해봅니다. 진행하다보면 기존에 가상머신을 생성할 때와 차이점을 발견할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144341194-d86db4a8-144e-42a8-82cd-628b98e8cccd.png)
+* 기존에는 가상머신을 생성할 때 `클러스터가 아닌 호스트`를 지정해주어야 했습니다.
+* 하지만 DRS가 설정되어 있는 상황에서는 `DRS가 알아서 호스트를 지정`해주기 때문에 선택할 필요가 없습니다.
+
+가상머신을 생성하고 호스트를 확인해보면 `173`에 생성된 것을 확인할 수 있습니다.   
+(`172` 호스트에는 총 4개의 가상머신이 있었기 때문에 `173`에 로드밸런싱되어 배치되었습니다)
+![image](https://user-images.githubusercontent.com/43658658/144341743-9e1aeb5e-10a2-4929-bc41-4929176ae3de.png)
+
+## Storage vMotion Migration
+
+`Storage vMotion` : 가상머신을 다른 데이터스토어로 마이그레이션합니다(가상머신은 데이터스토어 내에 파일 형식으로 저장되어 있습니다).
+
+> <h3>Storage vMotion 실습</h3>
+
+먼저 50GB 정도의 신규 데이터스토어를 생성합니다.
+
+
+
 ## EVC 설정
 
 CPU 간의 호환성을 맞추기 위해 EVC를 설정합니다.   
