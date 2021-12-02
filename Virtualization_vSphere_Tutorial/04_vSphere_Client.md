@@ -74,7 +74,7 @@ GUI로 설치합니다.
 
 이 윈도우 서버에 `iSCSI 공유 스토리지`를 구성할 것입니다.   
 
-먼저 [서버 관리자]로 접속합니다.   
+먼저 [서버 관리자]를 실행합니다.   
 iSCSI를 이용하기 위해 필요한 것들을 설치합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144347499-b7e1ac29-e610-4da7-a18f-aec74612fc41.png)   
 `iSCSI Target Server`를 선택하면 `File Server`도 선택하도록 되어있습니다.   
