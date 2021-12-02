@@ -152,7 +152,7 @@ DRS를 `수동`으로 설정했기 때문에 가상머신의 전원을 켤 때 �
 * `VM 제거 자동화 수준` : VM 제거 자동화 여부
 
 고급 기능 설정 부분입니다.   
-![image](https://user-images.githubusercontent.com/43658658/144358389-957ec591-71c7-4a26-bedb-07ce5d04128c.png)
+![image](https://user-images.githubusercontent.com/43658658/144452109-a513bfb0-2a00-4b37-acc5-c557ec833e6f.png)   
 `I/O 메트릭` : 가상머신 및 전체 데이터스토어의 I/O를 모니터링하다가 설정값보다 높아지면 자동으로 마이그레이션합니다.   
 `Storage DRS 임계값` : 사용된 공간이 일정 수준 이상이 되면 마이그레이션을 권장합니다.
 
