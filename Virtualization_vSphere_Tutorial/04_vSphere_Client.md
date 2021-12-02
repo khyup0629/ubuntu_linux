@@ -2,10 +2,14 @@
 
 ## vCenter에 ESXi 호스트 등록하기
 
-vCenter에 ESXi 호스트를 등록합니다.   
+vCenter에 ESXi 호스트를 등록해보겠습니다.   
 
+먼저 데이터센터를 생성합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143967825-9d7a778a-c1cc-4c1a-b168-d5a3c8fc2571.png)   
+간단하게 이름만 지정해서 생성이 가능합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143968050-e4f43a43-6c75-4cdf-8fc0-4251c92b365e.png)   
+
+다음으로 호스트를 추가합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143968085-b4b24f03-45d7-4374-9964-0736a0c78fdb.png)   
 
 ESXi 호스트 정보들을 입력합니다.
