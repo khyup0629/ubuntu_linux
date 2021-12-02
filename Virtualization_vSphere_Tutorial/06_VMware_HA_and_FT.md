@@ -14,9 +14,9 @@ vMotion와의 차이점은 `vMotion`은 호스트의 `전원이 켜져 있을 �
 
 ## vSphere HA 아키텍처
 
-![image](https://user-images.githubusercontent.com/43658658/144362795-79023fc5-a01e-4f76-ad46-a5256d4bf9ea.png)   
+![image](https://user-images.githubusercontent.com/43658658/144408684-9c32ac5e-fb9d-454e-af6d-98ef394711c9.png)   
 
-vCenter에서 vSphere HA 기능을 활성화하면 각 호스트에 `FDM 에이전트`가 설치되면서 `HA 클러스터`를 구성합니다.   
+vCenter에서 vSphere HA 기능을 활성화하면 각 호스트들이 `HA 클러스터`를 구성합니다.   
 이때, 각 호스트들 사이에서 마스터(1대)와 슬레이브 호스트(나머지)를 선정합니다.   
 
 각 호스트는 HA 구성에 문제가 없는지 지속적으로 상호 적합성을 체크합니다.   
