@@ -14,7 +14,7 @@ vCenter에 ESXi 호스트를 등록해보겠습니다.
 
 ESXi 호스트 정보들을 입력합니다.
 ![image](https://user-images.githubusercontent.com/43658658/143968125-8e1999ca-bc5e-48d6-907e-572fa97fa21e.png)   
-![image](https://user-images.githubusercontent.com/43658658/143968217-03d8b0a4-8df8-430f-bce7-380873e81be5.png)
+![image](https://user-images.githubusercontent.com/43658658/143968217-03d8b0a4-8df8-430f-bce7-380873e81be5.png)   
 라이센스 확인 페이지입니다. 여기서 라이센스가 있다면 선택하면 됩니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143968389-ea90405c-485d-48f4-9982-2826cde0a4fd.png)   
 ESXi에 접속이 가능하도록 하기 위해 잠금 모드는 사용하지 않겠습니다.   
