@@ -33,7 +33,7 @@ VM 위치를 확인합니다.
 같은 방법으로 나머지 호스트도 추가합니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143969301-74db4716-6b9b-4318-b700-7a537cabebcc.png)
 
-## iSCSI 공유 스토리지
+## iSCSI 공유 스토리지 생성하기
 
 RJ45를 통한 네트워크 환경에서 서버와 스토리지를 연결하기 위해 `iSCSI 프로토콜`을 이용합니다.   
 (SAN 방식 FC 프로토콜을 통해 SCSI 명령어를 전달하는데, NAS 환경에서는 iSCSI 프로토콜을 이용해 SCSI 명령어를 전달합니다).
