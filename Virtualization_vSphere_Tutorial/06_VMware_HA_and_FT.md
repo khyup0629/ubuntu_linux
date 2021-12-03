@@ -129,9 +129,3 @@ Fault Tolerance 상태를 `보호되지 않음`을 `보호됨`으로 바꿔주�
 
 
 
-
-
-
-![image](https://user-images.githubusercontent.com/43658658/144568119-752c97c9-fc5e-4aa7-99e0-844efab95628.png)
-
-
