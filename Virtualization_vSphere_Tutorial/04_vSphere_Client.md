@@ -121,7 +121,30 @@ iSCSI 탭에서 iSCSI 가상 스토리지를 만듭니다.
 `클러스터` : 복수의 ESXi 호스트를 논리적으로 그룹화한 것입니다. vCenter는 동일한 클러스터에 속한 ESXi들의 리소스를 클러스터 단위의 리소스로 관리합니다.
 
 ![image](https://user-images.githubusercontent.com/43658658/143991875-e2e48f04-dd6a-4ecd-adf0-0d8b81f51669.png)   
-![image](https://user-images.githubusercontent.com/43658658/143991994-bcfeacaa-1310-476e-a656-7b731bd85771.png)   
+![image](https://user-images.githubusercontent.com/43658658/144576526-c4157e27-9e6a-4ad5-8850-6bdb2a170357.png)   
+
+EVC는 클러스터 내의 호스트들의 CPU 호환을 맞춰주는 기술입니다.
+![image](https://user-images.githubusercontent.com/43658658/144234434-358d7f63-4800-4115-a18f-6c41cc0ca193.png)
+
+[CPU/EVC Matrix](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=cpu) 참고 사이트
+
+`172.16.0.172`와 `172.16.0.173`의 CPU는 아래와 같이 동일하지만 ESXi 버전이 다릅니다.   
+![image](https://user-images.githubusercontent.com/43658658/144233957-7fa3995f-e4b6-4c59-979d-5bb436e4a8d4.png)   
+![image](https://user-images.githubusercontent.com/43658658/144233967-653d10c1-20bb-4102-85ba-6c8d3aa12c99.png)
+
+`172.16.0.172`의 가능한 EVC 모드는 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234134-030fddc0-f537-49aa-ba7a-3c773f486ca5.png)
+
+`172.16.0.173`의 가능한 EVC 모드는 아래와 같습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234304-5a361af3-1073-4181-8432-4fd121eee4c3.png)
+
+인텔의 `Merom`으로 설정합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144234564-c46b98ad-5d7d-4c6c-8393-e671a8892512.png)
+
+vCenter가 클러스터 바깥에 위치해있다면 위와 같은 설정은 클러스터를 생성하고 이후에 해도 상관없지만,   
+vCenter가 클러스터 내의 호스트 위에 가상머신으로 올려져 있다면, 사전에 설정을 해주어야 합니다.   
+(나중에 여러 실습을 할 때, CPU의 호환이 맞지 않아 결국 EVC 설정을 해주어야 할 때, 굉장히 번거로워질 수 있습니다)
+
 ESXi 호스트 2개를 드래그 앤 드롭하여 클러스터 안으로 넣습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143992141-23096bd5-e1ee-421e-834f-9e9b372e584a.png)
 
