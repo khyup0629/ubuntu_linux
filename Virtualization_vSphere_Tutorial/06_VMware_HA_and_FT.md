@@ -74,6 +74,64 @@ FT는 `무정지서버`입니다. 1년에 5분 이내의 다운 타임을 허용
 
 일반적으로 이중화는 한쪽 서비스에 장애가 발생하면 `페일오버 시간이 발생`하는데, FT 서비스는 페일오버 시간이 `거의 0`에 가깝습니다.
 
+먼저 100GB 스토리지 2개를 만들어줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144560882-65bba9aa-cddb-42ac-b72d-95470f59fd40.png)
 
+새로 생성한 `FT_TEST` 데이터스토어로 `FT_Test` 가상머신을 생성합니다. 이때 네트워크 어댑터 유형을 `VMXNET3`로 연결합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144566381-c68bca70-c846-4435-a07e-a4c8d4ff1daf.png)
+
+이제 본격적으로 FT를 구성해보겠습니다.
+
+먼저 FT로 동기화할 가상머신을 지정하고, [Fault Tolerance] > [Fault Tolerance 설정]을 클릭합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144561504-fb5e5b47-fec8-423c-bdc4-c9bd3a4869b4.png)
+
+아래의 문제가 발생했습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144567181-2b9b18d2-f998-42dd-9738-09379fd2c725.png)
+
+이는 VMkernel 포트를 하나 생성해주고, `vMotion`과 `Fault Tolerance 로깅`을 체크해주면 됩니다.   
+
+먼저 가상 스위치를 하나 생성해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144567372-edf45f8d-7fc9-430b-914f-32f66ba8baa3.png)   
+
+VMkernel 네트워크 어댑터를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144567429-27f7cd75-dc37-491f-8fcd-a0410137f650.png)
+
+기존 스위치에서 `vSwitch0`을 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144567755-fe989233-ebc6-419a-8b40-0ea905891bee.png)
+
+`vMotion`과 `Fault Tolerance 로깅`을 체크합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144567940-67a30e5c-f725-489e-8674-1c75c273ec89.png)
+
+IP를 설정해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144568025-4fa9286c-0029-4340-b016-a5ef372c9811.png)
+
+설정을 완료합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144568711-a7dad8af-3066-45ea-ba75-e06518af8dcc.png)
+
+`173` 호스트에 대해서도 설정을 진행합니다.
+
+다시 돌아와서 FT를 설정해줍니다.   
+![image](https://user-images.githubusercontent.com/43658658/144568309-7e3d0c5d-4eec-4f34-b62d-e132c70c69c8.png)   
+이번에는 대역폭 문제가 발생했습니다. 하지만 간단한 테스트 환경을 구성하는 것이기 때문에 대역폭은 중요하지 않습니다. 넘어갑니다.
+
+방금 생성한 데이터스토어를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144568769-ce7330d1-06ff-4a6c-a0d9-804730f5ccfd.png)
+
+Secondary 가상머신이 동작할 ESXi 호스트를 선택합니다.   
+![image](https://user-images.githubusercontent.com/43658658/144569110-aee26d4d-2934-44c8-a4d2-d5ccb5a73279.png)
+
+FT구성이 정상적으로 완료되었습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144572193-a1fe643d-7c09-4c50-8aef-5b4fa3a99668.png)
+
+Fault Tolerance 상태를 `보호되지 않음`을 `보호됨`으로 바꿔주기 위해 가상머신을 켜서 동기화를 시켜줍니다.   
+부팅 중에 동기화를 시키기 때문에 부팅이 오래걸립니다.   
+![image](https://user-images.githubusercontent.com/43658658/144570606-ad769c6f-5fb8-4116-b116-b8b0fe9e9c64.png)
+
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/43658658/144568119-752c97c9-fc5e-4aa7-99e0-844efab95628.png)
 
 
