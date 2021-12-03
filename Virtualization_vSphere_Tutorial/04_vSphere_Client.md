@@ -123,10 +123,8 @@ iSCSI 탭에서 iSCSI 가상 스토리지를 만듭니다.
 ![image](https://user-images.githubusercontent.com/43658658/143991875-e2e48f04-dd6a-4ecd-adf0-0d8b81f51669.png)   
 ![image](https://user-images.githubusercontent.com/43658658/144576526-c4157e27-9e6a-4ad5-8850-6bdb2a170357.png)   
 
-EVC는 클러스터 내의 호스트들의 CPU 호환을 맞춰주는 기술입니다.
-![image](https://user-images.githubusercontent.com/43658658/144234434-358d7f63-4800-4115-a18f-6c41cc0ca193.png)
-
-[CPU/EVC Matrix](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=cpu) 참고 사이트
+EVC는 클러스터 내의 호스트들의 CPU 호환을 맞춰주는 기술입니다.   
+=> [CPU/EVC Matrix](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=cpu) 참고 사이트
 
 `172.16.0.172`와 `172.16.0.173`의 CPU는 아래와 같이 동일하지만 ESXi 버전이 다릅니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144233957-7fa3995f-e4b6-4c59-979d-5bb436e4a8d4.png)   
@@ -139,7 +137,6 @@ EVC는 클러스터 내의 호스트들의 CPU 호환을 맞춰주는 기술입�
 ![image](https://user-images.githubusercontent.com/43658658/144234304-5a361af3-1073-4181-8432-4fd121eee4c3.png)
 
 인텔의 `Merom`으로 설정합니다.   
-![image](https://user-images.githubusercontent.com/43658658/144234564-c46b98ad-5d7d-4c6c-8393-e671a8892512.png)
 
 vCenter가 클러스터 바깥에 위치해있다면 위와 같은 설정은 클러스터를 생성하고 이후에 해도 상관없지만,   
 vCenter가 클러스터 내의 호스트 위에 가상머신으로 올려져 있다면, 사전에 설정을 해주어야 합니다.   
