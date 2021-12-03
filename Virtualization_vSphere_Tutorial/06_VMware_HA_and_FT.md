@@ -130,4 +130,6 @@ Fault Tolerance 상태를 `보호되지 않음`을 `보호됨`으로 바꿔주�
 정상적으로 FT 구성이 완료되었습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/144593458-8bae779b-c77d-4b55-82cf-fe17b944fb9d.png)   
 
+`173` 호스트에는 쉐도우 가상머신이 생성되어 있는 것을 확인할 수 있습니다.   
+![image](https://user-images.githubusercontent.com/43658658/144593626-86c6b8a1-a5fb-40b1-849e-2c9ca8afafe0.png)
 
