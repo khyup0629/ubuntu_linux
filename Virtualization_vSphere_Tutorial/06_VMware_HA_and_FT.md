@@ -125,9 +125,9 @@ FT구성이 완료되었습니다.
 
 Fault Tolerance 상태를 `보호되지 않음`을 `보호됨`으로 바꿔주기 위해 가상머신을 켜서 동기화를 시켜줍니다.   
 부팅 중에 동기화를 시키기 때문에 부팅이 오래걸립니다.   
-![image](https://user-images.githubusercontent.com/43658658/144570606-ad769c6f-5fb8-4116-b116-b8b0fe9e9c64.png)
+![image](https://user-images.githubusercontent.com/43658658/144593348-1e195b4e-4aa7-4499-8c19-78c07e72b7ea.png)
 
 정상적으로 FT 구성이 완료되었습니다.   
-![image](https://user-images.githubusercontent.com/43658658/144582097-d916c0f3-e23f-4aa6-9fec-f8c8b5cb1b5f.png)   
+![image](https://user-images.githubusercontent.com/43658658/144593458-8bae779b-c77d-4b55-82cf-fe17b944fb9d.png)   
 
 
