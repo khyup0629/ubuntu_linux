@@ -128,6 +128,6 @@ Fault Tolerance 상태를 `보호되지 않음`을 `보호됨`으로 바꿔주�
 ![image](https://user-images.githubusercontent.com/43658658/144570606-ad769c6f-5fb8-4116-b116-b8b0fe9e9c64.png)
 
 정상적으로 FT 구성이 완료되었습니다.   
-![image](https://user-images.githubusercontent.com/43658658/144579610-2a6d1a2a-b837-4082-a7e3-708cd4922a98.png)
+![image](https://user-images.githubusercontent.com/43658658/144582097-d916c0f3-e23f-4aa6-9fec-f8c8b5cb1b5f.png)   
 
 
