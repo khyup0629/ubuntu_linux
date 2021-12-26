@@ -188,7 +188,7 @@ IP 주소로 접속합니다.
 정상적으로 접속 되는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143857038-99142293-664f-44ce-aa9d-c847332f8596.png)
 
-## vCenter 설치하기
+# vCenter 설치하기
 
 vCenter Server iso 파일이 들어있는 USB를 PC에 마운트하고 iso 파일 위에서 [우클릭] > [탑재]를 누릅니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143832280-40f04b24-ca63-493d-9100-0847962d212f.png)
@@ -246,7 +246,7 @@ SSO에서 설정한 `administrator@설정한도메인/설정한패스워드`를 
 설치한 ESXi 서버에 들어가보면 VM으로 위에서 설치한 vCenter Server가 생성되어 있는 것을 확인할 수 있습니다.   
 ![image](https://user-images.githubusercontent.com/43658658/143844926-346aea8b-30e6-4fc4-bcba-e150ef32187a.png)
 
-## vSphere의 3가지 클라이언트
+# vSphere의 3가지 클라이언트
 
 vSphere를 사용하다 보면 혼동되는 개념이 있습니다. 바로 클라이언트입니다.   
 `vSphere Client`는 프로그램 버전이 있고, 웹 버전이 있습니다.    
